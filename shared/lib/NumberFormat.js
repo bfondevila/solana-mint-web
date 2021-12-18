@@ -12,7 +12,7 @@ const NumberFormat = (props) => {
   });
 
   const RARITY_FORMAT = new Intl.NumberFormat(locale, {
-    style: "decimal",
+    style: "percent",
     minimumFractionDigits: "2",
     maximumFractionDigits: "2",
   });

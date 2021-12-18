@@ -18,19 +18,40 @@ const NFTSale = (props) => {
   const nftRarityExamples = [
     {
       img: "/images/hero.png",
-      rarity: 0.01,
+      rarity: 0.0001,
+      unique: true,
     },
     {
       img: "/images/hero.png",
-      rarity: 0.02,
+      rarity: 0.0001,
     },
     {
       img: "/images/hero.png",
-      rarity: 1.0,
+      rarity: 0.0003,
     },
     {
       img: "/images/hero.png",
-      rarity: 10.0,
+      rarity: 0.075,
+    },
+    {
+      img: "/images/hero.png",
+      rarity: 0.09,
+    },
+    {
+      img: "/images/hero.png",
+      rarity: 0.1,
+    },
+    {
+      img: "/images/hero.png",
+      rarity: 0.15,
+    },
+    {
+      img: "/images/hero.png",
+      rarity: 0.18,
+    },
+    {
+      img: "/images/hero.png",
+      rarity: 0.2,
     },
   ];
 
@@ -41,7 +62,8 @@ const NFTSale = (props) => {
           <NFTSaleItem
             imageUrl={item.img}
             rarity={item.rarity}
-            className="sm-2"
+            unique={item.unique}
+            index={index}
             key={index}
           />
         );
