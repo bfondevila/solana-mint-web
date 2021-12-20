@@ -2,8 +2,7 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import { PROJECT_NAME } from "../../constants/common";
 import FeaturesList from "../../components/FeaturesList";
 import PayCTA from "../../components/PayCTA";
-
-//<NFTSaleStats></NFTSaleStats>
+import NFTSaleStats from "../../components/NFTSaleStats";
 
 const Home = () => {
   return (
@@ -23,6 +22,9 @@ const Home = () => {
           <img src="https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg"></img>
           <Button href={"/"}>COMPRAR NFT</Button>
         </Col>
+      </Row>
+      <Row className="text-center">
+        <NFTSaleStats></NFTSaleStats>
       </Row>
       <Row className="text-center">
         <Col>
