@@ -10,14 +10,14 @@ const FeaturesList = () => {
 
   return (
     <Container>
-      {features.map((entry) => {
+      {features.map((entry, index) => {
         return (
               <FeatureCard
                 header={entry.header}
                 content={entry.content}
                 footer={entry.footer}
                 imgSrc={entry.imgSrc}
-                invertCols={entry.invertCols}
+                invertCols={index % 2 === 0 ? true : false}
               ></FeatureCard>
         );
       })}

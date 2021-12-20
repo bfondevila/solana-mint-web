@@ -10,7 +10,6 @@ const featuresData = [
     footer: "Dirección del contrato: 0x265...456",
     imgSrc:
       "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
-    invertCols: false,
   },
   {
     key: "disenos",
@@ -27,7 +26,6 @@ const featuresData = [
       cada obra</p>,
     imgSrc:
       "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
-    invertCols: true,
   },
   {
     key: "causa_social",
@@ -39,7 +37,6 @@ const featuresData = [
     footer: <p>Lee nuestro manifiesto <a href='/'>aquí</a></p>,
     imgSrc:
       "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
-    invertCols: false,
   },
   {
     key: "premio_gordo",
@@ -52,7 +49,6 @@ const featuresData = [
     footer: "",
     imgSrc:
       "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
-    invertCols: true,
   },
 ];
 
