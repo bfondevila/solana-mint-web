@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "format": "prettier -w '**/*.(js|jsx|css|scss|json)'"
+    "format": "prettier -w '**/*.(js|jsx|css|scss|json)'",
+    "deploy": "npm run build && cd infrastructure && cdk deploy '*'"
   },
   "dependencies": {
     "a11y-react-emoji": "^1.1.3",
