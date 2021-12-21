@@ -4,6 +4,15 @@ import { PROJECT_NAME } from "../../constants/common";
 const MetamaskConnection = () => {
   const onboarding = new MetaMaskOnboarding({ forwarderOrigin });
 
+  const [text, setText] = useState("");
+
+  const [disabled, setDisabled] = useState(false);
+
+  const handleDisabled = () => setDisabled(true);
+  const handleEnable = () => setDisabled(false);
+
+  const [onClickFunction, setOnClickFunction] = useState();
+
   //Check function to see if the MetaMask extension is installed
   const isMetaMaskInstalled = () => {
     //Have to check the ethereum binding on the window object to see if it's installed
@@ -13,8 +22,8 @@ const MetamaskConnection = () => {
 
   //This will start the onboarding proccess
   const onClickInstall = () => {
-    onboardButton.innerText = "Onboarding in progress";
-    onboardButton.disabled = true;
+    setText("Onboarding in progress");
+    handleDisabled();
     //On this object we have startOnboarding which will start the onboarding process for our end user
     onboarding.startOnboarding();
   };
@@ -29,27 +38,24 @@ const MetamaskConnection = () => {
     }
   };
 
-  const MetaMaskClientCheck = () => {
-    //Check to see if Metmask is installed
-    if (!isMetaMaskInstalled()) {
-      return (
-        <Button onclick={onClickInstall} disabled={false}>
-          Click here to install MetaMask!
-        </Button>
-      );
-    } else {
-      //If it is installed we change our button text
-      return (
-        <Button onclick={onClickConnect} disabled={false}>
-          Connect!
-        </Button>
-      );
-    }
-  };
+  //Set button depending on whether metamask is installed
+  if (!isMetaMaskInstalled()) {
+    handleEnable();
+    setText("Click here to install MetaMask!");
+    setOnClickFunction(onClickInstall);
+  } else {
+    handleEnable();
+    setText("Connect!");
+    setOnClickFunction(onClickConnect);
+  }
 
   return (
     <Container>
-      <Row className="text-center">{MetaMaskClientCheck}</Row>
+      <Row className="text-center">
+        <Button onClick={onClickFunction} disabled={disabled}>
+          {text}
+        </Button>
+      </Row>
     </Container>
   );
 };
