@@ -1,30 +1,41 @@
 import { PROJECT_NAME } from "../../constants/common.js";
 import Head from "next/head";
 import Link from "next/link";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useRouter } from "next/router";
 import style from "./header.module.scss";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   const router = useRouter();
 
   const links = [
     {
-      key: "inicio",
-      name: "Inicio",
-      link: "/",
+      key: "venta_nft",
+      name: "COMPRAR NFT",
+      link: "/nft",
+    },
+    {
+      key: "coleccion",
+      name: "COLECCIÓN",
+      link: "/nft",
     },
     {
       key: "historia",
-      name: "Historia",
+      name: "HISTORIA",
       link: "/historia",
     },
     {
-      key: "nft",
-      name: "Venta NFT",
-      link: "/nft",
+      key: "causa_social",
+      name: "CAUSA SOCIAL",
+      link: "/",
     },
   ];
+
+  // NOT WORKING: Iconos Sociales. Instalar paquetes FontAwesome
+  //  <FontAwesomeIcon icon={faTwitterSquare} />
+  //  <FontAwesomeIcon icon={faInstagram} />
 
   return (
     <Navbar bg="light" expand="lg">
@@ -34,16 +45,7 @@ const Header = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Container>
-        <Navbar.Brand>
-          <img
-            src="/images/hero.png"
-            width="30"
-            height="30"
-            className={"d-inline-block align-top " + style.logo}
-            alt="Olivio del Toro"
-          />
-          {PROJECT_NAME}
-        </Navbar.Brand>
+        <Navbar.Brand>{PROJECT_NAME}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -62,6 +64,8 @@ const Header = () => {
                 </Link>
               );
             })}
+            <Button href={"/"}>CONECTAR WALLET</Button>
+            <Container>Iconos Sociales</Container>
           </Nav>
         </Navbar.Collapse>
       </Container>
