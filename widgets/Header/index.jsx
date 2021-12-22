@@ -14,6 +14,11 @@ const Header = () => {
 
   const links = [
     {
+      key: "home",
+      name: "HOME",
+      link: "/"
+    },
+    {
       key: "venta_nft",
       name: "COMPRAR NFT",
       link: "/nft",
@@ -21,17 +26,17 @@ const Header = () => {
     {
       key: "coleccion",
       name: "COLECCIÓN",
-      link: "/nft",
+      link: "/nft", // TODO: change to coleccion
     },
     {
-      key: "historia",
-      name: "HISTORIA",
-      link: "/historia",
+      key: "relato",
+      name: "RELATO",
+      link: "/relato",
     },
     {
       key: "causa_social",
       name: "CAUSA SOCIAL",
-      link: "/",
+      link: "/", // TODO: change to causa_social
     },
   ];
 
