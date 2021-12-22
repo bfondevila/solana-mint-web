@@ -26,7 +26,7 @@ const Header = () => {
     {
       key: "coleccion",
       name: "COLECCIÓN",
-      link: "/nft", // TODO: change to coleccion
+      link: "/coleccion", 
     },
     {
       key: "relato",
@@ -36,7 +36,7 @@ const Header = () => {
     {
       key: "causa_social",
       name: "CAUSA SOCIAL",
-      link: "/", // TODO: change to causa_social
+      link: "/causa", 
     },
   ];
 
