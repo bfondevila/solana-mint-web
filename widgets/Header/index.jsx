@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useRouter } from "next/router";
 import style from "./header.module.scss";
+import MetamaskConnection from "../../components/MetamaskConnection";
+
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -64,7 +66,7 @@ const Header = () => {
                 </Link>
               );
             })}
-            <Button href={"/"}>CONECTAR WALLET</Button>
+            <MetamaskConnection>PAPI</MetamaskConnection>
             <Container>Iconos Sociales</Container>
           </Nav>
         </Navbar.Collapse>
