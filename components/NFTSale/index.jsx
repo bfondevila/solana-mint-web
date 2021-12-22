@@ -17,41 +17,99 @@ const NFTSale = (props) => {
 
   const nftRarityExamples = [
     {
-      img: "/images/hero.png",
-      rarity: 0.0001,
+      img: "/images/collection/oro-plata-bronce.png",
+      rarity: 0,
       unique: true,
     },
     {
-      img: "/images/hero.png",
+      img: "/images/collection/oro-rojo-azul.png",
       rarity: 0.0001,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.0003,
+      img: "/images/collection/rojo-plata-negro.png",
+      rarity: 0.0002,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.075,
+      img: "/images/collection/azul-plata-morado.png",
+      rarity: 0.0002,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.09,
+      img: "/images/collection/morado-azul-bronce.png",
+      rarity: 0.0005,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.1,
+      img: "/images/collection/blanco-verde-bronce.png",
+      rarity: 0.0005,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.15,
+      img: "/images/collection/negro-blanco-bronce.png",
+      rarity: 0.0005,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.18,
+      img: "/images/collection/rojo-verde-morado.png",
+      rarity: 0.001,
     },
     {
-      img: "/images/hero.png",
-      rarity: 0.2,
+      img: "/images/collection/blanco-rojo-azul.png",
+      rarity: 0.001,
+    },
+    {
+      img: "/images/collection/blanco-rojo-verde.png",
+      rarity: 0.001,
+    },
+    {
+      img: "/images/collection/blanco-verde-rojo.png",
+      rarity: 0.0013,
+    },
+    {
+      img: "/images/collection/negro-morado-azul.png",
+      rarity: 0.0015,
+    },
+    {
+      img: "/images/collection/negro-verde-morado.png",
+      rarity: 0.0015,
+    },
+    {
+      img: "/images/collection/negro-blanco-rojo.png",
+      rarity: 0.002,
+    },
+    {
+      img: "/images/collection/morado-azul-blanco.png",
+      rarity: 0.004,
+    },
+    {
+      img: "/images/collection/blanco-azul-negro.png",
+      rarity: 0.004,
+    },
+    {
+      img: "/images/collection/azul-blanco-negro.png",
+      rarity: 0.0045,
+    },
+    {
+      img: "/images/collection/morado-verde-blanco.png",
+      rarity: 0.005,
+    },
+    {
+      img: "/images/collection/blanco-morado-verde.png",
+      rarity: 0.010,
+    }, {
+      img: "/images/collection/verde-blanco-negro.png",
+      rarity: 0.010,
+    }, {
+      img: "/images/collection/morado-negro-blanco.png",
+      rarity: 0.012,
+    },
+    {
+      img: "/images/collection/negro-morado-blanco.png",
+      rarity: 0.012,
+    },
+    {
+      img: "/images/collection/morado-blanco-negro.png",
+      rarity: 0.0132,
+    },
+    {
+      img: "/images/collection/blanco-negro-morado.png",
+      rarity: 0.014,
     },
   ];
 
