@@ -28,7 +28,7 @@ const Home = () => {
           </p>
         </Col>
         <Col className="text-center">
-          <img src="/images/hero.jpg" width="300p" height="auto"></img>
+          <img src="/images/hero.png" width="300p" height="auto"></img>
           <Button href={"/nft"}>COMPRAR NFT POR 20€ O 10 MATIC</Button>
         </Col>
         <Col>
