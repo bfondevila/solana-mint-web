@@ -1,63 +1,72 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { PROJECT_NAME } from "../../constants/common";
+import MetaMaskOnboarding from '@metamask/onboarding';
+import React from 'react';
+
+// code from: https://docs.metamask.io/guide/onboarding-library.html#examples
+const ONBOARD_TEXT = 'Click here to install MetaMask!';
+const CONNECT_TEXT = 'Connect';
+const CONNECTED_TEXT = 'Connected';
 
 const MetamaskConnection = () => {
-  const onboarding = new MetaMaskOnboarding({ forwarderOrigin });
+    const [buttonText, setButtonText] = React.useState(ONBOARD_TEXT);
+    const [isDisabled, setDisabled] = React.useState(false);
+    const [accounts, setAccounts] = React.useState([]);
+    const onboarding = React.useRef();
 
-  const [text, setText] = useState("");
+    React.useEffect(() => {
+      if (!onboarding.current) {
+        onboarding.current = new MetaMaskOnboarding();
+      }
+    }, []);
 
-  const [disabled, setDisabled] = useState(false);
+    React.useEffect(() => {
+      if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+        if (accounts.length > 0) {
+          setButtonText(accounts[0]);
+          setDisabled(true);
+          onboarding.current.stopOnboarding();
+        } else {
+          setButtonText(CONNECT_TEXT);
+          setDisabled(false);
+        }
+      }
+    }, [accounts]);
 
-  const handleDisabled = () => setDisabled(true);
-  const handleEnable = () => setDisabled(false);
+    React.useEffect(() => {
+      function handleNewAccounts(newAccounts) {
+        setAccounts(newAccounts);
+      }
+      if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+        window.ethereum
+          .request({ method: 'eth_requestAccounts' })
+          .then(handleNewAccounts);
+        window.ethereum.on('accountsChanged', handleNewAccounts);
+        return () => {
+          window.ethereum.removeListener('accountsChanged', handleNewAccounts);
+        };
+      }
+    }, []);
 
-  const [onClickFunction, setOnClickFunction] = useState();
-
-  //Check function to see if the MetaMask extension is installed
-  const isMetaMaskInstalled = () => {
-    //Have to check the ethereum binding on the window object to see if it's installed
-    const { ethereum } = window;
-    return Boolean(ethereum && ethereum.isMetaMask);
-  };
-
-  //This will start the onboarding proccess
-  const onClickInstall = () => {
-    setText("Onboarding in progress");
-    handleDisabled();
-    //On this object we have startOnboarding which will start the onboarding process for our end user
-    onboarding.startOnboarding();
-  };
-
-  const onClickConnect = async () => {
-    try {
-      // Will open the MetaMask UI
-      // You should disable this button while the request is pending!
-      await ethereum.request({ method: "eth_requestAccounts" });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  //Set button depending on whether metamask is installed
-  if (!isMetaMaskInstalled()) {
-    handleEnable();
-    setText("Click here to install MetaMask!");
-    setOnClickFunction(onClickInstall);
-  } else {
-    handleEnable();
-    setText("Connect!");
-    setOnClickFunction(onClickConnect);
-  }
-
-  return (
-    <Container>
-      <Row className="text-center">
-        <Button onClick={onClickFunction} disabled={disabled}>
-          {text}
-        </Button>
-      </Row>
-    </Container>
-  );
+    const onClick = () => {
+      if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+        window.ethereum
+          .request({ method: 'eth_requestAccounts' })
+          .then((newAccounts) => setAccounts(newAccounts));
+      } else { 
+        // redirect to new page to explain how to create Metamask
+        if (location.href.split('/').at(-1) != 'nft'){
+          window.location = '/nft';
+        } else {
+          onboarding.current.startOnboarding();    
+        }    
+      }
+    };
+    return (
+      <button disabled={isDisabled} onClick={onClick}>
+        {buttonText}
+      </button>
+    );
 };
-
 export default MetamaskConnection;
+
