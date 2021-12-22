@@ -9,23 +9,23 @@ const featuresData = [
                 venderá nunca más!",
     footer: "Dirección del contrato: 0x265...456",
     imgSrc:
-      "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
+      "images/payment_methods.png",
   },
   {
     key: "disenos",
     header: "24 DISEÑOS EXCLUSIVOS",
     content:
-      "“Estrella sobre un volcán” está formada por 24 obras \
+      "“Estrella sobre un volcán dormido” está formada por 24 obras \
                 únicas. Cuando compras un NFT, ¡no sabes cuál te va a \
                 tocar! Algunas de estas variaciones son menos probables \
                 que te toquen, haciendo algunas de ellas más “raras” que \
                 otras (esto hace que coleccionar un poco más divertido). \
                 ",
     footer:
-      <p><a href='/nft'>En esta página</a> puedes ver el porcentaje de rarezas de
+      <p><a href='/coleccion'>En esta página</a> puedes ver el porcentaje de rarezas de
       cada obra</p>,
     imgSrc:
-      "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
+      "images/collage.png",
   },
   {
     key: "causa_social",
@@ -34,22 +34,22 @@ const featuresData = [
       "En apoyo a la catástrofe humana y material del volcán de \
       La Palma, se donará el 80% de la recaudación al Cabildo \
       de La Palma.",
-    footer: <p>Lee nuestro manifiesto <a href='/'>aquí</a></p>,
+    footer: <p>Lee nuestro manifiesto <a href='/causa'>aquí</a></p>,
     imgSrc:
-      "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
+      "images/volcan.png"
   },
   {
     key: "premio_gordo",
     header: "EL PREMIO GORDO: \
-      NFT COLECCTIONISTA Y LÁMINA FÍSICA",
+      NFT COLECCIONISTA Y LÁMINA FÍSICA",
     content:
       "Entre todos los los dueños de la colección “Estrella sobre \
-      un volcán”, se sorteará la única unidad de NFT Coleccionista formado por los colores oro, plata y bronce y su versión \
+      un volcán dormido”, se sorteará la única unidad de NFT Coleccionista formado por los colores oro, plata y bronce y su versión \
       física firmada por Octavio del Toro.",
     footer: "",
     imgSrc:
-      "https://as01.epimg.net/diarioas/imagenes/2021/12/07/actualidad/1638859529_126758_1638868324_noticia_normal_recorte1.jpg",
-  },
+      "images/ganador.png" 
+    },
 ];
 
 export default featuresData; 
