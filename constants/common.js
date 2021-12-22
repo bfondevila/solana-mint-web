@@ -1,1 +1,1 @@
-export const PROJECT_NAME = "Olivio del Toro";
+export const PROJECT_NAME = "OCTAVIO del TORO";
