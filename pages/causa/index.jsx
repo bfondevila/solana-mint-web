@@ -1,13 +1,15 @@
 import { Container } from "react-bootstrap";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
+import Causa from "../../content/Causa";
 
-export default function History() {
+
+export default function CausaPage() {
   return (
     <Container>
       <Header />
 
-      <p>This is the page with history</p>
+      <Causa />
 
       <Footer />
     </Container>
