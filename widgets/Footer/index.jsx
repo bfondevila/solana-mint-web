@@ -45,7 +45,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
+    <footer className={"black_background " + style.footer}>
       <Container>
         <Row>
           <Col className="text-center">made with love for La Palma</Col>
@@ -77,17 +77,6 @@ const Footer = () => {
           <Col xs={2} md={4}></Col>
         </Row>
       </Container>
-      <style jsx>{`
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-top: 25px;
-        }
-      `}</style>
     </footer>
   );
 };

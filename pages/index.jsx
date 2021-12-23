@@ -5,12 +5,12 @@ import Header from "../widgets/Header";
 
 export default function App() {
   return (
-    <Container>
+    <div>
       <Header />
 
       <Home />
 
       <Footer />
-    </Container>
+    </div>
   );
 }
