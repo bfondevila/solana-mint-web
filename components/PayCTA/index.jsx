@@ -1,5 +1,5 @@
-import { Col, Container, Row, Button, Card } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
+import { Col, Container, Row, Button } from "react-bootstrap";
+import style from "./pay_cta.module.scss";
 
 const PayCTA = () => {
   return (

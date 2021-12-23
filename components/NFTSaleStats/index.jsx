@@ -1,60 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row, Button, Card } from "react-bootstrap";
+import { PROJECT_NAME } from "../../constants/common";
+import style from "./nft_sales_stats.module.scss";
 
 const NFTSaleStats = (props) => {
-  const { totalSales, lastSale, deadline } = props;
-
-  const calculateTimeLeft = () => {
-    const difference = +new Date(`${deadline}`) - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        días: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutos: Math.floor((difference / 1000 / 60) % 60),
-        segundos: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-  });
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>,
-    );
-  });
+  // temp. Must be filled by backend
+  const totalSales = "5480€";
+  const lastSale = "53 minutos";
+  const daysToDeadline = 4;
+  const hoursToDeadline = 0;
+  const minToDeadline = 34;
+  const secToDeadline = 10;
 
   return (
     <Container className="text-center">
-      <p>
+      <p className={style.stats}>
         {totalSales} han sido recaudados para La Palma, la última compra hace{" "}
         {lastSale}
       </p>
-      <p>
-        La venta finaliza en{" "}
-        {timerComponents.length ? (
-          timerComponents
-        ) : (
-          <span>NFT sale has finished.</span>
-        )}
+      <p className={style.countdown}>
+        La venta finaliza en {daysToDeadline} días, {hoursToDeadline} horas,{" "}
+        {minToDeadline} minutos, {secToDeadline} segundos
       </p>
     </Container>
   );

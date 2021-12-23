@@ -1,3 +1,3 @@
-// module.exports = {
-//   exportPathMap: "./pages",
-// };
+module.exports = {
+  exportPathMap: "./pages",
+};

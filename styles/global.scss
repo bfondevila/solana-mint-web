@@ -1,0 +1,49 @@
+body {
+  background-color: #f2f1f0;
+  color: black;
+  font-family: "Monserrat";
+}
+
+.btn {
+  -webkit-box-shadow: 7px 5px 0px 0px #000000;
+  box-shadow: 7px 5px 0px 0px #000000;
+  border: 1px solid;
+  border-radius: 0;
+
+  &:hover {
+    border: 1px solid;
+    background-color: #ccc;
+  }
+}
+
+.black_background {
+    background-color: black;
+    color: white;
+    a.link {
+      text-decoration: underline;
+      color: white;
+      &:hover {
+        text-decoration: underline; 
+        color: white;
+      }
+    }
+    
+}
+
+.white_background {
+    background-color: #ffffff;
+    a.link {
+      text-decoration: underline;
+      color: black;
+      &:hover {
+        text-decoration: underline; 
+        color: black;
+      }
+    }
+}
+
+.grey_background {
+    background-color: #f2f1f0;
+}
+
+
