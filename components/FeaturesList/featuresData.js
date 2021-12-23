@@ -1,4 +1,6 @@
-const featuresData = [
+const featuresData = 
+
+{"Home": [
   {
     key: "pago",
     header: "PAGA CON DINERO O MATIC",
@@ -50,6 +52,51 @@ const featuresData = [
     imgSrc:
       "images/ganador.png" 
     },
-];
+],
+
+"NFT": [
+  {
+    key: "rarezas",
+    header: "Rarezas",
+    content:
+      "Cuando compras un NFT, ¡no sabes cuál te va \
+      a tocar! Algunas de estas variaciones son\
+      menos probable que te toquen, haciendo algunas de ellas más “raras” que otras (esto\
+      hace que coleccionar un poco más divertido)",
+    footer: "",
+    imgSrc:
+      "images/payment_methods.png",
+  },
+  {
+    key: "tecnologia",
+    header: "Tecnología",
+    content:
+      <ul>
+        <li>Diseño digital: ProCreate en iPad</li>
+        <li>Cuadro físico: lámina 46x54cm en papel Hahnemühle </li>
+        <li>Hemp 290g usando tintas pigmentadas minerales. </li>
+        <li>Blockchain: Polygon </li>
+        <li>Smart contract: 0x24214124a </li>
+      </ul>,
+    footer: "",
+    imgSrc:
+      "images/collage.png",
+  },
+  {
+    key: "edicion_exclusiva",
+    header: "Edición exclusiva",
+    content:
+      "El número de unidades a vender es ilimitado  \
+      pero la colección estará abierta hasta el 7 de \
+      Enero de 2022. Luego, nunca más se volverán a \
+      vender nuevas unidades. Cuando finalice la \
+      venta, sortearemos entre todos los participantes el NFT Coleccionista (formado por los colores oro, plata y bronce) y la versión física de la \
+      obra.",
+    footer: "",
+    imgSrc:
+      "images/volcan.png"
+  },
+]
+};
 
 export default featuresData; 

@@ -54,7 +54,7 @@ const Home = () => {
         </Col>
       </Row>
       <Row>
-        <FeaturesList></FeaturesList>
+        <FeaturesList data="Home"></FeaturesList>
       </Row>
       <Row className="text-center">
         <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>
