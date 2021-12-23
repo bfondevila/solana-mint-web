@@ -1,0 +1,13 @@
+.card_container {
+  padding: 40px 0;
+  .card_container_text {
+    height: 100%;
+    -webkit-box-shadow: 12px 14px 0px 0px #000000;
+    box-shadow: 12px 14px 0px 0px #000000;
+    border-radius: 0;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
