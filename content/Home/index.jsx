@@ -29,7 +29,7 @@ const Home = () => {
           </p>
         </Col>
         <Col className="text-center">
-          <img src="/images/hero.png" width="300p" height="auto"></img>
+          <img src="/images/collection/rojo-plata-negro.png" width="300p" height="auto"></img>
           <Button href={"/nft"}>COMPRAR NFT POR 20€ O 10 MATIC</Button>
         </Col>
         <Col>
@@ -60,7 +60,7 @@ const Home = () => {
         </Col>
       </Row>
       <Row>
-        <FeaturesList></FeaturesList>
+        <FeaturesList data="Home"></FeaturesList>
       </Row>
       <Row className="text-center">
         <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>

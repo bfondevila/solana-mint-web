@@ -11,7 +11,9 @@ const NFTSaleItem = (props) => {
   const rarityFormat = NumberFormat().rarity;
 
   const rarityIndexToName = (rarity) => {
-    if (rarity <= 0.01) {
+    if (rarity == 0) {
+      return "Coleccionista";
+    } else if (rarity <= 0.01) {
       return "Legendario";
     } else if (rarity <= 0.1) {
       return "Epico";
