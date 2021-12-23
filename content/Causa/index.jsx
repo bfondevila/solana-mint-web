@@ -1,5 +1,6 @@
 import {Container, Row, Col} from "react-bootstrap";
 import PayCTA from "../../components/PayCTA";
+import TeamGrid from "../../components/TeamGrid";
 
 
 const Causa = () => {
@@ -29,7 +30,15 @@ const Causa = () => {
       </Row>
 
       <Row className="text-center">
-      <h2>NUESTRO EQUIPO</h2>
+      <h2>Conoce más sobre el proyecto directamente por los fundadores</h2>
+      <video width="200p" height="400p" controls>
+            <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
+          </video>
+      </Row>
+
+      <Row className="text-center">
+        <h2>NUESTRO EQUIPO</h2>
+        <TeamGrid></TeamGrid>
       </Row>
 
 
