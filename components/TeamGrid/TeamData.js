@@ -20,7 +20,7 @@ const TeamData = [
         profile: "CONTENIDO",
       },
       {
-        img: "/images/team/javi.png",
+        img: "/images/team/angel.png",
         name: "ÁNGEL JIMÉNEZ BAUTISTA",
         profile: "DISEÑO WEB",
       },

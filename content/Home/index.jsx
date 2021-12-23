@@ -33,7 +33,7 @@ const Home = () => {
           </div>
 
           <div className={style.pic_container}>
-            <img src="/images/hero.png" width="300p" height="auto"></img>
+            <img src="/images/collection/azul-blanco-negro.png" width="300p" height="auto"></img>
             <Button href={"/nft"}>COMPRAR NFT POR 20€ O 10 MATIC</Button>
           </div>
           {/* <div>
@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       <section className={style.section}>
-        <FeaturesList></FeaturesList>
+        <FeaturesList data="Home"></FeaturesList>
       </section>
 
       <section
