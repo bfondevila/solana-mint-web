@@ -46,21 +46,21 @@ const NFT = () => {
         <Row>
           <Col>
             <img
-              src="/images/collection/rojo-plata-negro.png"
+              src="/images/collection/blanco-verde-bronce.png"
               width="300p"
               height="auto"
             ></img>
           </Col>
           <Col>
             <img
-              src="/images/collection/rojo-plata-negro.png"
+              src="/images/collection/negro-blanco-rojo.png"
               width="300p"
               height="auto"
             ></img>
           </Col>
           <Col>
             <img
-              src="/images/collection/rojo-plata-negro.png"
+              src="/images/collection/morado-azul-bronce.png"
               width="300p"
               height="auto"
             ></img>

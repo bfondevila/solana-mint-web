@@ -65,7 +65,7 @@ const featuresData =
       hace que coleccionar un poco más divertido)",
     footer: "",
     imgSrc:
-      "images/payment_methods.png",
+      "images/rarities.png",
   },
   {
     key: "tecnologia",
@@ -80,7 +80,7 @@ const featuresData =
       </ul>,
     footer: "",
     imgSrc:
-      "images/collage.png",
+      "images/polygon.png",
   },
   {
     key: "edicion_exclusiva",
@@ -94,7 +94,7 @@ const featuresData =
       obra.",
     footer: "",
     imgSrc:
-      "images/volcan.png"
+      "images/exclusive.png"
   },
 ]
 };
