@@ -1,5 +1,4 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
-import style from "./pay_cta.module.scss";
 
 const PayCTA = () => {
   return (
