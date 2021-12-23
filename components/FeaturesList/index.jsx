@@ -4,9 +4,9 @@ import FeatureCard from "./FeatureCard";
 import FeaturesData from "../../components/FeaturesList/featuresData";
 
 
-const FeaturesList = () => {
+const FeaturesList = (props) => {
 
-  const features = FeaturesData
+  const features = FeaturesData[props.data]
 
   return (
     <Container>

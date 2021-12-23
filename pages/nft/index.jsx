@@ -1,14 +1,14 @@
 import { Container } from "react-bootstrap";
-import NFTSale from "../../components/NFTSale";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
+import NFT from "../../content/NFT"
 
-export default function NFT() {
+export default function NFTPage() {
   return (
     <Container>
       <Header />
 
-      <NFTSale />
+      <NFT />
 
       <Footer />
     </Container>
