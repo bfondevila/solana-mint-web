@@ -4,7 +4,6 @@ import NumberFormat from "../../shared/lib/NumberFormat";
 import style from "./nftsale.module.scss";
 
 const NFTSaleItem = (props) => {
-  const imageUrl = props.imageUrl;
   const rarity = props.rarity;
   const index = props.index;
 
@@ -27,7 +26,11 @@ const NFTSaleItem = (props) => {
   return (
     <Col className={style.wrap} xs={6} md={4}>
       {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-      <Image src={imageUrl} alt={"NFT tres enanos de rareza " + rarity} fluid />
+      <Image
+        src={props.imageUrl}
+        alt={"NFT tres enanos de rareza " + rarity}
+        fluid
+      />
       <h3 className={style.rarityName}>
         #{index}. {rarityIndexToName(rarity)}
       </h3>

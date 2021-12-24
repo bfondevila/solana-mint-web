@@ -9,7 +9,7 @@ import MetamaskConnection from "../../components/MetamaskConnection";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const Header = () => {
+const Header = (props) => {
   const router = useRouter();
 
   const links = [
@@ -37,6 +37,11 @@ const Header = () => {
       key: "causa_social",
       name: "CAUSA SOCIAL",
       link: "/causa", 
+    },
+    {
+      key: "mi_cuenta",
+      name: "MI CUENTA",
+      link: "/mi-cuenta", 
     },
   ];
 
@@ -71,7 +76,7 @@ const Header = () => {
                 </Link>
               );
             })}
-            <MetamaskConnection>PAPI</MetamaskConnection>
+            <MetamaskConnection onAccountsChanged={props.onAccountsChanged}/>
             <Container>Iconos Sociales</Container>
           </Nav>
         </Navbar.Collapse>
