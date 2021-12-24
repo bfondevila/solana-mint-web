@@ -53,9 +53,9 @@ const Footer = () => {
         <Row>
           <Col xs={2} md={4}></Col>
           <Col>
-            {mainLinks.map((entry) => {
+            {mainLinks.map((entry, index) => {
               return (
-                <Row>
+                <Row key={"footerLink"+index}>
                   <a href={entry.link} key={"FooterLink" + entry.key}>
                     {entry.name}
                   </a>
@@ -64,9 +64,9 @@ const Footer = () => {
             })}
           </Col>
           <Col>
-            {secondaryLinks.map((entry) => {
+            {secondaryLinks.map((entry, index) => {
               return (
-                <Row>
+                <Row key={"footerLinkSecondary"+index}>
                   <a href={entry.link} key={"FooterLink" + entry.key}>
                     {entry.name}
                   </a>

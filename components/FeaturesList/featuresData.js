@@ -24,8 +24,7 @@ const featuresData =
                 otras (esto hace que coleccionar un poco más divertido). \
                 ",
     footer:
-      <p><a href='/coleccion'>En esta página</a> puedes ver el porcentaje de rarezas de
-      cada obra</p>,
+      "<a href='/coleccion'>En esta página</a> puedes ver el porcentaje de rarezas de cada obra",
     imgSrc:
       "images/collage.png",
   },
@@ -36,7 +35,7 @@ const featuresData =
       "En apoyo a la catástrofe humana y material del volcán de \
       La Palma, se donará el 80% de la recaudación al Cabildo \
       de La Palma.",
-    footer: <p>Lee nuestro manifiesto <a href='/causa'>aquí</a></p>,
+    footer: "Lee nuestro manifiesto <a href='/causa'>aquí</a>",
     imgSrc:
       "images/volcan.png"
   },

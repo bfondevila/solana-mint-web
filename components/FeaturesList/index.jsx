@@ -1,7 +1,6 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
-import FeatureCard from "./FeatureCard";
+import { Container } from "react-bootstrap";
 import FeaturesData from "../../components/FeaturesList/featuresData";
+import FeatureCard from "./FeatureCard";
 
 
 const FeaturesList = (props) => {
@@ -18,6 +17,7 @@ const FeaturesList = (props) => {
                 footer={entry.footer}
                 imgSrc={entry.imgSrc}
                 invertCols={index % 2 === 0 ? true : false}
+                key={"featureCard"+index}
               ></FeatureCard>
         );
       })}

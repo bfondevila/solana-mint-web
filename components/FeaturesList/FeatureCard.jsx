@@ -23,7 +23,7 @@ const FeatureCard = (props) => {
         </Card>
       </Col>
       <Col>
-        <img src={props.imgSrc}></img>
+        <img src={props.imgSrc}/>
       </Col>
     </Row>
   );
