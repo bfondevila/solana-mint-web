@@ -6,12 +6,12 @@ import Causa from "../../content/Causa";
 
 export default function CausaPage() {
   return (
-    <Container>
+    <div>
       <Header />
 
       <Causa />
 
       <Footer />
-    </Container>
+    </div>
   );
 }

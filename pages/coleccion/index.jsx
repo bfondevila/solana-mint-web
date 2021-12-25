@@ -5,12 +5,12 @@ import Coleccion from "../../content/Coleccion";
 
 export default function ColeccionPage() {
   return (
-    <Container>
+    <div>
       <Header />
 
      <Coleccion />
 
       <Footer />
-    </Container>
+    </div>
   );
 }

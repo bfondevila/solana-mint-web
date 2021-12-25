@@ -1,7 +1,5 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
+import { Button } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
-import PayCTA from "../../components/PayCTA";
 import NFTSaleStats from "../../components/NFTSaleStats";
 import PaymentSection from "../../components/PaymentSection";
 import style from "./home.module.scss";

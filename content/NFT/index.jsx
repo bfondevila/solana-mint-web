@@ -1,8 +1,7 @@
-import { Col, Container, Row, Button, Card, CardBody, CardTitle } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
 import FeaturesList from "../../components/FeaturesList";
 import PayCTA from "../../components/PayCTA";
 import style from "./nft.module.scss";
+import PaymentSection from "../../components/PaymentSection";
 
 const NFT = () => {
   return (

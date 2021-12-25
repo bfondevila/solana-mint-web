@@ -17,8 +17,8 @@ const BlockieIdenticon = ({ address, diameter, alt }) => {
 
   return (
     <>
-      <canvas ref={canvasRef} style={{ display: 'none' }} />
-      <img src={dataUrl} height={diameter} width={diameter} alt={alt || ''} />
+      <canvas ref={canvasRef} style={{ display: "none" }} />
+      <img src={dataUrl} height={diameter} width={diameter} alt={alt || ""} />
     </>
   );
 };

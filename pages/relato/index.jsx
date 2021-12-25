@@ -5,12 +5,12 @@ import Relato from "../../content/Relato";
 
 export default function RelatoPage() {
   return (
-    <Container>
+    <div>
       <Header />
 
       <Relato />
 
       <Footer />
-    </Container>
+    </div>
   );
 }

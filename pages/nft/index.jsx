@@ -5,12 +5,12 @@ import NFT from "../../content/NFT"
 
 export default function NFTPage() {
   return (
-    <Container>
+    <div>
       <Header />
 
       <NFT />
 
       <Footer />
-    </Container>
+    </div>
   );
 }

@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import Home from "../content/Home";
 import Footer from "../widgets/Footer";
 import Header from "../widgets/Header";
