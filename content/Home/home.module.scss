@@ -18,6 +18,17 @@
   .pic_container {
     display: flex;
     flex-direction: column;
+
+    & > img {
+      margin-bottom: 30px;
+      -webkit-box-shadow: 1px 6px 20px -2px #000000;
+      box-shadow: 1px 6px 20px -2px #000000;
+    }
+    & > a {
+      width: 223px;
+      align-self: center;
+      font-weight: bolder;
+    }
   }
 }
 
@@ -29,8 +40,8 @@
 }
 
 .pay_section {
-    height: 357px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+  height: 357px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
 }
