@@ -10,7 +10,7 @@ const FeatureCard = (props) => {
         " " +
         (props.invertCols
           ? style.reverse + " .white_background"
-          : ".grey_background")
+          : " .grey_background")
       }
     >
       <Col>

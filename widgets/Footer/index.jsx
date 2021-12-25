@@ -46,37 +46,45 @@ const Footer = () => {
 
   return (
     <footer className={"black_background " + style.footer}>
-      <Container>
-        <Row>
-          <Col className="text-center">made with love for La Palma</Col>
-        </Row>
-        <Row>
-          <Col xs={2} md={4}></Col>
-          <Col>
+      <div className={style.footer_container}>
+        <div className={style.title}>
+          <h2 className={"text-center " + style.title}>
+            made with love for La Palma
+          </h2>
+        </div>
+        <div className={style.links_container}>
+          <div className={style.links_left}>
             {mainLinks.map((entry, index) => {
               return (
-                <Row key={"footerLink"+index}>
-                  <a href={entry.link} key={"FooterLink" + entry.key}>
+                <div key={"footerLink" + index}>
+                  <a
+                    className="link"
+                    href={entry.link}
+                    key={"FooterLink" + entry.key}
+                  >
                     {entry.name}
                   </a>
-                </Row>
+                </div>
               );
             })}
-          </Col>
-          <Col>
+          </div>
+          <div className={style.links_right}>
             {secondaryLinks.map((entry, index) => {
               return (
-                <Row key={"footerLinkSecondary"+index}>
-                  <a href={entry.link} key={"FooterLink" + entry.key}>
+                <div key={"footerLinkSecondary" + index}>
+                  <a
+                    className="link"
+                    href={entry.link}
+                    key={"FooterLink" + entry.key}
+                  >
                     {entry.name}
                   </a>
-                </Row>
+                </div>
               );
             })}
-          </Col>
-          <Col xs={2} md={4}></Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

@@ -5,10 +5,13 @@ body {
 }
 
 .btn {
+  box-sizing: border-box;
   -webkit-box-shadow: 7px 5px 0px 0px #000000;
   box-shadow: 7px 5px 0px 0px #000000;
   border: 1px solid;
   border-radius: 0;
+  padding: 20px 30px;
+  width: 350px;
 
   &:hover {
     border: 1px solid;
@@ -46,4 +49,8 @@ body {
     background-color: #f2f1f0;
 }
 
+
+button {
+  border: none;
+}
 
