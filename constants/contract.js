@@ -1,5 +1,5 @@
 export const Contract = {
-  address: "0x80B31a1a9c40C9291B91bbeBbD2c689429811870",
+  address: "0x145A444C3B90A2082013938e88b1bFF548b13bba",
   rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
   chainId: "0x13881",
   chainName: "Polygon Testnet (Mumbai)",

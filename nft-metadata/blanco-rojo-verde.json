@@ -1,11 +1,11 @@
 {
-    "name": "Estrella sobre un volc&aacute;n",
-    "description": "El NFT solidario de Octavio del Toro. La colecci&oacute;n \"Estrella sobre un volc&aacute;n\" es una fusi&oacute;n de arte f&iacute;sico y digital mezclando la democratizaci&oacute;n de la tecnolog&iacute;a blockchain, la promoci&oacute;n del arte local canario y el apoyo econ&oacute;mico a una causa social de los afectados por el volc&aacute;n de la Palma.",
+    "name": "Estrella sobre un volcán",
+    "description": "El NFT solidario de Octavio del Toro. La colección \"Estrella sobre un volcán\" es una fusión de arte físico y digital mezclando la democratización de la tecnología blockchain, la promoción del arte local canario y el apoyo económico a una causa social de los afectados por el volcán de la Palma.",
     "image": "ipfs://Qmen1sjd6uQ1aoE1eUSeyo5UagvKKoDkZ8tqr4QBiUckEd/blanco-rojo-verde.png",
     "attributes": [
         {
             "trait_type": "Rareza",
-            "value": "&Eacute;pico"
+            "value": "Épico"
         },
         {
             "trait_type": "Enano",
