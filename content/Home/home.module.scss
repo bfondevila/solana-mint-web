@@ -30,4 +30,7 @@
 
 .pay_section {
     height: 357px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }

@@ -33,7 +33,11 @@ const Home = () => {
           </div>
 
           <div className={style.pic_container}>
-            <img src="/images/collection/azul-blanco-negro.png" width="300p" height="auto"></img>
+            <img
+              src="/images/collection/azul-blanco-negro.png"
+              width="300p"
+              height="auto"
+            ></img>
             <Button href={"/nft"}>COMPRAR NFT POR 20€ O 10 MATIC</Button>
           </div>
           {/* <div>
@@ -73,8 +77,10 @@ const Home = () => {
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>
-        <PayCTA />
+        <div className={"grey_background " + style.pay_section_container}>
+          <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>
+          <PayCTA />
+        </div>
       </section>
     </main>
   );
