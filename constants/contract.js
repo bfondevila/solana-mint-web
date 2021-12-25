@@ -18,6 +18,11 @@ export const Contract = {
           type: "uint256",
         },
         {
+          internalType: "string",
+          name: "ipfsMetadataFolderCid",
+          type: "string",
+        },
+        {
           internalType: "address",
           name: "vrfCoordinator",
           type: "address",
@@ -186,11 +191,6 @@ export const Contract = {
           name: "rarity",
           type: "uint256",
         },
-        {
-          internalType: "string",
-          name: "cid",
-          type: "string",
-        },
       ],
       stateMutability: "view",
       type: "function",
@@ -308,11 +308,6 @@ export const Contract = {
               internalType: "uint256",
               name: "rarity",
               type: "uint256",
-            },
-            {
-              internalType: "string",
-              name: "cid",
-              type: "string",
             },
           ],
           internalType: "struct NFTProperties",
@@ -693,11 +688,6 @@ export const Contract = {
           name: "rarity",
           type: "uint256",
         },
-        {
-          internalType: "string",
-          name: "cid",
-          type: "string",
-        },
       ],
       stateMutability: "view",
       type: "function",
@@ -773,6 +763,26 @@ export const Contract = {
     {
       inputs: [],
       name: "triggerOriginalGiveaway",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "withdraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "address",
+          name: "token",
+          type: "address",
+        },
+      ],
+      name: "withdrawToken",
       outputs: [],
       stateMutability: "nonpayable",
       type: "function",

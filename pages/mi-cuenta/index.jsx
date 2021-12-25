@@ -11,7 +11,7 @@ import {
   getTotalMoneyRaisedEuros,
   getTotalNFTSold,
   lastNFTMintedTime,
-} from "../../shared/lib/crypto";
+} from "../../shared/lib/Crypto";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
 
@@ -94,25 +94,27 @@ export default function MyAccount() {
       <Container>
         <h1>Wallet actions(needs a wallet connected)</h1>
         <p>Wallet address: {userWallet || "Not connected"}</p>
-        <Container hidden={() => !isConnected()}>
-          <button onClick={() => mint(1)}>Mint 1 NFT</button>
-          <button onClick={() => mint(10)}>Mint 10 NFTs</button>
-          <p>
-            Last transaction requested to the contract:{" "}
-            {transactionHash ?? "N/A"}
-          </p>
-          <p>Number of NFTs owned: {NFTsInWallet.length}</p>
-          {NFTsInWallet.map((nft, index) => {
-            return (
-              <NFTSaleItem
-                imageUrl={nft.imgUrl}
-                rarity={+nft.rarity / 10000}
-                index={index + 1}
-                key={index}
-              ></NFTSaleItem>
-            );
-          })}
-        </Container>
+        {isConnected() && (
+          <Container>
+            <button onClick={() => mint(1)}>Mint 1 NFT</button>
+            <button onClick={() => mint(10)}>Mint 10 NFTs</button>
+            <p>
+              Last transaction requested to the contract:{" "}
+              {transactionHash ?? "N/A"}
+            </p>
+            <p>Number of NFTs owned: {NFTsInWallet.length}</p>
+            {NFTsInWallet.map((nft, index) => {
+              return (
+                <NFTSaleItem
+                  imageUrl={nft.image}
+                  rarity={nft.rarity / 10000}
+                  rarityStr={nft.rarityStr}
+                  key={index}
+                ></NFTSaleItem>
+              );
+            })}
+          </Container>
+        )}
       </Container>
       <Footer />
     </Container>

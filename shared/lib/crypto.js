@@ -6,6 +6,10 @@ const getContract = () => {
   return new web3.eth.Contract(Contract.abi, Contract.address);
 };
 
+const getIPFSGateway = (url) => {
+  return url.replace("ipfs://", "https://ipfs.io/ipfs/");
+};
+
 /**
  * @returns Number of NFTs sold to date
  */
@@ -60,17 +64,29 @@ const getPricePerNFTInWei = async () => {
  * Gets the properties of the NFT with a given ID (or null if it has not been revealed)
  * @returns an object with the following properties:
  * "rarity" (as an int), "color1", "color2", "color3",
- * "cid" (the ipfs hash of the image), "imgUrl" (a renderizable img url)
+ * "imgUrl" (a renderizable img url), "rarityStr" (as a string)
  * @see getRarityLevel(rarity: int) to retrieve rarity as a string
  */
 const getNFTProperties = async (nftId) => {
   const contract = getContract();
   const properties = await contract.methods.tokenProperties(nftId).call();
-  if (properties.cid === "") {
-    return null;
+  if (properties.color1 === "") {
+    return null; //Pending reveal
   } else {
-    properties.imgUrl = "https://ipfs.io/ipfs/" + properties["cid"];
-    return properties;
+    const tokenURI = await contract.methods.tokenURI(nftId).call();
+    const tokenMetadata = await fetch(getIPFSGateway(tokenURI))
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return {
+          image: getIPFSGateway(responseJson.image),
+          rarityStr: responseJson.name,
+        };
+      })
+      .catch((error) => {
+        console.log(error); //not fatal, just image not shown
+        return {};
+      });
+    return { ...properties, ...tokenMetadata };
   }
 };
 
