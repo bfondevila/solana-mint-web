@@ -1,3 +1,20 @@
 .logo {
   margin-right: 10px;
 }
+
+.header_container {
+  border-bottom: 1px solid black;
+  height: 90px;
+  background-color: white;
+  .brand {
+  }
+
+  .button_access {
+    width: 800px;
+    justify-content: space-around;
+  }
+
+  .social {
+    display: flex;
+  }
+}
