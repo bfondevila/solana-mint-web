@@ -16,7 +16,7 @@ const Header = (props) => {
     {
       key: "home",
       name: "HOME",
-      link: "/"
+      link: "/",
     },
     {
       key: "venta_nft",
@@ -26,7 +26,7 @@ const Header = (props) => {
     {
       key: "coleccion",
       name: "COLECCIÓN",
-      link: "/coleccion", 
+      link: "/coleccion",
     },
     {
       key: "relato",
@@ -36,12 +36,12 @@ const Header = (props) => {
     {
       key: "causa_social",
       name: "CAUSA SOCIAL",
-      link: "/causa", 
+      link: "/causa",
     },
     {
       key: "mi_cuenta",
       name: "MI CUENTA",
-      link: "/mi-cuenta", 
+      link: "/mi-cuenta",
     },
   ];
 
@@ -50,36 +50,30 @@ const Header = (props) => {
   //  <FontAwesomeIcon icon={faInstagram} />
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Head>
-        <title>{PROJECT_NAME}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
-        <Navbar.Brand>{PROJECT_NAME}</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {links.map((entry) => {
-              return (
-                <Link
-                  href={entry.link}
-                  passHref
-                  key={"MainNavbarLink" + entry.key}
+        <Navbar.Brand className={style.brand}>{PROJECT_NAME}</Navbar.Brand>
+        <Nav className={style.button_access}>
+          {links.map((entry) => {
+            return (
+              <Link
+                href={entry.link}
+                passHref
+                key={"MainNavbarLink" + entry.key}
+              >
+                <Nav.Link
+                  className={entry.link === router.pathname ? "active" : ""}
                 >
-                  <Nav.Link
-                    className={entry.link === router.pathname ? "active" : ""}
-                  >
-                    {entry.name ?? entry.key}
-                  </Nav.Link>
-                </Link>
-              );
-            })}
-            <MetamaskConnection onAccountsChanged={props.onAccountsChanged}/>
-            <Container>Iconos Sociales</Container>
-          </Nav>
-        </Navbar.Collapse>
+                  {entry.name ?? entry.key}
+                </Nav.Link>
+              </Link>
+            );
+          })}
+        </Nav>
+        <div className={"btn " + style.social}>
+          <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
+          {/* <Container>Iconos Sociales</Container> */}
+        </div>
       </Container>
     </Navbar>
   );
