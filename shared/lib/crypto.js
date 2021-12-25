@@ -1,10 +1,8 @@
 import Web3 from "web3";
 import { Contract } from "../../constants/contract";
 
-const getContract = () => {
-  const web3 = new Web3(Contract.rpcUrls[0]);
-  return new web3.eth.Contract(Contract.abi, Contract.address);
-};
+const web3 = new Web3(Contract.rpcUrls[0]);
+const contract = new web3.eth.Contract(Contract.abi, Contract.address);
 
 const getIPFSGateway = (url) => {
   return url.replace("ipfs://", "https://ipfs.io/ipfs/");
@@ -14,7 +12,6 @@ const getIPFSGateway = (url) => {
  * @returns Number of NFTs sold to date
  */
 const getTotalNFTSold = async () => {
-  const contract = getContract();
   return (await contract.methods.lastTokenId().call()) - 1; //The original is not sold, so we discount it
 };
 
@@ -28,7 +25,6 @@ const getTotalMoneyRaisedEuros = async () => {
  * @returns array of NFT objects with their properties (imgUrl, rarity, etc.)
  */
 const getNFTsFromAddress = async (address) => {
-  const contract = getContract();
   const tokenCount = await contract.methods.balanceOf(address).call();
 
   const tokenIds = [];
@@ -47,7 +43,6 @@ const getNFTsFromAddress = async (address) => {
  * @returns A unix timestamp with the NFT sale end time (UTC time)
  */
 const getNFTSaleFinishTime = async () => {
-  const contract = getContract();
   return await contract.methods.saleFinishTime().call();
 };
 
@@ -56,7 +51,6 @@ const getPricePerNFT = async () => {
 };
 
 const getPricePerNFTInWei = async () => {
-  const contract = getContract();
   return await contract.methods.NFT_PRICE().call();
 };
 
@@ -68,7 +62,6 @@ const getPricePerNFTInWei = async () => {
  * @see getRarityLevel(rarity: int) to retrieve rarity as a string
  */
 const getNFTProperties = async (nftId) => {
-  const contract = getContract();
   const properties = await contract.methods.tokenProperties(nftId).call();
   if (properties.color1 === "") {
     return null; //Pending reveal
@@ -94,12 +87,10 @@ const getNFTProperties = async (nftId) => {
  * @returns The UNIX timestamp of the last minted NFT
  */
 const lastNFTMintedTime = async () => {
-  const contract = getContract();
   return await contract.methods.lastMinted().call();
 };
 
 const getMintData = (address, amount) => {
-  const contract = getContract();
   return contract.methods.mint(address, amount).encodeABI();
 };
 
