@@ -16,5 +16,14 @@
 
   .social {
     display: flex;
+    padding: unset;
+    width: 144px;
+    box-shadow: 2px 2px 0px 0px #000000;
+
+    & > button {
+      padding: 7px 14px;
+      background-color: white;
+      letter-spacing: 1px;
+    }
   }
 }
