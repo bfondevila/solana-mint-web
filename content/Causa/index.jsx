@@ -64,8 +64,7 @@ const Causa = () => {
     <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>
-        <PayCTA />
+        <PaymentSection></PaymentSection>
       </section>
     </main>
 

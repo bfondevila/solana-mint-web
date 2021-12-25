@@ -3,6 +3,7 @@ import { PROJECT_NAME } from "../../constants/common";
 import FeaturesList from "../../components/FeaturesList";
 import PayCTA from "../../components/PayCTA";
 import NFTSaleStats from "../../components/NFTSaleStats";
+import PaymentSection from "../../components/PaymentSection";
 import style from "./home.module.scss";
 
 const Home = () => {
@@ -77,10 +78,7 @@ const Home = () => {
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <div className={"grey_background " + style.pay_section_container}>
-          <h2>¡HAZTE CON ESTA PIEZA ÚNICA!</h2>
-          <PayCTA />
-        </div>
+        <PaymentSection></PaymentSection>
       </section>
     </main>
   );
