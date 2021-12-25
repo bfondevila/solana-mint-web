@@ -23,7 +23,7 @@ const MetamaskConnection = () => {
   React.useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
-        setButtonText(accounts[0]);
+        setButtonText("Mis NFTs");
         setDisabled(true);
         onboarding.current.stopOnboarding();
       } else {
