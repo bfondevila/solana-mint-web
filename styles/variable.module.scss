@@ -1,0 +1,19 @@
+/*
+* This file is created for add all common variables we used.
+* We can add colors, breakpoints, typical size as variables.
+* normal scss if it is common it will be at global.scss.
+*/
+
+//Colors
+
+$metal: #999999;
+$bronce: #7c6887;
+$gold: #f4d47d;
+
+//Breakpoints
+
+:export {
+  metal: $metal;
+  bronce: $bronce;
+  gold: $gold;
+}

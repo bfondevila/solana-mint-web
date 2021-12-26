@@ -1,12 +1,63 @@
 import FeaturesList from "../../components/FeaturesList";
 import PayCTA from "../../components/PayCTA";
-import style from "./nft.module.scss";
+import { Nav } from "react-bootstrap";
+import { useRouter } from "next/router";
 import PaymentSection from "../../components/PaymentSection";
+import Link from "next/link";
+import style from "./nft.module.scss";
 
 const NFT = () => {
+  const router = useRouter();
+
+  const imgLinks = [
+    {
+      src: "/images/collection/blanco-verde-bronce.png",
+      background: "#999999",
+    },
+    {
+      src: "/images/collection/morado-azul-bronce.png",
+      background: "#7c6887",
+    },
+    {
+      src: "/images/collection/blanco-verde-bronce.png",
+      background: "#f4d47d",
+    },
+  ];
+
+  const links = [
+    {
+      key: "relato",
+      name: "LA HISTORIA",
+      link: "/relato",
+    },
+    {
+      key: "causa_social",
+      name: "LA CAUSA SOLIDARIA",
+      link: "/causa",
+    },
+    {
+      key: "coleccion",
+      name: "LA COLECCIÓN",
+      link: "/coleccion",
+    },
+  ];
+
   return (
     <main>
       <section className={style.section}>
+        <div className={"text-center"}>
+          La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
+          digital diseñadas por el pintor canario Octavio del Toro. Con un
+          trasfondo social y cultural, el uso de la tecnología blockchain
+          permite que cualquier persona pueda ser dueño de una exclusiva pieza
+          de arte
+        </div>
+
+        <div className="text-center">
+          {imgLinks.map((entry) => (
+            <img src={entry.src} width="300" height="auto"></img>
+          ))}
+        </div>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
             <h2>¿Cómo comprar un NFT?</h2>
@@ -29,63 +80,25 @@ const NFT = () => {
       </section>
 
       <section className={style.section}>
-        <div className={"text-center"}>
-          La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
-          digital diseñadas por el pintor canario Octavio del Toro. Con un
-          trasfondo social y cultural, el uso de la tecnología blockchain
-          permite que cualquier persona pueda ser dueño de una exclusiva pieza
-          de arte
-        </div>
-      </section>
-
-      <section className={style.section}>
-        <div className={"text-center"}>
-          <div>
-            <span>
-              <img
-                src="/images/collection/blanco-verde-bronce.png"
-                width="300p"
-                height="auto"
-              ></img>
-            </span>
-          </div>
-          <div>
-            <span>
-              <img
-                src="/images/collection/morado-azul-bronce.png"
-                width="300p"
-                height="auto"
-              ></img>
-            </span>
-          </div>
-          <div>
-            <span>
-              <img
-                src="/images/collection/blanco-verde-bronce.png"
-                width="300p"
-                height="auto"
-              ></img>
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className={style.section}>
         <div className={"text-center black_background " + style.discover}>
-          <div>CONOCE MÁS SOBRE:</div>
-          <div>
-            <span>
-              <a href="/relato">LA HISTORIA</a>
-            </span>
-          </div>
-          <div>
-            <span>
-              <a href="/causa">LA CAUSA SOLIDARIA</a>
-            </span>
-          </div>
-          <div>
-            <span>
-              <a href="/coleccion"> LA COLECCIÓN</a>
-            </span>
+          <h2>CONOCE MÁS SOBRE:</h2>
+          <div className={style.link_container}>
+            {links.map((entry) => {
+              return (
+                <Link
+                  href={entry.link}
+                  passHref
+                  key={"MainNavbarLink" + entry.key}
+                  className="link"
+                >
+                  <Nav.Link
+                    className={entry.link === router.pathname ? "active" : ""}
+                  >
+                    {entry.name ?? entry.key}
+                  </Nav.Link>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

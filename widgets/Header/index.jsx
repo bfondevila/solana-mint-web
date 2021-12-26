@@ -1,7 +1,6 @@
 import { PROJECT_NAME } from "../../constants/common.js";
-import Head from "next/head";
 import Link from "next/link";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { useRouter } from "next/router";
 import style from "./header.module.scss";
 import MetamaskConnection from "../../components/MetamaskConnection";

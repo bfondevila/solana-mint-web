@@ -20,37 +20,36 @@ body {
 }
 
 .black_background {
-    background-color: black;
+  background-color: black;
+  color: white;
+  a.link,
+  link {
+    text-decoration: underline;
     color: white;
-    a.link {
+    &:hover {
       text-decoration: underline;
       color: white;
-      &:hover {
-        text-decoration: underline; 
-        color: white;
-      }
     }
-    
+  }
 }
 
 .white_background {
-    background-color: #ffffff;
-    a.link {
+  background-color: #ffffff;
+  a.link,
+  link {
+    text-decoration: underline;
+    color: black;
+    &:hover {
       text-decoration: underline;
       color: black;
-      &:hover {
-        text-decoration: underline; 
-        color: black;
-      }
     }
+  }
 }
 
 .grey_background {
-    background-color: #f2f1f0;
+  background-color: #f2f1f0;
 }
-
 
 button {
   border: none;
 }
-
