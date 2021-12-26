@@ -7,17 +7,15 @@
   height: 90px;
   background-color: white;
 
-
   .button_access {
     width: 800px;
     justify-content: space-around;
   }
 
   .social {
-    display: flex;
-    padding: unset;
-    width: 144px;
     box-shadow: 2px 2px 0px 0px #000000;
+    padding: 0;
+    width: auto;
 
     & > button {
       padding: 7px 14px;

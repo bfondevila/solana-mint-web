@@ -1,7 +1,7 @@
 import MetaMaskOnboarding from "@metamask/onboarding";
 import React from "react";
-import BlockieIdenticon from "./BlockieIdenticon";
 import { Contract } from "../../constants/contract";
+import style from "./metamask.module.scss";
 
 const ONBOARD_TEXT = "Click here to install MetaMask!";
 const CONNECT_TEXT = "Connect Wallet";
@@ -51,37 +51,33 @@ const MetamaskConnection = (props) => {
   }, []);
 
   React.useEffect(async () => {
-    const metamaskConnected = localStorage.getItem("metamaskConnected");
-    let timeSinceConnectionMs = false;
-    if (metamaskConnected) {
-      timeSinceConnectionMs = new Date() - new Date(metamaskConnected);
-    }
-
-    //Disconnect metamask after 60 minutes
-    if (timeSinceConnectionMs && timeSinceConnectionMs < 60 * 60 * 1000) {
-      function handleNewAccounts(newAccounts) {
-        setAccounts(newAccounts);
-        if (props.onAccountsChanged) {
-          props.onAccountsChanged(newAccounts[0]);
-        }
+    const handleNewAccounts = (newAccounts) => {
+      setAccounts(newAccounts);
+      if (props.onAccountsChanged) {
+        props.onAccountsChanged(newAccounts[0]);
       }
+    };
 
-      function handleChainChanged(_chainId) {
-        window.location.reload();
-      }
+    const handleChainChanged = (_chainId) => {
+      window.location.reload();
+    };
 
-      if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-        await switchToContractChain();
-        window.ethereum
-          .request({ method: "eth_requestAccounts" })
-          .then(handleNewAccounts);
-        window.ethereum.on("accountsChanged", handleNewAccounts);
-        window.ethereum.on("chainChanged", handleChainChanged);
-        return () => {
-          window.ethereum.removeListener("accountsChanged", handleNewAccounts);
-          window.ethereum.removeListener("chainChanged", handleChainChanged);
-        };
-      }
+    if (
+      MetaMaskOnboarding.isMetaMaskInstalled() &&
+      (await window.ethereum._metamask.isUnlocked())
+    ) {
+      await switchToContractChain();
+
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then(handleNewAccounts);
+      window.ethereum.on("accountsChanged", handleNewAccounts);
+      window.ethereum.on("chainChanged", handleChainChanged);
+
+      return () => {
+        window.ethereum.removeListener("accountsChanged", handleNewAccounts);
+        window.ethereum.removeListener("chainChanged", handleChainChanged);
+      };
     }
   }, []);
 
@@ -92,7 +88,6 @@ const MetamaskConnection = (props) => {
         setButtonText(accountDisplay(accounts[0]));
         setDisabled(true);
         onboarding.current.stopOnboarding();
-        localStorage.setItem("metamaskConnected", new Date());
       } else {
         setButtonText(CONNECT_TEXT);
         setDisabled(false);
@@ -100,11 +95,12 @@ const MetamaskConnection = (props) => {
     }
   }, [accounts]);
 
-  const onClick = () => {
+  const onClick = async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
-        .then((newAccounts) => setAccounts(newAccounts));
+        .then((newAccounts) => setAccounts(newAccounts))
+        .catch(() => window.location.reload());
     } else {
       // redirect to new page to explain how to create Metamask
       if (location.href.split("/").at(-1) != "nft") {
@@ -117,14 +113,8 @@ const MetamaskConnection = (props) => {
 
   return (
     <button disabled={isDisabled} onClick={onClick}>
-      {buttonText}
-      <span hidden={accounts.length == 0}>
-        <BlockieIdenticon
-          address={accounts.length > 0 ? accounts[0] : ""}
-          diameter="20px"
-          alt="BlockieIdenticon"
-        />
-      </span>
+      <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
+      <span>{buttonText}</span>
     </button>
   );
 };
