@@ -25,6 +25,10 @@ const getTotalMoneyRaisedEuros = async () => {
  * @returns array of NFT objects with their properties (imgUrl, rarity, etc.)
  */
 const getNFTsFromAddress = async (address) => {
+  if (!address) {
+    return [];
+  }
+
   const tokenCount = await contract.methods.balanceOf(address).call();
 
   const tokenIds = [];
@@ -62,6 +66,10 @@ const getPricePerNFTInWei = async () => {
  * @see getRarityLevel(rarity: int) to retrieve rarity as a string
  */
 const getNFTProperties = async (nftId) => {
+  if (!nftId) {
+    return {};
+  }
+
   const properties = await contract.methods.tokenProperties(nftId).call();
   if (properties.color1 === "") {
     return null; //Pending reveal
@@ -91,6 +99,10 @@ const lastNFTMintedTime = async () => {
 };
 
 const getMintData = (address, amount) => {
+  if (!address || !amount) {
+    return null;
+  }
+
   return contract.methods.mint(address, amount).encodeABI();
 };
 
