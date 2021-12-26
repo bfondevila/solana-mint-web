@@ -8,6 +8,8 @@ import {
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
 import style from "./micuenta.module.scss";
+import MetamaskConnection from "../../components/MetamaskConnection";
+
 
 export default function MyAccount() {
   const [userWallet, setUserWallet] = useState("");
@@ -29,6 +31,12 @@ export default function MyAccount() {
         <div className={"text-center" + " " + style.paddings}>
         <h1>Tu cuenta</h1>
         <p>{userWallet ? "Accede a tu colección en Opensea: " : "Por favor, conecta tu monedero primero."}</p>
+        {!isConnected() && (
+          <div className={"btn " + style.social}>
+          <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+          {/* <Container>Iconos Sociales</Container> */}
+        </div>
+        )}
         {isConnected() && (
           <div>
             {
@@ -37,6 +45,7 @@ export default function MyAccount() {
           </div>
         )}
         </div>
+
         </section>
         <div className={"text-center white_background"}>
         {isConnected() && (
