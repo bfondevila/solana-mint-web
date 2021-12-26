@@ -103,7 +103,7 @@ const NFT = () => {
         </div>
       </section>
       <section className={style.section}>
-        <FeaturesList data="Home"></FeaturesList>
+        <FeaturesList data="NFT"></FeaturesList>
       </section>
       <section
         className={"text-center " + style.section + " " + style.pay_section}
