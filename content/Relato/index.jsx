@@ -19,7 +19,8 @@ const Relato = () => {
         </div>
       </section>
 
-      <section className={style.section}>
+      <div className={style.introduction_container}>
+          <div className={style.introduction}>
         <div>
           En La Palma no hace mucho explotó un volcán, el último hasta ahora de
           una larga serie que descuella en el paisaje cambiante. Irrumpió
@@ -57,7 +58,8 @@ const Relato = () => {
           basta con imaginar cómo se disipan el vacío y el fuego en un
           inagotable surtidor de esperanza.
         </div>
-      </section>
+        </div>
+        </div>
 
       <section
         className={"text-center " + style.section + " " + style.pay_section}

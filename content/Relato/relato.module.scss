@@ -6,14 +6,16 @@
   display: flex;
   flex-wrap: row wrap;
   justify-content: space-between;
-  padding-top: 69px;
+  padding-top: 49px;
   padding-bottom: 47.7px;
-  max-width: 948px;
+  max-width: 748px;
+  text-align: justify;
+  text-justify: inter-word;
   width: 100%;
   margin: 0 auto;
 
   .introduction {
-    width: 500px;
+    width: 710px;
   }
   .pic_container {
     display: flex;
