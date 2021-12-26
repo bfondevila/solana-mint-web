@@ -36,9 +36,14 @@ const Causa = () => {
       <section>
         <div className={"text-center"}>
           <h2>Conoce más sobre el proyecto directamente por los fundadores</h2>
-          <video width="200p" height="400p" controls>
-            <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
-          </video>
+          <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/G9vMrkFaby8" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
         </div>
       </section>
 
