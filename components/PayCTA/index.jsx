@@ -1,4 +1,5 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   Alert,
@@ -17,14 +18,13 @@ import {
 } from "../../shared/lib/Crypto";
 import NumberFormat from "../../shared/lib/NumberFormat";
 import MetamaskConnection from "../MetamaskConnection";
-import Link from "next/link";
 import style from "./pay_cta.module.scss";
 
 const PayCTA = () => {
   const [show, setShow] = useState(false);
-  const orderDetails = useRef({ amount: 0, userWallet: null });
+  const orderDetails = useRef({ amount: 0, userWallet: "" });
   const [NFTAmount, setNFTAmount] = useState(0);
-  const [userWallet, setUserWallet] = useState();
+  const [userWallet, setUserWallet] = useState("");
   const [modalTitle, setModalTitle] = useState();
   const [platform, setPlatform] = useState();
   const [errorState, setErrorState] = useState(false);
@@ -44,9 +44,9 @@ const PayCTA = () => {
     orderDetails.current.amount = amount;
   };
 
-  const handleAccountsChanged = (account) => {
-    setUserWallet(account);
-    orderDetails.current.userWallet = account;
+  const handleAccountsChanged = (accounts) => {
+    setUserWallet(accounts.length > 0 ? accounts[0] : "");
+    orderDetails.current.userWallet = accounts.length > 0 ? accounts[0] : "";
   };
 
   const paypalClicked = () => {
@@ -81,7 +81,7 @@ const PayCTA = () => {
 
     const amount = data.orderDetails.current.amount;
     const userWallet = data.orderDetails.current.userWallet;
-    if (userWallet == "") {
+    if (userWallet === "") {
       setErrorState("Debes conectar tu wallet primero.");
       return;
     }
@@ -212,7 +212,7 @@ const PayCTA = () => {
             displayFullAddress
             displayWithLink
           />
-          <span className={style.required} hidden={userWallet != null}>
+          <span className={style.required} hidden={userWallet !== ""}>
             * Requerido
           </span>
           <p>¿Cuántas unidades deseas comprar?</p>
@@ -259,7 +259,7 @@ const PayCTA = () => {
                     )
                   }
                   onApprove={(data, actions) => onApprove(data, actions)}
-                  disabled={!userWallet || !NFTAmount}
+                  disabled={userWallet === "" || !NFTAmount}
                 />
               </PayPalScriptProvider>
             </>
@@ -269,7 +269,7 @@ const PayCTA = () => {
               <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
                 variant="success"
-                disabled={!userWallet || !NFTAmount || mintInProgress}
+                disabled={userWallet === "" || !NFTAmount || mintInProgress}
               >
                 Mintear NFTs
               </Button>

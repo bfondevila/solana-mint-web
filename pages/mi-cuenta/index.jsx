@@ -55,9 +55,11 @@ export default function MyAccount() {
     }
   };
 
-  const handleAccountsChanged = async (account) => {
-    setUserWallet(account);
-    setNFTsInWallet(await Promise.all(await getNFTsFromAddress(account)));
+  const handleAccountsChanged = async (accounts) => {
+    setUserWallet(accounts.length > 0 ? accounts[0] : "");
+    if (accounts.length > 0) {
+      setNFTsInWallet(await Promise.all(await getNFTsFromAddress(accounts[0])));
+    }
   };
 
   useEffect(async () => {

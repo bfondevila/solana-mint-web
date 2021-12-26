@@ -71,7 +71,6 @@ const Header = (props) => {
         </Nav>
         <div className={"btn " + style.social}>
           <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
-          {/* <Container>Iconos Sociales</Container> */}
         </div>
       </Container>
     </Navbar>
