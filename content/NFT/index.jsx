@@ -61,7 +61,7 @@ const NFT = () => {
                 3. Listo, ahora eres dueño de una de las 24 piezas de arte{" "}
               </li>
             </ul>
-            <PayCTA></PayCTA>
+            <PayCTA />
           </div>
         </div>
         <div className={"text-center container"}>
@@ -108,7 +108,7 @@ const NFT = () => {
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );
