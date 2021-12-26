@@ -1,7 +1,6 @@
 import PaymentSection from "../../components/PaymentSection";
 import TeamGrid from "../../components/TeamGrid";
 import style from "./causa.module.scss";
-import PaymentSection from "../../components/PaymentSection";
 
 const Causa = () => {
   return (

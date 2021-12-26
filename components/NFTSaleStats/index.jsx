@@ -26,7 +26,7 @@ const NFTSaleStats = (props) => {
   const [secToDeadline, setSecToDeadline] = useState(0);
 
   useEffect(async () => {
-    setTotalSales(await getTotalMoneyRaisedEuros());
+    setTotalSales(Math.floor(await getTotalMoneyRaisedEuros()));
     const seconds = currentDate - await lastNFTMintedTime();
     if(seconds / 3600 > 1){
         setLastSale(Math.floor(seconds / 3600) + " horas")

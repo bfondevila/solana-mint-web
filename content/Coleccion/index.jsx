@@ -1,7 +1,6 @@
 import PaymentSection from "../../components/PaymentSection";
 import NFTSale from "../../components/NFTSale";
 import style from "./coleccion.module.scss";
-import PaymentSection from "../../components/PaymentSection";
 
 const Coleccion = () => {
   return (
