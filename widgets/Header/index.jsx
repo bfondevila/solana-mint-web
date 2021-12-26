@@ -52,7 +52,12 @@ const Header = (props) => {
   return (
     <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
-        <Navbar.Brand className={style.brand}>{PROJECT_NAME}</Navbar.Brand>
+        <Navbar.Brand>
+          <img src="/images/volcan.png"
+                width="300p"
+                height="auto"
+              ></img>
+        </Navbar.Brand>
         <Nav className={style.button_access}>
           {links.map((entry) => {
             return (
