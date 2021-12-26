@@ -61,10 +61,10 @@ const NFT = () => {
                 3. Listo, ahora eres dueño de una de las 24 piezas de arte{" "}
               </li>
             </ul>
-            <PayCTA></PayCTA>
+            <PayCTA />
           </div>
         </div>
-        <div className={"text-center"}>
+        <div className={"text-center container"}>
           La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
           digital diseñadas por el pintor canario Octavio del Toro. Con un
           trasfondo social y cultural, el uso de la tecnología blockchain
@@ -103,12 +103,12 @@ const NFT = () => {
         </div>
       </section>
       <section className={style.section}>
-        <FeaturesList data="Home"></FeaturesList>
+        <FeaturesList data="NFT"></FeaturesList>
       </section>
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

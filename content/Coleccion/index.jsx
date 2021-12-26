@@ -1,6 +1,7 @@
 import PaymentSection from "../../components/PaymentSection";
 import NFTSale from "../../components/NFTSale";
 import style from "./coleccion.module.scss";
+import PaymentSection from "../../components/PaymentSection";
 
 const Coleccion = () => {
   return (
@@ -22,15 +23,14 @@ const Coleccion = () => {
         Las probabilidades de que toque cada una de las 23 variaciones y su
         clasificación de rarezas son:
         <div className="text-center">
-          <NFTSale></NFTSale>
+          <NFTSale />
         </div>
-        <NFTSale />
       </section>
 
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

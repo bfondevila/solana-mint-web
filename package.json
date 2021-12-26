@@ -10,7 +10,6 @@
     "deploy": "npm run build && cd infrastructure && cdk deploy '*'"
   },
   "dependencies": {
-    "@download/blockies": "^1.0.3",
     "@metamask/onboarding": "^1.0.1",
     "a11y-react-emoji": "^1.1.3",
     "bootstrap": "^5.1.3",

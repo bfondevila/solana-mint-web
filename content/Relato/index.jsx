@@ -1,7 +1,6 @@
 import PaymentSection from "../../components/PaymentSection";
 import style from "./relato.module.scss";
 
-
 const Relato = () => {
   return (
     <main>
@@ -64,7 +63,7 @@ const Relato = () => {
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

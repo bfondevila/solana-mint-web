@@ -1,10 +1,11 @@
 import { PROJECT_NAME } from "../../constants/common.js";
-import Link from "next/link";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import style from "./header.module.scss";
+
 import MetamaskConnection from "../../components/MetamaskConnection";
 
+import style from "./header.module.scss";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 

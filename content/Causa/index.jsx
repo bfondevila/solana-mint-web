@@ -1,6 +1,7 @@
 import PaymentSection from "../../components/PaymentSection";
 import TeamGrid from "../../components/TeamGrid";
 import style from "./causa.module.scss";
+import PaymentSection from "../../components/PaymentSection";
 
 const Causa = () => {
   return (
@@ -28,8 +29,8 @@ const Causa = () => {
               volcán de La Palma.
             </li>
           </ul>
-          El 80% de la recaudación irá destinada a acciones solidarias para los
-          afectados por el volcán de La Palma.
+          El 80% de la recaudación irá destinada a acciones solidarias para
+          los afectados por el volcán de La Palma.
         </div>
       </section>
 
@@ -68,7 +69,7 @@ const Causa = () => {
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );
