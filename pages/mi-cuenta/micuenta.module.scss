@@ -1,0 +1,39 @@
+.section {
+  margin-top: 60px;
+}
+
+.introduction_container {
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: space-between;
+  padding-top: 69px;
+  padding-bottom: 47.7px;
+  max-width: 948px;
+  width: 100%;
+  margin: 0 auto;
+
+  .introduction {
+    width: 500px;
+  }
+  .pic_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.discover {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 157.42px;
+}
+
+.pay_section {
+    height: 357px;
+}
+
+
+.paddings {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

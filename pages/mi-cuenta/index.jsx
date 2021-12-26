@@ -1,58 +1,20 @@
-import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Row } from "react-bootstrap";
+import OpenseaButton from "../../components/OpenseaButton";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
-import { Contract } from "../../constants/contract";
 import {
-  getMintData,
-  getNFTSaleFinishTime,
   getNFTsFromAddress,
-  getPricePerNFT,
-  getPricePerNFTInWei,
-  getTotalMoneyRaisedEuros,
-  getTotalNFTSold,
-  lastNFTMintedTime,
 } from "../../shared/lib/Crypto";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
+import style from "./micuenta.module.scss";
 
 export default function MyAccount() {
   const [userWallet, setUserWallet] = useState("");
-  const [NFTsSold, setNFTsSold] = useState("");
-  const [moneyRaised, setMoneyRaised] = useState(0);
-  const [NFTSaleFinishTime, setNFTSaleFinishTime] = useState();
-  const [pricePerNFT, setPricePerNFT] = useState(0);
-  const [pricePerNFTInWei, setPricePerNFTInWei] = useState(0);
-  const [lastMintedNFTTime, setLastMintedNFTTime] = useState();
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
-  const [transactionHash, setTransactionHash] = useState();
 
   const isConnected = () => {
     return userWallet !== "";
-  };
-
-  const mint = async (amount) => {
-    if (userWallet == "") {
-      alert("Error: wallet not connected");
-    }
-
-    const transactionParameters = {
-      to: Contract.address,
-      from: ethereum.selectedAddress,
-      data: getMintData(userWallet, amount),
-      value: "0x" + (+pricePerNFTInWei * amount).toString(16),
-    };
-
-    // As with any RPC call, it may throw an error
-    try {
-      const txHash = await ethereum.request({
-        method: "eth_sendTransaction",
-        params: [transactionParameters],
-      });
-      setTransactionHash(txHash);
-    } catch (error) {
-      alert("Error");
-      console.log(error);
-    }
   };
 
   const handleAccountsChanged = async (account) => {
@@ -60,49 +22,28 @@ export default function MyAccount() {
     setNFTsInWallet(await Promise.all(await getNFTsFromAddress(account)));
   };
 
-  useEffect(async () => {
-    setNFTsSold(await getTotalNFTSold());
-    setMoneyRaised(await getTotalMoneyRaisedEuros());
-    setNFTSaleFinishTime(await getNFTSaleFinishTime());
-    setPricePerNFT(await getPricePerNFT());
-    setPricePerNFTInWei(await getPricePerNFTInWei());
-    setLastMintedNFTTime(await lastNFTMintedTime());
-  });
-
   return (
-    <Container>
+    <main>
       <Header onAccountsChanged={handleAccountsChanged} />
-      <Container>
-        <h1>Contract stats (does not need a wallet connected)</h1>
-        <p>
-          Contract address:{" "}
-          <a
-            target="_blank"
-            href={
-              Contract.blockExplorerUrls[0] + "/address/" + Contract.address
-            }
-          >
-            {Contract.address}
-          </a>
-        </p>
-        <p>NFTs sold to date: {NFTsSold}</p>
-        <p>Money raised: {moneyRaised}&euro;</p>
-        <p>Date of NFT sale finishing: {NFTSaleFinishTime} (UNIX timestamp)</p>
-        <p>Price per NFT: {pricePerNFT} MATIC</p>
-        <p>Last minted UNIX timestamp: {lastMintedNFTTime}</p>
-      </Container>
-      <Container>
-        <h1>Wallet actions(needs a wallet connected)</h1>
-        <p>Wallet address: {userWallet || "Not connected"}</p>
+      <section className={style.section}>
+        <div className={"text-center" + " " + style.paddings}>
+        <h1>Tu cuenta</h1>
+        <p>{userWallet ? "Accede a tu colección en Opensea: " : "Por favor, conecta tu monedero primero."}</p>
         {isConnected() && (
-          <Container>
-            <button onClick={() => mint(1)}>Mint 1 NFT</button>
-            <button onClick={() => mint(10)}>Mint 10 NFTs</button>
-            <p>
-              Last transaction requested to the contract:{" "}
-              {transactionHash ?? "N/A"}
-            </p>
-            <p>Number of NFTs owned: {NFTsInWallet.length}</p>
+          <div>
+            {
+            <OpenseaButton wallet={userWallet}></OpenseaButton>
+            }
+          </div>
+        )}
+        </div>
+        </section>
+        <div className={"text-center white_background"}>
+        {isConnected() && (
+          <div className={"text-center" + " " + style.paddings}>
+            <h2>Actualmente tienes {NFTsInWallet.length} NFTs en tu monedero</h2>
+            <p></p>
+            <Row>
             {NFTsInWallet.map((nft, index) => {
               return (
                 <NFTSaleItem
@@ -112,11 +53,15 @@ export default function MyAccount() {
                   key={index}
                 ></NFTSaleItem>
               );
+              
             })}
-          </Container>
+            </Row>
+
+          </div>
         )}
-      </Container>
+        </div> 
+      
       <Footer />
-    </Container>
+    </main>
   );
 }
