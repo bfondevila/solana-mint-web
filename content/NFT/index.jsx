@@ -1,7 +1,6 @@
-import { Col, Container, Row, Button, Card, CardBody, CardTitle } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
 import FeaturesList from "../../components/FeaturesList";
 import PayCTA from "../../components/PayCTA";
+import PaymentSection from "../../components/PaymentSection";
 import style from "./nft.module.scss";
 
 const NFT = () => {
@@ -24,7 +23,7 @@ const NFT = () => {
                 3. Listo, ahora eres dueño de una de las 24 piezas de arte{" "}
               </li>
             </ul>
-            <PayCTA></PayCTA>
+            <PayCTA />
           </div>
         </div>
       </section>
@@ -91,12 +90,12 @@ const NFT = () => {
         </div>
       </section>
       <section className={style.section}>
-        <FeaturesList data="Home"></FeaturesList>
+        <FeaturesList data="Home" />
       </section>
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

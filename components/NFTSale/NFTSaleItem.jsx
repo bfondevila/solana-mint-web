@@ -18,7 +18,7 @@ const NFTSaleItem = (props) => {
         fluid
       />
       <h3 className={style.rarityName}>{rarityStr}</h3>
-      <p className={style.rarityValue}>&lt;{rarityFormat(rarity)}</p>
+      <p className={style.rarityValue}>{rarityFormat(rarity)}</p>
     </Col>
   );
 };

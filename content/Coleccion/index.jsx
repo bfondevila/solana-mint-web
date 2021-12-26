@@ -1,9 +1,6 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
-import FeaturesList from "../../components/FeaturesList";
-import PayCTA from "../../components/PayCTA";
 import NFTSale from "../../components/NFTSale";
 import style from "./coleccion.module.scss";
+import PaymentSection from "../../components/PaymentSection";
 
 const Coleccion = () => {
   return (
@@ -25,15 +22,14 @@ const Coleccion = () => {
         Las probabilidades de que toque cada una de las 23 variaciones y su
         clasificación de rarezas son:
         <div className="text-center">
-          <NFTSale></NFTSale>
+          <NFTSale />
         </div>
-        <NFTSale />
       </section>
 
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

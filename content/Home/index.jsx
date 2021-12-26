@@ -1,7 +1,5 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
+import { Button } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
-import PayCTA from "../../components/PayCTA";
 import NFTSaleStats from "../../components/NFTSaleStats";
 import PaymentSection from "../../components/PaymentSection";
 import style from "./home.module.scss";
@@ -19,17 +17,17 @@ const Home = () => {
             <h3>ESTRELLA BAJO UN VOLCÁN DORMIDO</h3>
             <h4>OCTAVIO DEL TORO</h4>
             <p>
-              Apoya el arte canario y a los afectados del volcán de La Palma con
-              la compra de un NFT. Puedes ser dueño de una exclusiva pieza de
-              arte digital donde el 80% de la recaudación se destinará a los
-              afectados por el volcán de La Palma.
+              Apoya el arte canario y a los afectados del volcán de La Palma
+              con la compra de un NFT. Puedes ser dueño de una exclusiva pieza
+              de arte digital donde el 80% de la recaudación se destinará a
+              los afectados por el volcán de La Palma.
             </p>
             <p>
-              La colección “Estrella sobre un volcán dormido” es una fusión de
-              arte físico y digital mezclando la democratización de la
+              La colección “Estrella sobre un volcán dormido” es una fusión
+              de arte físico y digital mezclando la democratización de la
               tecnología blockchain, la promoción del arte local canario y el
-              apoyo económico a una causa social de los afectados por el volcán
-              palmero.
+              apoyo económico a una causa social de los afectados por el
+              volcán palmero.
             </p>
           </div>
 
@@ -48,7 +46,7 @@ const Home = () => {
           </div> */}
         </div>
         <div className="text-center">
-          <NFTSaleStats></NFTSaleStats>
+          <NFTSaleStats />
         </div>
       </section>
 
@@ -72,13 +70,13 @@ const Home = () => {
       </section>
 
       <section className={style.section}>
-        <FeaturesList data="Home"></FeaturesList>
+        <FeaturesList data="Home" />
       </section>
 
       <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
   );

@@ -1,38 +1,42 @@
-import {Container, Row, Col} from "react-bootstrap";
-import PayCTA from "../../components/PayCTA";
 import TeamGrid from "../../components/TeamGrid";
 import style from "./causa.module.scss";
+import PaymentSection from "../../components/PaymentSection";
 
 const Causa = () => {
   return (
     <main>
       <section className={style.section}>
         <div className={"text-center"}>
-        <h1>Una buena causa</h1>
+          <h1>Una buena causa</h1>
         </div>
         <div className={style.introduction}>
           Los objetivos del proyecto “Estrella sobre un volcán dormido” son:
           <ul>
-            <li>Promover el arte local canario mediante la tecnología blockchain;
-            </li>
-            <li>Democratizar el acceso a la compra de una obra digital a usuarios 
-              que nunca han comprado un NFT;
-            </li>
-            <li>Gamificar la venta y apremiar a los compradores con versiones físicas 
-              y digitales limitadas de la colección;  
+            <li>
+              Promover el arte local canario mediante la tecnología blockchain;
             </li>
             <li>
-            Visibilizar y apoyar acciones solidarias para los afectados por el volcán de La Palma.
+              Democratizar el acceso a la compra de una obra digital a usuarios
+              que nunca han comprado un NFT;
+            </li>
+            <li>
+              Gamificar la venta y apremiar a los compradores con versiones
+              físicas y digitales limitadas de la colección;
+            </li>
+            <li>
+              Visibilizar y apoyar acciones solidarias para los afectados por el
+              volcán de La Palma.
             </li>
           </ul>
-          El 80% de la recaudación irá destinada a acciones solidarias para los afectados por el volcán de La Palma.
+          El 80% de la recaudación irá destinada a acciones solidarias para
+          los afectados por el volcán de La Palma.
         </div>
       </section>
-        
+
       <section>
-      <div className={"text-center"}>
-        <h2>Conoce más sobre el proyecto directamente por los fundadores</h2>
-        <video width="200p" height="400p" controls>
+        <div className={"text-center"}>
+          <h2>Conoce más sobre el proyecto directamente por los fundadores</h2>
+          <video width="200p" height="400p" controls>
             <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
           </video>
         </div>
@@ -61,13 +65,12 @@ const Causa = () => {
         </div>
       </section>
 
-    <section
+      <section
         className={"text-center " + style.section + " " + style.pay_section}
       >
-        <PaymentSection></PaymentSection>
+        <PaymentSection />
       </section>
     </main>
-
   );
 };
 
