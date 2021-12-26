@@ -4,11 +4,11 @@ body {
   font-family: "Monserrat";
 }
 
-.btn {
+.btn-primary {
   box-sizing: border-box;
   -webkit-box-shadow: 7px 5px 0px 0px #000000;
   box-shadow: 7px 5px 0px 0px #000000;
-  border: 1px solid;
+  border: none;
   border-radius: 0;
   padding: 20px 30px;
   width: 350px;
@@ -19,38 +19,36 @@ body {
   }
 }
 
+.btn-check:checked + .btn-dark {
+  background: white;
+  color: black;
+}
+
 .black_background {
-    background-color: black;
+  background-color: black;
+  color: white;
+  a.link {
+    text-decoration: underline;
     color: white;
-    a.link {
+    &:hover {
       text-decoration: underline;
       color: white;
-      &:hover {
-        text-decoration: underline; 
-        color: white;
-      }
     }
-    
+  }
 }
 
 .white_background {
-    background-color: #ffffff;
-    a.link {
+  background-color: #ffffff;
+  a.link {
+    text-decoration: underline;
+    color: black;
+    &:hover {
       text-decoration: underline;
       color: black;
-      &:hover {
-        text-decoration: underline; 
-        color: black;
-      }
     }
+  }
 }
 
 .grey_background {
-    background-color: #f2f1f0;
+  background-color: #f2f1f0;
 }
-
-
-button {
-  border: none;
-}
-

@@ -14,11 +14,28 @@ const MetamaskConnection = (props) => {
   const onboarding = React.useRef();
 
   const accountDisplay = (account) => {
-    return (
-      account.substring(0, 6) +
-      "..." +
-      account.substring(account.length - 4, account.length - 1)
-    );
+    let result;
+    if (props.displayFullAddress) {
+      result = account;
+    } else {
+      result =
+        account.substring(0, 6) +
+        "..." +
+        account.substring(account.length - 4, account.length - 1);
+    }
+
+    if (props.displayWithLink) {
+      result = (
+        <a
+          target="_blank"
+          href={Contract.blockExplorerUrls[0] + "/address/" + account}
+        >
+          {result}
+        </a>
+      );
+    }
+
+    return result;
   };
 
   const switchToContractChain = async () => {

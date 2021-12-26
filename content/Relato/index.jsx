@@ -11,7 +11,7 @@ const Relato = () => {
             src="/images/anelio.jpeg"
             width="300p"
             height="auto"
-            class="center"
+            className="center"
           ></img>
           <h3>El relato detrás de la ceniza</h3>
           <h5>por Anelio Rodríguez Concepción</h5>

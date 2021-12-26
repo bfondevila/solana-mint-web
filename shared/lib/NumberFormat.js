@@ -9,7 +9,16 @@ const NumberFormat = (props) => {
     maximumFractionDigits: "2",
   });
 
+  const EUROS = new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: "EUR",
+    minimumFractionDigits: "0",
+    maximumFractionDigits: "0",
+  });
+
   return {
+    euros: (value) => EUROS.format(value),
+    matic: (value) => value + " MATIC",
     rarity: (value) => RARITY_FORMAT.format(value),
   };
 };
