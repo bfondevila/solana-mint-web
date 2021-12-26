@@ -64,7 +64,7 @@ const NFT = () => {
             <PayCTA></PayCTA>
           </div>
         </div>
-        <div className={"text-center"}>
+        <div className={"text-center container"}>
           La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
           digital diseñadas por el pintor canario Octavio del Toro. Con un
           trasfondo social y cultural, el uso de la tecnología blockchain
