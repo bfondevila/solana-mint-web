@@ -14,11 +14,28 @@ const MetamaskConnection = (props) => {
   const onboarding = React.useRef();
 
   const accountDisplay = (account) => {
-    return (
-      account.substring(0, 6) +
-      "..." +
-      account.substring(account.length - 4, account.length - 1)
-    );
+    let result;
+    if (props.displayFullAddress) {
+      result = account;
+    } else {
+      result =
+        account.substring(0, 6) +
+        "..." +
+        account.substring(account.length - 4, account.length - 1);
+    }
+
+    if (props.displayWithLink) {
+      result = (
+        <a
+          target="_blank"
+          href={Contract.blockExplorerUrls[0] + "/address/" + account}
+        >
+          {result}
+        </a>
+      );
+    }
+
+    return result;
   };
 
   const switchToContractChain = async () => {
@@ -44,6 +61,13 @@ const MetamaskConnection = (props) => {
     }
   };
 
+  const handleNewAccounts = (newAccounts) => {
+    setAccounts(newAccounts);
+    if (props.onAccountsChanged) {
+      props.onAccountsChanged(newAccounts);
+    }
+  };
+
   React.useEffect(() => {
     if (!onboarding.current) {
       onboarding.current = new MetaMaskOnboarding();
@@ -51,13 +75,6 @@ const MetamaskConnection = (props) => {
   }, []);
 
   React.useEffect(async () => {
-    const handleNewAccounts = (newAccounts) => {
-      setAccounts(newAccounts);
-      if (props.onAccountsChanged) {
-        props.onAccountsChanged(newAccounts[0]);
-      }
-    };
-
     const handleChainChanged = (_chainId) => {
       window.location.reload();
     };
@@ -99,7 +116,7 @@ const MetamaskConnection = (props) => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
-        .then((newAccounts) => setAccounts(newAccounts))
+        .then((newAccounts) => handleNewAccounts(newAccounts))
         .catch(() => window.location.reload());
     } else {
       // redirect to new page to explain how to create Metamask
