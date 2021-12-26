@@ -53,9 +53,10 @@ const Header = (props) => {
     <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
         <Navbar.Brand>
-          <img src="/images/volcan.png"
-                width="300p"
+          <img src="/images/logo.png"
+                width="200p"
                 height="auto"
+                class="center"
               ></img>
         </Navbar.Brand>
         <Nav className={style.button_access}>

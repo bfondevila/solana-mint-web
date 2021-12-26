@@ -23,6 +23,10 @@
   }
 }
 
+.white_background {
+  background: #fff;
+}
+
 .discover {
   display: flex;
   justify-content: space-evenly;
@@ -32,4 +36,9 @@
 
 .pay_section {
     height: 357px;
+}
+
+.paddings {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

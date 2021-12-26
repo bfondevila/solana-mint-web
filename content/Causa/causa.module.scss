@@ -5,9 +5,9 @@
 .introduction_container {
   display: flex;
   flex-wrap: row wrap;
-  justify-content: space-between;
-  padding-top: 69px;
-  padding-bottom: 47.7px;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
   max-width: 948px;
   width: 100%;
   margin: 0 auto;
@@ -30,4 +30,21 @@
 
 .pay_section {
     height: 357px;
+}
+
+.align_text_left {
+  text-align: left;
+}
+
+.white_background {
+  background: #fff;
+}
+
+.alternative_background {
+  background: #BA8469;
+}
+
+.paddings {
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
