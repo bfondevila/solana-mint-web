@@ -1,20 +1,60 @@
 import { Col, Container, Row, Button, Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import { PROJECT_NAME } from "../../constants/common";
 import style from "./nft_sales_stats.module.scss";
+import {
+  getMintData,
+  getNFTSaleFinishTime,
+  getNFTsFromAddress,
+  getPricePerNFT,
+  getPricePerNFTInWei,
+  getTotalMoneyRaisedEuros,
+  getTotalNFTSold,
+  lastNFTMintedTime,
+} from "../../shared/lib/Crypto";
+
+const currentDate = Math.floor(Date.now() / 1000);
 
 const NFTSaleStats = (props) => {
   // temp. Must be filled by backend
-  const totalSales = "5480€";
-  const lastSale = "53 minutos";
-  const daysToDeadline = 4;
-  const hoursToDeadline = 0;
-  const minToDeadline = 34;
-  const secToDeadline = 10;
+  const [totalSales, setTotalSales] = useState(0);
+  const [lastSale, setLastSale] = useState();
+  const [saleFinishTime, setSaleFinishTime] = useState();
+  const [daysToDeadline, setDaysToDeadline]  = useState(0);
+  const [hoursToDeadline, setHoursToDeadline] = useState(0);
+  const [minToDeadline, setMinToDeadline] = useState(0);
+  const [secToDeadline, setSecToDeadline] = useState(0);
+
+  useEffect(async () => {
+    setTotalSales(await getTotalMoneyRaisedEuros());
+    const seconds = currentDate - await lastNFTMintedTime();
+    if(seconds / 3600 > 1){
+        setLastSale(Math.floor(seconds / 3600) + " horas")
+    } else if(seconds / 60 > 1){
+      setLastSale(Math.floor(seconds / 60) + " minutos")
+    } else {
+      setLastSale(seconds + " segundos")
+      }
+    
+    setSaleFinishTime(await getNFTSaleFinishTime());
+    var finishSeconds = saleFinishTime-currentDate;
+    const days = Math.floor(finishSeconds / 86400)
+    setDaysToDeadline(days);
+    finishSeconds -= days * 86400
+    const hours = Math.floor(finishSeconds / 3600) % 24;
+    setHoursToDeadline(hours);
+    finishSeconds -= hours * 3600
+    const minutes = Math.floor(finishSeconds / 60) % 60;
+    setMinToDeadline(minutes);
+    finishSeconds -= minutes * 60;
+    setSecToDeadline(seconds % 60);
+  }
+  );
 
   return (
     <Container className="text-center">
       <p className={style.stats}>
-        {totalSales} han sido recaudados para La Palma, la última compra hace{" "}
+        {totalSales}€ han sido recaudados para La Palma, la última compra hace{" "}
         {lastSale}
       </p>
       <p className={style.countdown}>
