@@ -1,17 +1,11 @@
-import { Col, Container, Row, Button, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { PROJECT_NAME } from "../../constants/common";
-import style from "./nft_sales_stats.module.scss";
+import { Container } from "react-bootstrap";
 import {
-  getMintData,
   getNFTSaleFinishTime,
-  getNFTsFromAddress,
-  getPricePerNFT,
-  getPricePerNFTInWei,
   getTotalMoneyRaisedEuros,
-  getTotalNFTSold,
   lastNFTMintedTime,
 } from "../../shared/lib/Crypto";
+import style from "./nft_sales_stats.module.scss";
 
 const currentDate = Math.floor(Date.now() / 1000);
 
