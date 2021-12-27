@@ -1,11 +1,16 @@
 import FeaturesList from "../../components/FeaturesList";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
 import PayCTA from "../../components/PayCTA";
-import { Nav } from "react-bootstrap";
+import { Nav,Button} from "react-bootstrap";
 import { useRouter } from "next/router";
 import PaymentSection from "../../components/PaymentSection";
 import Link from "next/link";
 import style from "./nft.module.scss";
+import Header from "../../widgets/Header";
+import MetamaskConnection from "../../components/MetamaskConnection";
+import { useState } from "react";
+import MetaMaskOnboarding from "@metamask/onboarding";
+
 
 const NFT = () => {
   const router = useRouter();
@@ -43,33 +48,72 @@ const NFT = () => {
     },
   ];
 
-  const card_content = (
+  const connected_card_content = (
     <div className={style.align_text_left + " " + style.card_content}>
       <div className={style.card_content_container}>
         <h2>¿Cómo comprar un NFT?</h2>
         <p>
-          1. Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo
-        </p>
-        <p>
-          2. Compra una o varias unidades a través de Paypal o pagando con MATIC
+        Compra una o varias unidades a través de Paypal o pagando con MATIC
           (cada NFT cuesta 20€)
-        </p>
-        <p>3. Listo, ahora eres dueño de una de las 24 piezas de arte </p>
+        </p> 
       </div>
     </div>
   );
 
+  const disconnected_card_content = (
+    <div className={style.align_text_left + " " + style.card_content}>
+      <div className={style.card_content_container}>
+        <h2>¿Cómo comprar un NFT?</h2>
+        <p>
+          Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo
+        </p>
+        
+      </div>
+    </div>
+  );
+
+  const [userWallet, setUserWallet] = useState("");
+
+  const isConnected = () => {
+    return userWallet !== "";
+  };
+
+  const handleAccountsChanged = async (accounts) => {
+    const userAccount = accounts.length > 0 ? accounts[0] : "";
+    setUserWallet(userAccount);
+  };
+
   return (
+    
     <main>
+      <Header onAccountsChanged={handleAccountsChanged} />
       <section className={style.section}>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
-            <FeatureCard content={card_content}></FeatureCard>
+          {!isConnected() && (
+            <FeatureCard content={disconnected_card_content}></FeatureCard>
+          )}
+          {isConnected() && (
+            <FeatureCard content={connected_card_content}></FeatureCard>
+          )}     
           </div>
         </div>
-        <div className={"text-center container"}>
-          <PayCTA />
-        </div>
+        {!isConnected() && (
+            <div className={"text-center " + style.btn_container}>
+               <Button href={"https://docs.google.com/document/d/1aHsFnM6tkibs6I-EfpT_KjOwq-ik8StR89JQeEObqIQ/edit"}>
+                 ¿Cómo crear un wallet?
+              </Button>
+              <div className={"btn " + style.social}>
+                <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+            </div>
+          </div>
+          )}
+          {isConnected() && (
+            <div className={"text-center container"}>
+            <PayCTA />
+          </div>
+          )}
+        
       </section>
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
