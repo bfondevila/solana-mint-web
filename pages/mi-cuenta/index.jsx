@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
-import OpenseaButton from "../../components/OpenseaButton";
+import { Row } from "react-bootstrap";
+import MetamaskConnection from "../../components/MetamaskConnection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
+import OpenseaButton from "../../components/OpenseaButton";
 import { getNFTsFromAddress } from "../../shared/lib/Crypto";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
 import style from "./micuenta.module.scss";
-import MetamaskConnection from "../../components/MetamaskConnection";
 
 export default function MyAccount() {
   const [userWallet, setUserWallet] = useState("");
@@ -16,9 +16,10 @@ export default function MyAccount() {
     return userWallet !== "";
   };
 
-  const handleAccountsChanged = async (account) => {
-    setUserWallet(account);
-    setNFTsInWallet(await Promise.all(await getNFTsFromAddress(account)));
+  const handleAccountsChanged = async (accounts) => {
+    const userAccount = accounts.length > 0 ? accounts[0] : "";
+    setUserWallet(userAccount);
+    setNFTsInWallet(await Promise.all(await getNFTsFromAddress(userAccount)));
   };
 
   return (
