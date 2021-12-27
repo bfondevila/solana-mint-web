@@ -1,6 +1,19 @@
 .btn_container {
-    margin: 0 auto;
-    width: 730px;
-    display: flex;
-    justify-content: space-between;
+  margin: 0 auto;
+  width: 730px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nftAmountGroup {
+  margin-bottom: 20px;
+}
+
+.required {
+  color: red;
+  font-style: italic;
+  padding-top: 0.5em;
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: top;
 }

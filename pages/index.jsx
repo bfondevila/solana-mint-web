@@ -4,12 +4,12 @@ import Header from "../widgets/Header";
 
 export default function App() {
   return (
-    <div>
+    <>
       <Header />
 
       <Home />
 
       <Footer />
-    </div>
+    </>
   );
 }

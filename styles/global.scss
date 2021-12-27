@@ -42,7 +42,7 @@ h6 {
   box-sizing: border-box;
   -webkit-box-shadow: 7px 5px 0px 0px #000000;
   box-shadow: 7px 5px 0px 0px #000000;
-  border: 1px solid;
+  border: none;
   border-radius: 0;
   padding: 20px 30px;
   width: 350px;
@@ -51,6 +51,11 @@ h6 {
     border: 1px solid;
     background-color: #ccc;
   }
+}
+
+.btn-check:checked + .btn-dark {
+  background: white;
+  color: black;
 }
 
 .black_background {
