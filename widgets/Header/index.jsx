@@ -57,7 +57,7 @@ const Header = (props) => {
             src="/images/logo.png"
             width="200p"
             height="auto"
-            class="center"
+            className="center"
           ></img>
         </Navbar.Brand>
         <Nav className={style.button_access}>

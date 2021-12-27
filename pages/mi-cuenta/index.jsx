@@ -24,7 +24,7 @@ export default function MyAccount() {
 
   return (
     <main>
-      <Header onAccountsChanged={handleAccountsChanged} />
+      <Header />
       <section className={style.section}>
         <div className={"text-center" + " " + style.paddings}>
           <h1>Tu cuenta</h1>
