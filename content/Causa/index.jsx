@@ -6,22 +6,22 @@ import style from "./causa.module.scss";
 const Causa = () => {
   const card_content = (
     <div className={style.align_text_left + " " + style.card_content}>
-    <ul>
-      Los objetivos del proyecto “Estrella sobre un volcán dormido” son:
-      <li>Promover el arte local canario mediante la tecnología blockchain;</li>
-      <li>
+      <p className={style.card_title}>
+        Los objetivos del proyecto “Estrella sobre un volcán dormido” son:
+      </p>
+      <p> Promover el arte local canario mediante la tecnología blockchain.</p>
+      <p>
         Democratizar el acceso a la compra de una obra digital a usuarios que
-        nunca han comprado un NFT;
-      </li>
-      <li>
+        nunca han comprado un NFT.
+      </p>
+      <p>
         Gamificar la venta y apremiar a los compradores con versiones físicas y
-        digitales limitadas de la colección;
-      </li>
-      <li>
+        digitales limitadas de la colección.
+      </p>
+      <p>
         Visibilizar y apoyar acciones solidarias para los afectados por el
         volcán de La Palma.
-      </li>
-    </ul>
+      </p>
     </div>
   );
 
@@ -29,7 +29,7 @@ const Causa = () => {
     <main>
       <section className={style.section + " " + style.paddings}>
         <div className={"text-center"}>
-          <h1>Una buena causa</h1>
+          <h1>UNA BUENA CAUSA</h1>
         </div>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
@@ -37,14 +37,26 @@ const Causa = () => {
           </div>
         </div>
         <div className={"text-center"}>
-        <h3>El 80% de la recaudación irá destinada a acciones solidarias para
-            los afectados por el volcán de La Palma.</h3>
+          <h3>
+            El 80% de la recaudación irá destinada a acciones solidarias para
+            los afectados por el volcán de La Palma.
+          </h3>
         </div>
       </section>
 
       <section>
-        <div className={"text-center" + " " + style.white_background + " " + style.paddings}>
-          <h2>Conoce más sobre el proyecto directamente por los fundadores</h2>
+        <div
+          className={
+            "text-center" +
+            " " +
+            style.white_background +
+            " " +
+            style.paddings_plus
+          }
+        >
+          <h2 className={style.section_title}>
+            Conoce más sobre el proyecto directamente por los fundadores
+          </h2>
           <iframe
             width="560"
             height="315"
@@ -59,32 +71,45 @@ const Causa = () => {
         </div>
       </section>
 
-      <section>
+      <section className={style.section}>
         <div className={"text-center" + " " + style.paddings}>
-          <h2>NUESTRO EQUIPO</h2>
+          <h2 className={style.section_title}>NUESTRO EQUIPO</h2>
           <TeamGrid></TeamGrid>
         </div>
       </section>
 
-      <section>
-        <div className={"text-center white_background " + style.discover}>
+      <section className={style.section}>
+        <div
+          className={
+            "text-center white_background " +
+            style.discover +
+            " " +
+            style.paddings_plus
+          }
+        >
           <h2>CON EL APOYO DE:</h2>
           <div>
             <span>
-              <img src="/images/lecover_abogados.PNG" width="300p" height="auto"></img>
+              <img
+                src="/images/lecover_abogados.PNG"
+                width="300p"
+                height="auto"
+              ></img>
             </span>
           </div>
           <div>
             <span>
-              <img src="/images/fotoarte_black.png" width="300p" height="auto"></img>
+              <img
+                src="/images/fotoarte_black.png"
+                width="300p"
+                height="auto"
+              ></img>
             </span>
           </div>
         </div>
       </section>
 
-      <section
-        className={"text-center " + style.section + " " + style.pay_section}
-      >
+      <section className={"text-center " + style.paddings_plus}>
         <PaymentSection />
       </section>
     </main>

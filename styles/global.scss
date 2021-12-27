@@ -4,6 +4,40 @@ body {
   font-family: "Monserrat";
 }
 
+p {
+  font-size: 1.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1.8px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+h4 {
+  margin-bottom: 15px;
+}
+
+h5,
+h6 {
+  margin-bottom: 10px;
+}
+
 .btn {
   box-sizing: border-box;
   -webkit-box-shadow: 7px 5px 0px 0px #000000;
@@ -22,6 +56,8 @@ body {
 .black_background {
   background-color: black;
   color: white;
+  letter-spacing: 2px;
+  line-height: 1.5rem;
   a.link,
   link {
     text-decoration: underline;
@@ -48,6 +84,13 @@ body {
 
 .grey_background {
   background-color: #f2f1f0;
+}
+
+.black_link {
+  color: black;
+  &:hover {
+    color: gray;
+  }
 }
 
 button {

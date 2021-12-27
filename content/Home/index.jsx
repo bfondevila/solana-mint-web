@@ -17,17 +17,17 @@ const Home = () => {
             <h3>ESTRELLA BAJO UN VOLCÁN DORMIDO</h3>
             <h4>OCTAVIO DEL TORO</h4>
             <p>
-              Apoya el arte canario y a los afectados del volcán de La Palma
-              con la compra de un NFT. Puedes ser dueño de una exclusiva pieza
-              de arte digital donde el 80% de la recaudación se destinará a
-              los afectados por el volcán de La Palma.
+              Apoya el arte canario y a los afectados del volcán de La Palma con
+              la compra de un NFT. Puedes ser dueño de una exclusiva pieza de
+              arte digital donde el 80% de la recaudación se destinará a los
+              afectados por el volcán de La Palma.
             </p>
             <p>
-              La colección “Estrella sobre un volcán dormido” es una fusión
-              de arte físico y digital mezclando la democratización de la
+              La colección “Estrella sobre un volcán dormido” es una fusión de
+              arte físico y digital mezclando la democratización de la
               tecnología blockchain, la promoción del arte local canario y el
-              apoyo económico a una causa social de los afectados por el
-              volcán palmero.
+              apoyo económico a una causa social de los afectados por el volcán
+              palmero.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ const Home = () => {
       <section className={style.section}>
         <div className={"text-center black_background " + style.discover}>
           <div>
-            <span>
+            <span className="black_banner_text">
               VALIDADO LEGALMENTE <br></br>
               POR LOCOVERA
             </span>
@@ -74,7 +74,7 @@ const Home = () => {
       </section>
 
       <section
-        className={"text-center " + style.section + " " + style.pay_section}
+        className={"text-center " + style.section + " " + style.paddings}
       >
         <PaymentSection />
       </section>

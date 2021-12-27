@@ -29,11 +29,22 @@
 }
 
 .pay_section {
-    height: 357px;
+  height: 357px;
 }
-
 
 .paddings {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.sep_line {
+  margin: auto;
+  margin-bottom: 60px;
+  border: solid 1px black;
+  width: 50%;
+}
+
+.grid_container {
+  width: 50%;
+  margin: auto;
 }

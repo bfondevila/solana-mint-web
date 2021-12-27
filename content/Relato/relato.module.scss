@@ -14,9 +14,6 @@
   width: 100%;
   margin: 0 auto;
 
-  .introduction {
-    width: 710px;
-  }
   .pic_container {
     display: flex;
     flex-direction: column;
@@ -35,10 +32,23 @@
 }
 
 .pay_section {
-    height: 357px;
+  height: 357px;
 }
 
 .paddings {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.paddings_plus {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.img_container {
+  text-align: center;
+  -webkit-box-shadow: 12px 14px 0px 0px #000000;
+  box-shadow: 12px 14px 0px 0px #000000;
+  border-radius: 0;
+  margin-bottom: 35px;
 }
