@@ -53,11 +53,12 @@ const Header = (props) => {
     <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
         <Navbar.Brand>
-          <img src="/images/logo.png"
-                width="200p"
-                height="auto"
-                class="center"
-              ></img>
+          <img
+            src="/images/logo.png"
+            width="200p"
+            height="auto"
+            class="center"
+          ></img>
         </Navbar.Brand>
         <Nav className={style.button_access}>
           {links.map((entry) => {

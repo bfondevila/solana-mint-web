@@ -1,23 +1,23 @@
 {
-    "name": "#4 - Común",
-    "description": "El NFT solidario de Octavio del Toro. La colección \"Estrella sobre un volcán\" es una fusión de arte físico y digital mezclando la democratización de la tecnología blockchain, la promoción del arte local canario y el apoyo económico a una causa social de los afectados por el volcán de la Palma.",
-    "image": "ipfs://Qmen1sjd6uQ1aoE1eUSeyo5UagvKKoDkZ8tqr4QBiUckEd/blanco-morado-verde.png",
-    "attributes": [
-        {
-            "trait_type": "Rareza",
-            "value": "Común"
-        },
-        {
-            "trait_type": "Enano",
-            "value": "Blanco"
-        },
-        {
-            "trait_type": "Enano",
-            "value": "Morado"
-        },
-        {
-            "trait_type": "Enano",
-            "value": "Verde"
-        }
-    ]
+  "name": "#4 - Común",
+  "description": "El NFT solidario de Octavio del Toro. La colección \"Estrella sobre un volcán\" es una fusión de arte físico y digital mezclando la democratización de la tecnología blockchain, la promoción del arte local canario y el apoyo económico a una causa social de los afectados por el volcán de la Palma.",
+  "image": "ipfs://Qmen1sjd6uQ1aoE1eUSeyo5UagvKKoDkZ8tqr4QBiUckEd/blanco-morado-verde.png",
+  "attributes": [
+    {
+      "trait_type": "Rareza",
+      "value": "Común"
+    },
+    {
+      "trait_type": "Enano",
+      "value": "Blanco"
+    },
+    {
+      "trait_type": "Enano",
+      "value": "Morado"
+    },
+    {
+      "trait_type": "Enano",
+      "value": "Verde"
+    }
+  ]
 }

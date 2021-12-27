@@ -79,11 +79,13 @@ const NFTSale = (props) => {
     },
     {
       img: "/images/collection/blanco-morado-verde.png",
-      rarity: 0.10,
-    }, {
+      rarity: 0.1,
+    },
+    {
       img: "/images/collection/verde-blanco-negro.png",
-      rarity: 0.10,
-    }, {
+      rarity: 0.1,
+    },
+    {
       img: "/images/collection/morado-negro-blanco.png",
       rarity: 0.12,
     },

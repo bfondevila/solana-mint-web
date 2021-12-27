@@ -3,23 +3,21 @@ import TeamMemberCard from "./TeamMemberCard";
 import TeamData from "../../components/TeamGrid/TeamData";
 import style from "./team-card.module.scss";
 
-
 const TeamGrid = () => {
-
-  const teamData = TeamData
+  const teamData = TeamData;
 
   return (
     <Container>
-        <Row>
-      {teamData.map((entry) => {
-        return (
-              <TeamMemberCard
-                img={entry.img}
-                name={entry.name}
-                profile={entry.profile}
-              ></TeamMemberCard>
-        );
-      })}
+      <Row>
+        {teamData.map((entry) => {
+          return (
+            <TeamMemberCard
+              img={entry.img}
+              name={entry.name}
+              profile={entry.profile}
+            ></TeamMemberCard>
+          );
+        })}
       </Row>
     </Container>
   );

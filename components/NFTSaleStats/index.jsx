@@ -20,36 +20,35 @@ const NFTSaleStats = (props) => {
   const [totalSales, setTotalSales] = useState(0);
   const [lastSale, setLastSale] = useState();
   const [saleFinishTime, setSaleFinishTime] = useState();
-  const [daysToDeadline, setDaysToDeadline]  = useState(0);
+  const [daysToDeadline, setDaysToDeadline] = useState(0);
   const [hoursToDeadline, setHoursToDeadline] = useState(0);
   const [minToDeadline, setMinToDeadline] = useState(0);
   const [secToDeadline, setSecToDeadline] = useState(0);
 
   useEffect(async () => {
     setTotalSales(Math.floor(await getTotalMoneyRaisedEuros()));
-    const seconds = currentDate - await lastNFTMintedTime();
-    if(seconds / 3600 > 1){
-        setLastSale(Math.floor(seconds / 3600) + " horas")
-    } else if(seconds / 60 > 1){
-      setLastSale(Math.floor(seconds / 60) + " minutos")
+    const seconds = currentDate - (await lastNFTMintedTime());
+    if (seconds / 3600 > 1) {
+      setLastSale(Math.floor(seconds / 3600) + " horas");
+    } else if (seconds / 60 > 1) {
+      setLastSale(Math.floor(seconds / 60) + " minutos");
     } else {
-      setLastSale(seconds + " segundos")
-      }
-    
+      setLastSale(seconds + " segundos");
+    }
+
     setSaleFinishTime(await getNFTSaleFinishTime());
-    var finishSeconds = saleFinishTime-currentDate;
-    const days = Math.floor(finishSeconds / 86400)
+    var finishSeconds = saleFinishTime - currentDate;
+    const days = Math.floor(finishSeconds / 86400);
     setDaysToDeadline(days);
-    finishSeconds -= days * 86400
+    finishSeconds -= days * 86400;
     const hours = Math.floor(finishSeconds / 3600) % 24;
     setHoursToDeadline(hours);
-    finishSeconds -= hours * 3600
+    finishSeconds -= hours * 3600;
     const minutes = Math.floor(finishSeconds / 60) % 60;
     setMinToDeadline(minutes);
     finishSeconds -= minutes * 60;
     setSecToDeadline(seconds % 60);
-  }
-  );
+  });
 
   return (
     <Container className="text-center">

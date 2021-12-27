@@ -7,7 +7,7 @@ export default function ColeccionPage() {
     <div>
       <Header />
 
-     <Coleccion />
+      <Coleccion />
 
       <Footer />
     </div>
