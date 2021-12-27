@@ -13,9 +13,10 @@
   }
 
   .social {
-    box-shadow: 2px 2px 0px 0px #000000;
-    padding: 0;
+    display: flex;
     width: auto;
+    box-shadow: 2px 2px 0px 0px #000000;
+    padding: unset;
 
     & > button {
       padding: 7px 14px;

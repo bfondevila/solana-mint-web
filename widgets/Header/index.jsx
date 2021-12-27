@@ -1,10 +1,11 @@
+import { PROJECT_NAME } from "../../constants/common.js";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import MetamaskConnection from "../../components/MetamaskConnection";
-import { PROJECT_NAME } from "../../constants/common.js";
-import style from "./header.module.scss";
 
+import MetamaskConnection from "../../components/MetamaskConnection";
+
+import style from "./header.module.scss";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -51,7 +52,13 @@ const Header = (props) => {
   return (
     <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
-        <Navbar.Brand className={style.brand}>{PROJECT_NAME}</Navbar.Brand>
+        <Navbar.Brand>
+          <img src="/images/logo.png"
+                width="200p"
+                height="auto"
+                class="center"
+              ></img>
+        </Navbar.Brand>
         <Nav className={style.button_access}>
           {links.map((entry) => {
             return (

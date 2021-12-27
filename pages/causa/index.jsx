@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import Footer from "../../widgets/Footer";
 import Header from "../../widgets/Header";
 import Causa from "../../content/Causa";
@@ -6,12 +5,12 @@ import Causa from "../../content/Causa";
 
 export default function CausaPage() {
   return (
-    <Container>
+    <div>
       <Header />
 
       <Causa />
 
       <Footer />
-    </Container>
+    </div>
   );
 }

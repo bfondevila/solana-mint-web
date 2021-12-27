@@ -15,16 +15,22 @@ const FeatureCard = (props) => {
     >
       <Col>
         <Card className={style.card_container_text}>
-          <Card.Body>
-            <Card.Title>{props.header}</Card.Title>
+          <Card.Body className={style.card_body_content}>
+            <Card.Title className={style.feature_card_header}>
+              {props.header}
+            </Card.Title>
             <Card.Text>{props.content}</Card.Text>
             <Card.Text>{props.footer}</Card.Text>
           </Card.Body>
         </Card>
       </Col>
-      <Col>
-        <img src={props.imgSrc}/>
-      </Col>
+      {props.imgSrc ? (
+        <Col>
+          <img src={props.imgSrc} />
+        </Col>
+      ) : (
+        ""
+      )}
     </Row>
   );
 };

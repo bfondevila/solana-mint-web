@@ -1,5 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
-import Link from "next/link";
 import style from "./footer.module.scss";
 
 const Footer = () => {

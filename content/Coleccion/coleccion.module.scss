@@ -5,16 +5,12 @@
 .introduction_container {
   display: flex;
   flex-wrap: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 69px;
   padding-bottom: 47.7px;
-  max-width: 948px;
-  width: 100%;
+  width: 66%;
   margin: 0 auto;
 
-  .introduction {
-    width: 500px;
-  }
   .pic_container {
     display: flex;
     flex-direction: column;
@@ -29,5 +25,29 @@
 }
 
 .pay_section {
-    height: 357px;
+  height: 357px;
+}
+
+.grid_container {
+  width: 66%;
+  margin: auto;
+}
+
+.sep_line {
+  margin: auto;
+  margin-bottom: 60px;
+  border: solid 1px black;
+  width: 50%;
+}
+
+.paddings {
+  padding-top: 35px;
+  padding-bottom: 55px;
+}
+
+.justify_text {
+  text-align: justify;
+  text-align-last: center;
+  margin: 0 auto;
+  width: 66%;
 }
