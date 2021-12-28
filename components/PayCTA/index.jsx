@@ -200,18 +200,21 @@ const PayCTA = () => {
               <Link href="/mi-cuenta">tu cuenta</Link>.
             </p>
             <p hidden={!transactionHash}>
-              El pedido se ha registrado en la transacción{" "}
+              El pedido se ha registrado en la red Polygon (MATIC) en la
+              siguiente transacción:{" "}
+            </p>
+            <p>
               <a
                 href={Contract.blockExplorerUrls[0] + "/tx/" + transactionHash}
                 target="_blank"
+                className={style.transactionLink}
               >
                 {transactionHash}
-              </a>{" "}
-              en Polygon (MATIC).
+              </a>
             </p>
           </Alert>
           <div className={style.container}>
-            <span className={style.form_field}>Enviar a:{" "}</span>
+            <span className={style.form_field}>Enviar a: </span>
             <span>
               <MetamaskConnection
                 onAccountsChanged={handleAccountsChanged}
@@ -252,7 +255,14 @@ const PayCTA = () => {
                 * Requerido
               </span>
             </div>
-            <div className={"col-6 " + style.total_purchase_container + " " + style.text_right}>
+            <div
+              className={
+                "col-6 " +
+                style.total_purchase_container +
+                " " +
+                style.text_right
+              }
+            >
               <strong className={style.form_field}>TOTAL:</strong>
               <p className={style.total_purchase_field}>
                 {calculateTotal(NFTAmount)}
@@ -261,7 +271,7 @@ const PayCTA = () => {
           </div>
           {platform === "paypal" && (
             <>
-            <p className={style.form_field}>Elige el método de pago</p>
+              <p className={style.form_field}>Elige el método de pago</p>
               <PayPalScriptProvider
                 options={{
                   "client-id": PAYPAL_CLIENT_ID,
@@ -283,7 +293,7 @@ const PayCTA = () => {
           )}
           {platform === "matic" && (
             <>
-                <Button
+              <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
                 disabled={userWallet === "" || !NFTAmount || mintInProgress}
                 className={style.mint_btn}
