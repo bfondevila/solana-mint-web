@@ -12,7 +12,7 @@ const FeatureCard = (props) => {
           : " .grey_background")
       }
     >
-      <Col sm={12}  md={6}>
+      <Col>
         <Card className={style.card_container_text}>
           <Card.Body className={style.card_body_content}>
             <Card.Title className={style.feature_card_header}>
