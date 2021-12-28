@@ -5,24 +5,19 @@ import {
   getTotalMoneyRaisedEuros,
 } from "../../shared/lib/Crypto";
 import style from "./nft_sales_stats.module.scss";
-
-const currentDate = Math.floor(Date.now() / 1000);
+import Timer from "./Timer";
 
 const NFTSaleStats = (props) => {
-  // temp. Must be filled by backend
   const [totalSales, setTotalSales] = useState(0);
   const [lastSale, setLastSale] = useState();
-  const [deadline, setDeadline] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [saleFinishTime, setSaleFinishTime] = useState(null);
 
   useEffect(async () => {
     getPublicInfo().then(({ lastTokenId, lastMinted, saleFinishTime }) => {
       setTotalSales(Math.floor(getTotalMoneyRaisedEuros(lastTokenId)));
+      setSaleFinishTime(saleFinishTime);
 
+      const currentDate = Math.floor(Date.now() / 1000);
       const seconds = currentDate - lastMinted;
       if (seconds / 3600 > 1) {
         setLastSale(Math.floor(seconds / 3600) + " horas");
@@ -31,20 +26,6 @@ const NFTSaleStats = (props) => {
       } else {
         setLastSale(seconds + " segundos");
       }
-
-      var finishSeconds = saleFinishTime - currentDate;
-      const days = Math.floor(finishSeconds / 86400);
-      finishSeconds -= days * 86400;
-      const hours = Math.floor(finishSeconds / 3600) % 24;
-      finishSeconds -= hours * 3600;
-      const minutes = Math.floor(finishSeconds / 60) % 60;
-      finishSeconds -= minutes * 60;
-      setDeadline({
-        days: days,
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds,
-      });
     });
   }, []);
 
@@ -52,11 +33,10 @@ const NFTSaleStats = (props) => {
     <Container className="text-center">
       <p className={style.stats}>
         {totalSales}€ han sido recaudados para La Palma, la última compra hace{" "}
-        {lastSale}
+        {lastSale}.
       </p>
       <p className={style.countdown}>
-        La venta finaliza en {deadline.days} días, {deadline.hours} horas,{" "}
-        {deadline.minutes} minutos, {deadline.seconds} segundos
+        <Timer deadline={saleFinishTime} />
       </p>
     </Container>
   );
