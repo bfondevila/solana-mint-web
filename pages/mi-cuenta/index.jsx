@@ -27,7 +27,7 @@ export default function MyAccount() {
           <h1>Tu cuenta</h1>
           <h4>
             {userWallet
-              ? "Accede a tu colección en Opensea: "
+              ? "Accede a tu colección en OpenSea: "
               : "Por favor, conecta tu monedero primero."}
           </h4>
           <div className={"btn " + style.social} hidden={userWallet !== ""}>
