@@ -32,8 +32,8 @@ const FeatureCard = (props) => {
         </Card>
       </Col>
       {props.imgSrc && (
-        <Col>
-          <img src={props.imgSrc} />
+        <Col sm={12} md={6} className={style.flex_col}>
+          <img className={style.feature_img} src={props.imgSrc} />
         </Col>
       )}
     </Row>

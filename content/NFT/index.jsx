@@ -162,7 +162,7 @@ const NFT = () => {
       </section>
       <section
         className={
-          "text-center white_background " + style.section + " " + style.paddings
+          "text-center " + style.section + " " + style.paddings
         }
       >
         <PaymentSection />

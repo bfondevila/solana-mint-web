@@ -55,7 +55,7 @@ const PayCTA = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("paypal");
-    setModalTitle("Paga con Paypal");
+    setModalTitle("PAGA CON PAYPAL");
     setShow(true);
   };
 
@@ -63,7 +63,7 @@ const PayCTA = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("matic");
-    setModalTitle("Paga con MATIC (crypto)");
+    setModalTitle("PAGA CON MATIC (CRYPTO)");
     setShow(true);
   };
 
@@ -184,12 +184,12 @@ const PayCTA = () => {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={show} onHide={handleClose} dialogClassName={style.modal}>
+        <Modal.Header className={style.form_header} closeButton>
           <Modal.Title>{modalTitle}</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body className={style.form_container}>
           <Alert variant="danger" hidden={!errorState}>
             {errorState}
           </Alert>
@@ -210,45 +210,58 @@ const PayCTA = () => {
               en Polygon (MATIC).
             </p>
           </Alert>
-          Enviar a:{" "}
-          <MetamaskConnection
-            onAccountsChanged={handleAccountsChanged}
-            displayFullAddress
-            displayWithLink
-          />
-          <span className={style.required} hidden={userWallet !== ""}>
-            * Requerido
-          </span>
-          <p>¿Cuántas unidades deseas comprar?</p>
-          <ToggleButtonGroup
-            type="radio"
-            name="NFTAmount"
-            className={style.nftAmountGroup}
-            onChange={handleAmountNFTChange}
-            defaultValue={NFTAmount}
-          >
-            {[1, 2, 5, 10, 50, 100].map((amount, index) => {
-              return (
-                <ToggleButton
-                  key={index}
-                  id={"radio-" + index}
-                  type="radio"
-                  variant="dark"
-                  value={amount}
-                >
-                  {amount}
-                </ToggleButton>
-              );
-            })}
-          </ToggleButtonGroup>{" "}
-          <span className={style.required} hidden={NFTAmount !== 0}>
-            * Requerido
-          </span>
-          <Container>
-            <p>Total: {calculateTotal(NFTAmount)}</p>
-          </Container>
+          <div className={style.container}>
+            <span className={style.form_field}>Enviar a:{" "}</span>
+            <span>
+              <MetamaskConnection
+                onAccountsChanged={handleAccountsChanged}
+                displayFullAddress
+                displayWithLink
+              />
+              <label className={style.required} hidden={userWallet !== ""}>
+                * Requerido
+              </label>
+            </span>
+          </div>
+          <div className={style.flex_container + " " + style.container}>
+            <div className="col-6">
+              <p className={style.form_field}>¿Cuántas unidades quieres?</p>
+              <ToggleButtonGroup
+                type="radio"
+                name="NFTAmount"
+                className={style.nftAmountGroup}
+                onChange={handleAmountNFTChange}
+                defaultValue={NFTAmount}
+              >
+                {[1, 2, 5, 10, 50, 100].map((amount, index) => {
+                  return (
+                    <ToggleButton
+                      key={index}
+                      id={"radio-" + index}
+                      type="radio"
+                      variant="dark"
+                      value={amount}
+                      className={style.toggle_btn}
+                    >
+                      {amount}
+                    </ToggleButton>
+                  );
+                })}
+              </ToggleButtonGroup>{" "}
+              <span className={style.required} hidden={NFTAmount !== 0}>
+                * Requerido
+              </span>
+            </div>
+            <div className={"col-6 " + style.total_purchase_container + " " + style.text_right}>
+              <strong className={style.form_field}>TOTAL:</strong>
+              <p className={style.total_purchase_field}>
+                {calculateTotal(NFTAmount)}
+              </p>
+            </div>
+          </div>
           {platform === "paypal" && (
             <>
+            <p className={style.form_field}>Elige el método de pago</p>
               <PayPalScriptProvider
                 options={{
                   "client-id": PAYPAL_CLIENT_ID,
@@ -270,10 +283,10 @@ const PayCTA = () => {
           )}
           {platform === "matic" && (
             <>
-              <Button
+                <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
-                variant="success"
                 disabled={userWallet === "" || !NFTAmount || mintInProgress}
+                className={style.mint_btn}
               >
                 Mintear NFTs
               </Button>

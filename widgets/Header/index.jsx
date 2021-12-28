@@ -50,7 +50,7 @@ const Header = (props) => {
   //  <FontAwesomeIcon icon={faInstagram} />
 
   return (
-    <Navbar className={style.header_container} bg="light" expand="lg">
+    <Navbar className={style.header_container} bg="light" expand="lg" collapseOnSelect>
       <Container>
         <Navbar.Brand>
           <img
@@ -60,6 +60,8 @@ const Header = (props) => {
             className="center"
           ></img>
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
         <Nav className={style.button_access}>
           {links.map((entry) => {
             return (
@@ -77,7 +79,10 @@ const Header = (props) => {
             );
           })}
         </Nav>
-        <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
+        <div className={"btn " + style.social}>
+          <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
+        </div>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
