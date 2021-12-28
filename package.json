@@ -7,7 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "format": "prettier -w '**/*.(js|jsx|css|scss|json)'",
-    "deploy": "npm run build && cd infrastructure && cdk deploy '*'"
+    "deploy": "npm run build && cd infrastructure && cdk --require-approval never deploy '*'"
   },
   "dependencies": {
     "@metamask/onboarding": "^1.0.1",
