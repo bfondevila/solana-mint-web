@@ -1,12 +1,12 @@
-import Footer from "../../widgets/Footer";
 import NFT from "../../content/NFT";
+import Footer from "../../widgets/Footer";
 
 export default function NFTPage() {
   return (
-    <div>
+    <>
       <NFT />
 
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+import { Contract, getContractUrl } from "../../constants/contract";
+
 const featuresData = {
   Home: [
     {
@@ -22,12 +24,12 @@ const featuresData = {
                 otras (esto hace que coleccionar un poco más divertido). \
                 ",
       footer: (
-        <>
+        <p>
           <a className="black_link" href="/coleccion">
             En esta página
           </a>{" "}
           puedes ver el porcentaje de rarezas de cada obra
-        </>
+        </p>
       ),
       imgSrc: "images/collage.png",
     },
@@ -39,12 +41,12 @@ const featuresData = {
       La Palma, se donará el 80% de la recaudación al Cabildo \
       de La Palma.",
       footer: (
-        <>
+        <p>
           Lee nuestro manifiesto{" "}
           <a className="black_link" href="/causa">
             aquí
           </a>
-        </>
+        </p>
       ),
       imgSrc: "images/volcan.png",
     },
@@ -78,11 +80,16 @@ const featuresData = {
       header: "TECNOLOGÍA",
       content: (
         <>
-          Diseño digital: ProCreate en iPad<br></br>
-          Cuadro físico: lámina 46x54cm en papel Hahnemühle <br></br>
-          Hemp 290g usando tintas pigmentadas minerales. <br></br>
-          Blockchain: Polygon <br></br>
-          Smart contract: 0x24214124a <br></br>
+          <p>Diseño digital: ProCreate en iPad</p>
+          <p>Cuadro físico: lámina 46x54cm en papel Hahnemühle</p>
+          <p>Hemp 290g usando tintas pigmentadas minerales.</p>
+          <p>Blockchain: Polygon</p>
+          <p>
+            Smart contract:{" "}
+            <a href={getContractUrl()} target="_blank">
+              {Contract.address}
+            </a>
+          </p>
         </>
       ),
       footer: "",

@@ -9,12 +9,13 @@ const TeamGrid = () => {
   return (
     <Container>
       <Row>
-        {teamData.map((entry) => {
+        {teamData.map((entry, index) => {
           return (
             <TeamMemberCard
               img={entry.img}
               name={entry.name}
               profile={entry.profile}
+              key={index}
             ></TeamMemberCard>
           );
         })}

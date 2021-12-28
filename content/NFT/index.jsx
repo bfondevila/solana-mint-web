@@ -1,16 +1,14 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { Button, Nav } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
-import PayCTA from "../../components/PayCTA";
-import { Nav,Button} from "react-bootstrap";
-import { useRouter } from "next/router";
-import PaymentSection from "../../components/PaymentSection";
-import Link from "next/link";
-import style from "./nft.module.scss";
-import Header from "../../widgets/Header";
 import MetamaskConnection from "../../components/MetamaskConnection";
-import { useState } from "react";
-import MetaMaskOnboarding from "@metamask/onboarding";
-
+import PayCTA from "../../components/PayCTA";
+import PaymentSection from "../../components/PaymentSection";
+import Header from "../../widgets/Header";
+import style from "./nft.module.scss";
 
 const NFT = () => {
   const router = useRouter();
@@ -53,9 +51,9 @@ const NFT = () => {
       <div className={style.card_content_container}>
         <h2>¿Cómo comprar un NFT?</h2>
         <p>
-        Compra una o varias unidades a través de Paypal o pagando con MATIC
+          Compra una o varias unidades a través de Paypal o pagando con MATIC
           (cada NFT cuesta 20€)
-        </p> 
+        </p>
       </div>
     </div>
   );
@@ -67,7 +65,6 @@ const NFT = () => {
         <p>
           Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo
         </p>
-        
       </div>
     </div>
   );
@@ -84,36 +81,39 @@ const NFT = () => {
   };
 
   return (
-    
     <main>
       <Header onAccountsChanged={handleAccountsChanged} />
       <section className={style.section}>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
-          {!isConnected() && (
-            <FeatureCard content={disconnected_card_content}></FeatureCard>
-          )}
-          {isConnected() && (
-            <FeatureCard content={connected_card_content}></FeatureCard>
-          )}     
+            {!isConnected() && (
+              <FeatureCard content={disconnected_card_content}></FeatureCard>
+            )}
+            {isConnected() && (
+              <FeatureCard content={connected_card_content}></FeatureCard>
+            )}
           </div>
         </div>
         {!isConnected() && (
-            <div className={"text-center " + style.btn_container}>
-               <Button href={"https://docs.google.com/document/d/1aHsFnM6tkibs6I-EfpT_KjOwq-ik8StR89JQeEObqIQ/edit"}>
-                 ¿Cómo crear un wallet?
-              </Button>
-              <div className={"btn " + style.social}>
-                <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+          <div className={"text-center " + style.btn_container}>
+            <Button
+              href={
+                "https://docs.google.com/document/d/1aHsFnM6tkibs6I-EfpT_KjOwq-ik8StR89JQeEObqIQ/edit"
+              }
+              target="_blank"
+            >
+              ¿Cómo crear un wallet?
+            </Button>
+            <div className={"btn " + style.social}>
+              <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
             </div>
           </div>
-          )}
-          {isConnected() && (
-            <div className={"text-center container"}>
+        )}
+        {isConnected() && (
+          <div className={"text-center container"}>
             <PayCTA />
           </div>
-          )}
-        
+        )}
       </section>
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
@@ -125,8 +125,8 @@ const NFT = () => {
             de arte
           </h4>
 
-          {imgLinks.map((entry) => (
-            <img src={entry.src} width="300" height="auto"></img>
+          {imgLinks.map((entry, index) => (
+            <img src={entry.src} key={index} width="300" height="auto" />
           ))}
         </div>
       </section>
@@ -135,13 +135,14 @@ const NFT = () => {
         <div className={"text-center black_background " + style.discover}>
           <h2>CONOCE MÁS SOBRE:</h2>
           <div className={style.link_container}>
-            {links.map((entry) => {
+            {links.map((entry, index) => {
               return (
                 <Link
                   href={entry.link}
                   passHref
                   key={"MainNavbarLink" + entry.key}
                   className="link"
+                  key={index}
                 >
                   <Nav.Link
                     className={
@@ -159,7 +160,7 @@ const NFT = () => {
         </div>
       </section>
       <section className={style.section}>
-        <FeaturesList data="NFT"></FeaturesList>
+        <FeaturesList data="NFT" />
       </section>
       <section
         className={

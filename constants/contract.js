@@ -1,3 +1,13 @@
+export const getAddressUrl = (address) => {
+  return Contract.blockExplorerUrls[0] + "/address/" + address;
+};
+export const getContractUrl = () => {
+  return getAddressUrl(Contract.address);
+};
+export const getTransactionUrl = (transactionHash) => {
+  return Contract.blockExplorerUrls[0] + "/tx/" + transactionHash;
+};
+
 export const Contract = {
   address: "0x87eD5E7E9b2d3FccB9B113A1d15436D15C2ad107",
   rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
