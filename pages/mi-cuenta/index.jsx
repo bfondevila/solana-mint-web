@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
@@ -14,9 +13,10 @@ export default function MyAccount() {
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
 
   const handleAccountsChanged = async (accounts) => {
-    const userAccount = accounts.length > 0 ? accounts[0] : "";
-    setUserWallet(userAccount);
-    setNFTsInWallet(await Promise.all(await getNFTsFromAddress(userAccount)));
+    const userWallet = accounts.length > 0 ? accounts[0] : "";
+    setUserWallet(userWallet);
+
+    setNFTsInWallet(await getNFTsFromAddress(userWallet));
   };
 
   return (
@@ -45,9 +45,7 @@ export default function MyAccount() {
       >
         <div className={"text-center"}>
           <div className={"text-center" + " " + style.paddings}>
-            <h2>
-              Actualmente tienes {NFTsInWallet.length} NFTs en tu monedero
-            </h2>
+            <h2>Actualmente tienes {NFTsInWallet.length} NFT en tu monedero</h2>
             <hr className={style.sep_line}></hr>
             <div className={style.grid_container}>
               <Row>

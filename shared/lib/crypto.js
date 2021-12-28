@@ -22,13 +22,21 @@ const getNFTsFromAddress = async (address) => {
     return [];
   }
 
-  return (await contract.methods.getAllOwnedNFTs(address).call())
-    .map((arr) => {
-      return { ...{ tokenId: arr[0] }, ...arr[1] };
-    })
-    .map((nft) => {
-      return getNFTProperties(nft);
-    });
+  return Promise.all(
+    await contract.methods
+      .getAllOwnedNFTs(address)
+      .call()
+      .then((response) => {
+        return response
+          .map((result) => {
+            return {
+              ...{ tokenId: result.id, tokenURI: result.tokenURI },
+              ...result.properties,
+            };
+          })
+          .map((nft) => getNFTProperties(nft));
+      }),
+  );
 };
 
 /**
@@ -69,10 +77,15 @@ const getNFTProperties = async (properties) => {
     const tokenMetadata = await fetch(getIPFSGateway(properties.tokenURI))
       .then((response) => response.json())
       .then((responseJson) => {
-        return {
-          image: getIPFSGateway(responseJson.image),
-          rarityStr: responseJson.name,
-        };
+        try {
+          return {
+            image: getIPFSGateway(responseJson.image),
+            rarityStr: responseJson.name,
+          };
+        } catch (error) {
+          console.log(error); //not fatal, just image not shown
+          return {};
+        }
       })
       .catch((error) => {
         console.log(error); //not fatal, just image not shown
