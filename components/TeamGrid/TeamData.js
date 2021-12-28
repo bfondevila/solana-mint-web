@@ -35,7 +35,7 @@ const TeamData = [
     profile: "DESARROLLADOR WEB",
   },
   {
-    img: "/images/team/javi.png",
+    img: "/images/team/johnny.png",
     name: "JUAN MANUEL TUÑAS",
     profile: "DESARROLLADOR WEB",
   },

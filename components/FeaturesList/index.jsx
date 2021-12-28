@@ -1,12 +1,13 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import FeaturesData from "../../components/FeaturesList/featuresData";
 import FeatureCard from "./FeatureCard";
+import style from "./feature-card.module.scss";
 
 const FeaturesList = (props) => {
   const features = FeaturesData[props.data];
 
   return (
-    <Container>
+    <Container className={style.feature_container}>
       {features.map((entry, index) => {
         return (
           <FeatureCard

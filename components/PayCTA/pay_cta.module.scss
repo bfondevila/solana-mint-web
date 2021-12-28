@@ -1,3 +1,9 @@
+$breakpoint-mobile: 480px;
+
+.modal {
+  max-width: 700px;
+}
+
 .btn_container {
   margin: 0 auto;
   width: 730px;
@@ -6,7 +12,9 @@
 }
 
 .nftAmountGroup {
+  margin: auto;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .required {
@@ -16,4 +24,80 @@
   margin: 0 10px;
   display: inline-block;
   vertical-align: top;
+}
+
+.flex_container {
+  display: flex;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.toggle_btn {
+  padding: 5px 5px;
+}
+
+.form_header {
+  padding: 20px;
+  font-weight: 300;
+}
+
+.form_container {
+  padding: 40px;
+}
+
+.form_field {
+  font-size: 1.3rem;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.total_purchase_container {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.total_purchase_field {
+  text-decoration: underline 1px;
+  text-underline-offset: 8px;
+  font-size: 1.3rem;
+}
+
+.price {
+  text-align: center;
+}
+
+.mint_btn {
+  box-sizing: border-box;
+  -webkit-box-shadow: 7px 5px 0px 0px #000000;
+  box-shadow: 7px 5px 0px 0px #000000;
+  border: 1px solid;
+  border-radius: 0;
+  padding: 20px 30px;
+  width: 250px;
+  font-size: 20px;
+  letter-spacing: 1.8px;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+.mint_btn-check:checked + .btn-dark {
+  background: white;
+  color: black;
+}
+
+
+@media (max-width: $breakpoint-mobile) {
+  
+  .btn_container {
+    width: 230px; 
+    justify-content: center;
+  }
+
+
 }
