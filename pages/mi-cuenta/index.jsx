@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
@@ -11,10 +12,6 @@ import style from "./micuenta.module.scss";
 export default function MyAccount() {
   const [userWallet, setUserWallet] = useState("");
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
-
-  const isConnected = () => {
-    return userWallet !== "";
-  };
 
   const handleAccountsChanged = async (accounts) => {
     const userAccount = accounts.length > 0 ? accounts[0] : "";
@@ -33,41 +30,40 @@ export default function MyAccount() {
               ? "Accede a tu colección en Opensea: "
               : "Por favor, conecta tu monedero primero."}
           </h4>
-          {!isConnected() && (
-            <div className={"btn " + style.social}>
-              <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
-              {/* <Container>Iconos Sociales</Container> */}
-            </div>
-          )}
-          {isConnected() && (
-            <div>{<OpenseaButton wallet={userWallet}></OpenseaButton>}</div>
-          )}
+          <div className={"btn " + style.social} hidden={userWallet !== ""}>
+            <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+            {/* <Container>Iconos Sociales</Container> */}
+          </div>
+          <div hidden={userWallet === ""}>
+            <OpenseaButton wallet={userWallet}></OpenseaButton>
+          </div>
         </div>
       </section>
-      <section className={style.section + " white_background"}>
+      <section
+        className={style.section + " white_background"}
+        hidden={userWallet === ""}
+      >
         <div className={"text-center"}>
-          {isConnected() && (
-            <div className={"text-center" + " " + style.paddings}>
-              <h2>
-                Actualmente tienes {NFTsInWallet.length} NFTs en tu monedero
-              </h2>
-              <hr className={style.sep_line}></hr>
-              <div className={style.grid_container}>
-                <Row>
-                  {NFTsInWallet.map((nft, index) => {
-                    return (
-                      <NFTSaleItem
-                        imageUrl={nft.image}
-                        rarity={nft.rarity / 10000}
-                        rarityStr={nft.rarityStr}
-                        key={index}
-                      ></NFTSaleItem>
-                    );
-                  })}
-                </Row>
-              </div>
+          <div className={"text-center" + " " + style.paddings}>
+            <h2>
+              Actualmente tienes {NFTsInWallet.length} NFTs en tu monedero
+            </h2>
+            <hr className={style.sep_line}></hr>
+            <div className={style.grid_container}>
+              <Row>
+                {NFTsInWallet.map((nft, index) => {
+                  return (
+                    <NFTSaleItem
+                      imageUrl={nft.image}
+                      rarity={nft.rarity / 10000}
+                      rarityStr={nft.rarityStr}
+                      key={index}
+                    ></NFTSaleItem>
+                  );
+                })}
+              </Row>
             </div>
-          )}
+          </div>
         </div>
       </section>
       <Footer />

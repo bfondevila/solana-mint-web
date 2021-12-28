@@ -104,9 +104,7 @@ const NFT = () => {
             >
               ¿Cómo crear un wallet?
             </Button>
-            <div className={"btn " + style.social}>
-              <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
-            </div>
+            <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
           </div>
         )}
         {isConnected() && (

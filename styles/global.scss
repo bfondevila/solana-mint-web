@@ -38,11 +38,15 @@ h6 {
   margin-bottom: 10px;
 }
 
-.btn {
+button {
+  border: none;
+}
+
+.btn-primary {
   box-sizing: border-box;
   -webkit-box-shadow: 7px 5px 0px 0px #000000;
   box-shadow: 7px 5px 0px 0px #000000;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0;
   padding: 20px 30px;
   width: 350px;
@@ -50,6 +54,15 @@ h6 {
   &:hover {
     border: 1px solid;
     background-color: #ccc;
+  }
+
+  &:disabled {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  &:hover:disabled {
+    border: 1px solid transparent;
   }
 }
 
@@ -96,8 +109,4 @@ h6 {
   &:hover {
     color: gray;
   }
-}
-
-button {
-  border: none;
 }

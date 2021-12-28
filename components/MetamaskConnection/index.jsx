@@ -1,5 +1,6 @@
 import MetaMaskOnboarding from "@metamask/onboarding";
-import React from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import style from "./metamask.module.scss";
 
@@ -8,10 +9,9 @@ const CONNECT_TEXT = "Connect Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
 const MetamaskConnection = (props) => {
-  const [buttonText, setButtonText] = React.useState(ONBOARD_TEXT);
-  const [isDisabled, setDisabled] = React.useState(false);
-  const [accounts, setAccounts] = React.useState([]);
-  const onboarding = React.useRef();
+  const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
+  const [accounts, setAccounts] = useState([]);
+  const onboarding = useRef();
 
   const accountDisplay = (account) => {
     let result;
@@ -68,13 +68,13 @@ const MetamaskConnection = (props) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!onboarding.current) {
       onboarding.current = new MetaMaskOnboarding();
     }
   }, []);
 
-  React.useEffect(async () => {
+  useEffect(async () => {
     const handleChainChanged = (_chainId) => {
       window.location.reload();
     };
@@ -98,26 +98,28 @@ const MetamaskConnection = (props) => {
     }
   }, []);
 
-  React.useEffect(async () => {
+  useEffect(async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
         await switchToContractChain();
         setButtonText(accountDisplay(accounts[0]));
-        setDisabled(true);
         onboarding.current.stopOnboarding();
       } else {
         setButtonText(CONNECT_TEXT);
-        setDisabled(false);
       }
     }
   }, [accounts]);
 
   const onClick = async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then((newAccounts) => handleNewAccounts(newAccounts))
-        .catch(() => window.location.reload());
+      if (accounts.length > 0) {
+        setAccounts([]);
+      } else {
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then((newAccounts) => handleNewAccounts(newAccounts))
+          .catch(() => window.location.reload());
+      }
     } else {
       // redirect to new page to explain how to create Metamask
       if (location.href.split("/").at(-1) != "nft") {
@@ -129,10 +131,17 @@ const MetamaskConnection = (props) => {
   };
 
   return (
-    <button disabled={isDisabled} onClick={onClick}>
+    <Button
+      onClick={onClick}
+      className={
+        style.metamaskButton +
+        " " +
+        (props.displayFullAddress ? style.longDisplay : style.shortDisplay)
+      }
+    >
       <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
       <span>{buttonText}</span>
-    </button>
+    </Button>
   );
 };
 export default MetamaskConnection;
