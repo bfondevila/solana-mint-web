@@ -11,7 +11,7 @@ const featuresData = {
                 estará abierta hasta el 7 de Enero de 2022. ¡Luego no se \
                 venderá nunca más!",
       footer: "Dirección del contrato: 0x265...456",
-      imgSrc: "images/payment_methods.png",
+      imgSrc: "/images/payment_methods.png",
     },
     {
       key: "disenos",
@@ -31,7 +31,7 @@ const featuresData = {
           puedes ver el porcentaje de rarezas de cada obra
         </p>
       ),
-      imgSrc: "images/collage.png",
+      imgSrc: "/images/collage.png",
     },
     {
       key: "causa_social",
@@ -48,7 +48,7 @@ const featuresData = {
           </a>
         </p>
       ),
-      imgSrc: "images/volcan.png",
+      imgSrc: "/images/volcan.png",
     },
     {
       key: "premio_gordo",
@@ -59,7 +59,7 @@ const featuresData = {
       un volcán dormido”, se sorteará la única unidad de NFT Coleccionista formado por los colores oro, plata y bronce y su versión \
       física firmada por Octavio del Toro.",
       footer: "",
-      imgSrc: "images/ganador.png",
+      imgSrc: "/images/ganador.png",
     },
   ],
 
@@ -73,7 +73,7 @@ const featuresData = {
       menos probable que te toquen, haciendo algunas de ellas más “raras” que otras (esto\
       hace que coleccionar un poco más divertido)",
       footer: "",
-      imgSrc: "images/rarities.png",
+      imgSrc: "/images/rarities.png",
     },
     {
       key: "tecnologia",
@@ -81,8 +81,9 @@ const featuresData = {
       content: (
         <>
           <p>Diseño digital: ProCreate en iPad </p>
-          <p>Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
-          Hemp 290g usando tintas pigmentadas minerales.
+          <p>
+            Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
+            Hemp 290g usando tintas pigmentadas minerales.
           </p>
           <p>Blockchain: Polygon</p>
           <p>
@@ -94,7 +95,7 @@ const featuresData = {
         </>
       ),
       footer: "",
-      imgSrc: "images/polygon.png",
+      imgSrc: "/images/polygon.png",
     },
     {
       key: "edicion_exclusiva",
@@ -107,7 +108,7 @@ const featuresData = {
       venta, sortearemos entre todos los participantes el NFT Coleccionista (formado por los colores oro, plata y bronce) y la versión física de la \
       obra.",
       footer: "",
-      imgSrc: "images/exclusive.png",
+      imgSrc: "/images/exclusive.png",
     },
   ],
   causa: [
