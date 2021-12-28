@@ -20,10 +20,12 @@ import NumberFormat from "../../shared/lib/NumberFormat";
 import MetamaskConnection from "../MetamaskConnection";
 import style from "./pay_cta.module.scss";
 
+const defaultNFTAmount = 1;
+
 const PayCTA = () => {
   const [show, setShow] = useState(false);
-  const orderDetails = useRef({ amount: 0, userWallet: "" });
-  const [NFTAmount, setNFTAmount] = useState(1);
+  const orderDetails = useRef({ amount: defaultNFTAmount, userWallet: "" });
+  const [NFTAmount, setNFTAmount] = useState(defaultNFTAmount);
   const [userWallet, setUserWallet] = useState("");
   const [modalTitle, setModalTitle] = useState();
   const [platform, setPlatform] = useState();
