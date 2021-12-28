@@ -1,5 +1,4 @@
-import { Col, Container, Row, Button, Card } from "react-bootstrap";
-import { PROJECT_NAME } from "../../constants/common";
+import { Card, Col, Row } from "react-bootstrap";
 import style from "./feature-card.module.scss";
 
 const FeatureCard = (props) => {

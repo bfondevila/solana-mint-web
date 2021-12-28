@@ -22,12 +22,12 @@ const featuresData = {
                 otras (esto hace que coleccionar un poco más divertido). \
                 ",
       footer: (
-        <div>
+        <>
           <a className="black_link" href="/coleccion">
             En esta página
           </a>{" "}
           puedes ver el porcentaje de rarezas de cada obra
-        </div>
+        </>
       ),
       imgSrc: "images/collage.png",
     },
@@ -39,12 +39,12 @@ const featuresData = {
       La Palma, se donará el 80% de la recaudación al Cabildo \
       de La Palma.",
       footer: (
-        <div>
+        <>
           Lee nuestro manifiesto{" "}
           <a className="black_link" href="/causa">
             aquí
           </a>
-        </div>
+        </>
       ),
       imgSrc: "images/volcan.png",
     },
@@ -77,13 +77,13 @@ const featuresData = {
       key: "tecnologia",
       header: "TECNOLOGÍA",
       content: (
-        <div>
+        <>
           Diseño digital: ProCreate en iPad<br></br>
           Cuadro físico: lámina 46x54cm en papel Hahnemühle <br></br>
           Hemp 290g usando tintas pigmentadas minerales. <br></br>
           Blockchain: Polygon <br></br>
           Smart contract: 0x24214124a <br></br>
-        </div>
+        </>
       ),
       footer: "",
       imgSrc: "images/polygon.png",
@@ -108,7 +108,7 @@ const featuresData = {
       header:
         "Los objetivos del proyecto “Estrella sobre un volcán dormido” son:",
       content: (
-        <div>
+        <>
           Promover el arte local canario mediante la tecnología blockchain;
           <br></br>
           Democratizar el acceso a la compra de una obra digital a usuarios que
@@ -117,7 +117,7 @@ const featuresData = {
           y digitales limitadas de la colección;<br></br>
           Visibilizar y apoyar acciones solidarias para los afectados por el
           volcán de La Palma.<br></br>
-        </div>
+        </>
       ),
       footer: "",
       imgSrc: "",
