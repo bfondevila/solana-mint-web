@@ -12,9 +12,9 @@ import {
 import { Contract } from "../../constants/contract";
 import { PAYPAL_CLIENT_ID, PRICE_PER_NFT } from "../../constants/payment";
 import {
+  calculatePricePerNFT,
   getMintData,
-  getPricePerNFT,
-  getPricePerNFTInWei,
+  getPublicInfo,
 } from "../../shared/lib/Crypto";
 import NumberFormat from "../../shared/lib/NumberFormat";
 import MetamaskConnection from "../MetamaskConnection";
@@ -23,7 +23,7 @@ import style from "./pay_cta.module.scss";
 const PayCTA = () => {
   const [show, setShow] = useState(false);
   const orderDetails = useRef({ amount: 0, userWallet: "" });
-  const [NFTAmount, setNFTAmount] = useState(0);
+  const [NFTAmount, setNFTAmount] = useState(1);
   const [userWallet, setUserWallet] = useState("");
   const [modalTitle, setModalTitle] = useState();
   const [platform, setPlatform] = useState();
@@ -112,9 +112,11 @@ const PayCTA = () => {
     setMintInProgress(false);
   };
 
-  useEffect(async () => {
-    setMaticPerNFT(await getPricePerNFT());
-    setMaticPerNFTInWei(await getPricePerNFTInWei());
+  useEffect(() => {
+    getPublicInfo().then(({ nftPrice }) => {
+      setMaticPerNFTInWei(nftPrice);
+      setMaticPerNFT(calculatePricePerNFT(nftPrice));
+    });
   }, []);
 
   const createOrder = (data, actions) => {
