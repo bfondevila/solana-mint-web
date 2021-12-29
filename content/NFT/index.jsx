@@ -33,7 +33,7 @@ const NFT = () => {
       img: "/images/collection/morado-negro-blanco.png",
       rarity: 0.12,
     },
-  ]
+  ];
 
   const links = [
     {
@@ -90,7 +90,7 @@ const NFT = () => {
   return (
     <main>
       <Header onAccountsChanged={handleAccountsChanged} />
-      <section className={style.section}>
+      <section>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
             {!isConnected() && (
@@ -130,19 +130,19 @@ const NFT = () => {
             de arte:
           </h3>
           <Row>
-      {nftRarityExamples.map((item, index) => {
-        return (
-          <NFTSaleItem
-            imageUrl={item.img}
-            rarity={item.rarity}
-            unique={item.unique}
-            index={index}
-            key={index}
-            cleanDesign={true}
-          />
-        );
-      })}
-    </Row>
+            {nftRarityExamples.map((item, index) => {
+              return (
+                <NFTSaleItem
+                  imageUrl={item.img}
+                  rarity={item.rarity}
+                  unique={item.unique}
+                  index={index}
+                  key={index}
+                  cleanDesign={true}
+                />
+              );
+            })}
+          </Row>
         </div>
       </section>
 
@@ -178,9 +178,7 @@ const NFT = () => {
         <FeaturesList data="NFT" />
       </section>
       <section
-        className={
-          "text-center " + style.section + " " + style.paddings
-        }
+        className={"text-center " + style.section + " " + style.paddings}
       >
         <PaymentSection />
       </section>
