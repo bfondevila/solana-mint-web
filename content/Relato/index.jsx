@@ -1,26 +1,22 @@
+import { Container, Row, Col, Image } from "react-bootstrap";
 import PaymentSection from "../../components/PaymentSection";
 import style from "./relato.module.scss";
 
 const Relato = () => {
   return (
     <main>
-      <section className={style.section}>
-        <div className={"text-center" + " " + style.paddings}>
-          <img
-            src="/images/anelio.jpeg"
-            width="500p"
-            height="auto"
-            className={"center " + style.img_container}
-          ></img>
-          <h1>La isla de La Palma, el volcán y los Enanos</h1>
-          <h3>El relato detrás de la ceniza</h3>
-          <h5>por Anelio Rodríguez Concepción</h5>
-        </div>
-      </section>
+      <Container>
+        <Row className={style.section + " text-center"} as="section">
+          <Col>
+            <Image src="/images/anelio.jpeg" fluid />
+            <h1>La isla de La Palma, el volcán y los Enanos</h1>
+            <h3>El relato detrás de la ceniza</h3>
+            <h5>por Anelio Rodríguez Concepción</h5>
+          </Col>
+        </Row>
 
-      <section className={style.white_background}>
-        <div className={style.introduction_container}>
-          <div className={style.introduction}>
+        <Row as="section">
+          <Col>
             <p>
               En La Palma no hace mucho explotó un volcán, el último hasta ahora
               de una larga serie que descuella en el paisaje cambiante. Irrumpió
@@ -60,13 +56,15 @@ const Relato = () => {
               con imaginar cómo se disipan el vacío y el fuego en un inagotable
               surtidor de esperanza.
             </p>
-          </div>
-        </div>
-      </section>
+          </Col>
+        </Row>
 
-      <section className={"text-center " + style.paddings_plus}>
-        <PaymentSection />
-      </section>
+        <section
+          className={"text-center " + style.section + " " + style.paddings}
+        >
+          <PaymentSection />
+        </section>
+      </Container>
     </main>
   );
 };
