@@ -8,7 +8,7 @@ const featuresData = {
       content:
         "Fácil y rápido. Recibe tu NFT en tu wallet y si no tienes te \
                 explicamos cómo crearte uno. La venta de esta colección \
-                estará abierta hasta el 7 de Enero de 2022. ¡Luego no se \
+                estará abierta hasta el 16 de Enero de 2022. ¡Luego no se \
                 venderá nunca más!",
       imgSrc: "/images/payment_methods.png",
     },
@@ -104,7 +104,7 @@ const featuresData = {
       header: "EDICIÓN EXCLUSIVA",
       content:
         "El número de unidades a vender es ilimitado  \
-      pero la colección estará abierta hasta el 7 de \
+      pero la colección estará abierta hasta el 16 de \
       Enero de 2022. Luego, nunca más se volverán a \
       vender nuevas unidades. Cuando finalice la \
       venta, sortearemos entre todos los participantes el NFT Coleccionista (formado por los colores oro, plata y bronce) y la versión física de la \
