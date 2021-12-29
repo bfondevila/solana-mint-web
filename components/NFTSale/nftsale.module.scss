@@ -20,6 +20,7 @@
   padding: 20px;
 }
 
+.collector_card,
 .gold_card,
 .white_card,
 .gray_card {
@@ -32,16 +33,25 @@
   background-color: #eee;
 }
 
+.collector_card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(244, 212, 125, 1) 35%,
+    rgba(254, 185, 0, 1) 100%
+  );
+}
+
 .gold_card {
   background-color: #f4d47d;
 }
 
 .metal_card {
-  background-color: #999999;
+  background-color: #7c6887;
 }
 
 .bronze_card {
-  background-color: #7c6887;
+  background-color: #999999;
 }
 
 .card_body {

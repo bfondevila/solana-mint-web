@@ -42,7 +42,7 @@ const NFTSaleItem = (props) => {
       return style.gold_card;
     }
     if (rarity < 0.001) {
-      return style.gold_card;
+      return style.collector_card;
     }
   };
 
