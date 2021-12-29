@@ -1,4 +1,3 @@
-import { PROJECT_NAME } from "../../constants/common.js";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -50,7 +49,7 @@ const Header = (props) => {
   //  <FontAwesomeIcon icon={faInstagram} />
 
   return (
-    <Navbar className={style.header_container} bg="light" expand="lg" collapseOnSelect>
+    <Navbar className={style.header_container} bg="light" expand="lg">
       <Container>
         <Navbar.Brand>
           <img
@@ -62,26 +61,26 @@ const Header = (props) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className={style.button_access}>
-          {links.map((entry) => {
-            return (
-              <Link
-                href={entry.link}
-                passHref
-                key={"MainNavbarLink" + entry.key}
-              >
-                <Nav.Link
-                  className={entry.link === router.pathname ? "active" : ""}
+          <Nav className={style.button_access}>
+            {links.map((entry) => {
+              return (
+                <Link
+                  href={entry.link}
+                  passHref
+                  key={"MainNavbarLink" + entry.key}
                 >
-                  {entry.name ?? entry.key}
-                </Nav.Link>
-              </Link>
-            );
-          })}
-        </Nav>
-        <div className={"btn " + style.social}>
-          <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
-        </div>
+                  <Nav.Link
+                    className={entry.link === router.pathname ? "active" : ""}
+                  >
+                    {entry.name ?? entry.key}
+                  </Nav.Link>
+                </Link>
+              );
+            })}
+          </Nav>
+          <div className={"btn " + style.social}>
+            <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
