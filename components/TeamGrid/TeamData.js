@@ -27,7 +27,12 @@ const TeamData = [
   {
     img: "/images/team/brunof.png",
     name: "BRUNO FONDEVILA RODRÍGUEZ",
-    profile: "DESARROLLADOR BLOCKCHAIN",
+    profile: "DESARROLLADOR BLOCKCHAIN / WEB",
+  },
+  {
+    img: "/images/team/huseyin.png",
+    name: "HUSEYIN KOMBAYCI",
+    profile: "DESARROLLADOR BLOCKCHAIN / WEB",
   },
   {
     img: "/images/team/pedro.png",
@@ -37,11 +42,6 @@ const TeamData = [
   {
     img: "/images/team/johnny.png",
     name: "JUAN MANUEL TUÑAS",
-    profile: "DESARROLLADOR WEB",
-  },
-  {
-    img: "/images/team/huseyin.png",
-    name: "HUSEYIN KOMBAYCI",
     profile: "DESARROLLADOR WEB",
   },
   {

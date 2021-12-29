@@ -6,8 +6,8 @@
   font-size: 16px;
   font-weight: 600;
   text-align: left;
-  color: white;
-  letter-spacing:  1.8px;
+  color: black;
+  letter-spacing: 1.8px;
 }
 
 .team_card_title {
@@ -15,8 +15,8 @@
 }
 
 .card_body {
-  height: 100px;
-  padding: 20px 0;
+  height: 125px;
+  padding: 10px 0 0 0;
 }
 
 .team_grid_cell {
@@ -25,4 +25,4 @@
 
 .gold_card {
   background-color: #f4d47d;
-  }
+}

@@ -1,7 +1,6 @@
-import { Col, Container, Row, Button } from "react-bootstrap";
-import TeamMemberCard from "./TeamMemberCard";
+import { Container, Row } from "react-bootstrap";
 import TeamData from "../../components/TeamGrid/TeamData";
-import style from "./team-card.module.scss";
+import TeamMemberCard from "./TeamMemberCard";
 
 const TeamGrid = () => {
   const teamData = TeamData;

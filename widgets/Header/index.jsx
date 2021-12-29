@@ -60,7 +60,7 @@ const Header = (props) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+          <Nav className={style.navCentered}>
             {links.map((entry) => {
               return (
                 <Link
