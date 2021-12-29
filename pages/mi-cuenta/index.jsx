@@ -53,7 +53,7 @@ export default function MyAccount() {
                   return (
                     <NFTSaleItem
                       imageUrl={nft.image}
-                      rarity={nft.rarity / 10000}
+                      rarity={nft.rarity / 1000}
                       rarityStr={nft.rarityStr}
                       key={index}
                     ></NFTSaleItem>
