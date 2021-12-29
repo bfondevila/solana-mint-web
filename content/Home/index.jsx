@@ -52,18 +52,15 @@ const Home = () => {
 
       <section className={style.section}>
         <div className={"text-center black_background " + style.discover}>
-          <div>
-            <span className="black_banner_text">
-              VALIDADO LEGALMENTE <br></br>
-              POR LOCOVERA
-            </span>
-          </div>
+
           <div>
             <span>
-              DESCUBRE MÁS <br></br>
-              <a className="link" href="https://octaviodeltoro.com">
-                OCTAVIO DEL TORO
-              </a>
+              <h5>
+                DESCUBRE MÁS <br></br>
+                <a className="link" href="https://octaviodeltoro.com">
+                  OCTAVIO DEL TORO
+                </a>
+              </h5>
             </span>
           </div>
         </div>
