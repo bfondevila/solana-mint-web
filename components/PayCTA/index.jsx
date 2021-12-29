@@ -307,7 +307,12 @@ const PayCTA = () => {
       </Modal>
 
       <Row>
-        <Container className="d-flex flex-column flex-md-row justify-content-center">
+        <Container
+          className={
+            style.paymentOptionsWrapper +
+            "d-flex flex-column flex-md-row justify-content-center"
+          }
+        >
           <Button onClick={paypalClicked} className="mx-md-2 mb-2">
             PAGAR CON PAYPAL
           </Button>

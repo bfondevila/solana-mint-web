@@ -95,6 +95,11 @@ $breakpoint-mobile: 480px;
   font-size: 80%;
 }
 
+.paymentOptionsWrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: $breakpoint-mobile) {
   .btn_container {
     width: 230px;
