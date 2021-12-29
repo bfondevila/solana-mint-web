@@ -34,10 +34,7 @@
 }
 
 .discover {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 157.42px;
+  padding: 30px;
 }
 
 .pay_section {
@@ -69,4 +66,8 @@
 
 .white_background {
   background: #fff;
+}
+
+.saleStats {
+  align-self: center;
 }
