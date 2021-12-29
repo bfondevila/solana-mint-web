@@ -41,7 +41,7 @@ const Home = () => {
             className={style.flexCol}
           >
             <video width="300px" height="auto" controls>
-              <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
+              <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
             </video>
           </Col>
         </Row>
