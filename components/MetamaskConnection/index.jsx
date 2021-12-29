@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import style from "./metamask.module.scss";
 
-const ONBOARD_TEXT = "Click here to install MetaMask!";
-const CONNECT_TEXT = "Connect Wallet";
+const ONBOARD_TEXT = "Instalar wallet MetaMask!";
+const CONNECT_TEXT = "Conectar Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
 const MetamaskConnection = (props) => {

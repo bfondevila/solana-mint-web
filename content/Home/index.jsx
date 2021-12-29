@@ -11,7 +11,7 @@ const Home = () => {
         <Row as="section">
           <Col className={`text-center ${style.section}`} fluid>
             <h1>Colección Afectados por Volcán de La Palma</h1>
-            <h4>Obten un pedazo de arte digital de la historia palmera</h4>
+            <h4>El NFT solidario de Octavio del Toro</h4>
           </Col>
         </Row>
 
@@ -33,7 +33,7 @@ const Home = () => {
                     La colección “Estrella sobre un volcán dormido” es una
                     fusión de arte físico y digital mezclando la democratización
                     de la tecnología blockchain, la promoción del arte local
-                    canario y el apoyo económico a una causa social de los
+                    canario y el apoyo económico a una causa social para los
                     afectados por el volcán palmero.
                   </p>
                 </div>
@@ -42,6 +42,15 @@ const Home = () => {
                 <Button className={style.btnFullWidth + " mb-4"} href={"/nft"}>
                   COMPRAR NFT POR 20€ O 10 MATIC
                 </Button>
+
+                <div>
+                  <video width="300p" height="auto" controls>
+                    <source
+                      src="videos/LaPalma_9x16.mp4"
+                      type="video/mp4"
+                    ></source>
+                  </video>
+                </div>
               </Col>
             </Row>
           </Col>
@@ -70,20 +79,12 @@ const Home = () => {
 
         <section className={style.section}>
           <div className={"text-center black_background " + style.discover}>
-            <div>
-              <span className="black_banner_text">
-                VALIDADO LEGALMENTE <br></br>
-                POR LOCOVERA
-              </span>
-            </div>
-            <div>
-              <span>
-                DESCUBRE MÁS <br></br>
-                <a className="link" href="https://octaviodeltoro.com">
-                  OCTAVIO DEL TORO
-                </a>
-              </span>
-            </div>
+            <p>
+              DESCUBRE MÁS <br></br>
+              <a className="link" href="https://octaviodeltoro.com">
+                OCTAVIO DEL TORO
+              </a>
+            </p>
           </div>
         </section>
 
