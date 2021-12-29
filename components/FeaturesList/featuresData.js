@@ -80,17 +80,20 @@ const featuresData = {
       header: "TECNOLOGÍA",
       content: (
         <>
-          <p>Diseño digital: ProCreate en iPad </p>
           <p>
-            Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
-            Hemp 290g usando tintas pigmentadas minerales.
-          </p>
-          <p>Blockchain: Polygon</p>
-          <p>
-            Smart contract:{" "}
-            <a href={getContractUrl()} target="_blank">
-              {Contract.address}
-            </a>
+            <ul>
+            <li>Diseño digital: ProCreate en iPad </li>
+            <li>
+              Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
+              Hemp 290g usando tintas pigmentadas minerales
+            </li>
+            <li>Blockchain: Polygon</li>
+            <li>
+              <a href={getContractUrl()} target="_blank">
+                {"Smart contract"}
+              </a>
+            </li>
+            </ul>
           </p>
         </>
       ),
