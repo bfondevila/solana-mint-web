@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 import MetamaskConnection from "../../components/MetamaskConnection";
 
 import style from "./header.module.scss";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faTwitterSquare, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Header = (props) => {
   const router = useRouter();
@@ -44,24 +42,25 @@ const Header = (props) => {
     },
   ];
 
-  // NOT WORKING: Iconos Sociales. Instalar paquetes FontAwesome
-  //  <FontAwesomeIcon icon={faTwitterSquare} />
-  //  <FontAwesomeIcon icon={faInstagram} />
-
   return (
-    <Navbar className={style.header_container} bg="light" expand="lg">
+    <Navbar
+      className={style.header_container}
+      bg="light"
+      expand="lg"
+      collapseOnSelect
+    >
       <Container>
         <Navbar.Brand>
           <img
             src="/images/logo.png"
-            width="200p"
+            width="200px"
             height="auto"
             className="center"
           ></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className={style.button_access}>
+          <Nav>
             {links.map((entry) => {
               return (
                 <Link
@@ -77,10 +76,8 @@ const Header = (props) => {
                 </Link>
               );
             })}
-          </Nav>
-          <div className={"btn " + style.social}>
             <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
-          </div>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
