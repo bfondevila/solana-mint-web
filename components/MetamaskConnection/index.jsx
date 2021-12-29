@@ -112,9 +112,7 @@ const MetamaskConnection = (props) => {
 
   const onClick = async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      if (accounts.length > 0) {
-        setAccounts([]);
-      } else {
+      if (accounts.length == 0) {
         window.ethereum
           .request({ method: "eth_requestAccounts" })
           .then((newAccounts) => handleNewAccounts(newAccounts))
@@ -132,6 +130,7 @@ const MetamaskConnection = (props) => {
 
   return (
     <Button
+      disabled={accounts.length > 0 && !props.displayWithLink}
       onClick={onClick}
       className={
         style.metamaskButton +
