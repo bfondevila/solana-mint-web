@@ -16,7 +16,9 @@ export default function MyAccount() {
     const userWallet = accounts.length > 0 ? accounts[0] : "";
     setUserWallet(userWallet);
 
-    setNFTsInWallet(await getNFTsFromAddress(userWallet));
+    const myNFTs = await getNFTsFromAddress(userWallet);
+    myNFTs.sort((a, b) => a.rarity - b.rarity);
+    setNFTsInWallet(myNFTs);
   };
 
   return (
