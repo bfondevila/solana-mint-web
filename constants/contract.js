@@ -275,6 +275,19 @@ export const Contract = {
       type: "function",
     },
     {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "burn",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
       inputs: [],
       name: "fee",
       outputs: [
@@ -378,6 +391,11 @@ export const Contract = {
             {
               internalType: "uint256",
               name: "lastMinted",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "tokensBurned",
               type: "uint256",
             },
             {
@@ -838,6 +856,19 @@ export const Contract = {
           internalType: "string",
           name: "",
           type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "tokensBurned",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
         },
       ],
       stateMutability: "view",
