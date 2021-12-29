@@ -103,9 +103,6 @@ const NFTSale = (props) => {
     },
   ];
 
-
-
-
   return (
     <Row>
       {nftRarityExamples.map((item, index) => {

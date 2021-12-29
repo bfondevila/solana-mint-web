@@ -32,7 +32,6 @@ export default function MyAccount() {
           </h4>
           <div className={"btn " + style.social} hidden={userWallet !== ""}>
             <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
-            {/* <Container>Iconos Sociales</Container> */}
           </div>
           <div hidden={userWallet === ""}>
             <OpenseaButton wallet={userWallet}></OpenseaButton>
@@ -53,7 +52,7 @@ export default function MyAccount() {
                   return (
                     <NFTSaleItem
                       imageUrl={nft.image}
-                      rarity={nft.rarity / 10000}
+                      rarity={nft.rarity / 1000}
                       rarityStr={nft.rarityStr}
                       key={index}
                       cleanDesign={false}

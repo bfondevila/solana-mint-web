@@ -30,16 +30,16 @@ const NFTSaleItem = (props) => {
 
   const getRarityStyle = (rarity) => {
     if (rarity >= 0.1) {
-      return style.gold_card;
+      return style.white_card;
     }
     if (0.04 <= rarity && rarity <= 0.05) {
-      return style.gold_card;
+      return style.bronze_card;
     }
     if (0.01 <= rarity && rarity <= 0.02) {
-      return style.bronce_card;
+      return style.metal_card;
     }
     if (0.001 <= rarity && rarity <= 0.005) {
-      return style.metal_card;
+      return style.gold_card;
     }
     if (rarity < 0.001) {
       return style.gold_card;
@@ -62,7 +62,7 @@ const NFTSaleItem = (props) => {
           ) : (
             <Card.Body className={style.card_body}>
               <Card.Title className={style.card_text}>
-                #{index}. {getRarityStr(rarity)}
+                {getRarityStr(rarity)}
               </Card.Title>
               <p className={style.rarityValue}>{rarityFormat(rarity)}</p>
             </Card.Body>

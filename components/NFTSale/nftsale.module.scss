@@ -4,11 +4,12 @@
 }
 
 .card_text {
-  letter-spacing:  1.8px;
-  font-size: 24px;
+  letter-spacing: 0.8px;
+  font-size: 18px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   color: white;
+  margin-bottom: 0;
 }
 
 .card_container {
@@ -19,22 +20,33 @@
   padding: 20px;
 }
 
+.gold_card,
+.white_card,
+.gray_card {
+  .card_text {
+    color: #333;
+  }
+}
+
+.white_card {
+  background-color: #eee;
+}
+
 .gold_card {
-background-color: #f4d47d;
+  background-color: #f4d47d;
 }
 
 .metal_card {
-background-color: #999999;
+  background-color: #999999;
 }
 
-.bronce_card {
-background-color: #7c6887;
+.bronze_card {
+  background-color: #7c6887;
 }
-
 
 .card_body {
-  margin-top: 5px;
-  height: 40px;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .team_grid_cell {
@@ -49,6 +61,6 @@ background-color: #7c6887;
   background: #fff;
   top: 10px;
   right: 10px;
-  letter-spacing:  1.8px;
+  letter-spacing: 1.8px;
   font-size: 18px;
 }
