@@ -4,24 +4,5 @@
 
 .header_container {
   border-bottom: 1px solid black;
-  height: 90px;
   background-color: white;
-
-  .button_access {
-    width: 800px;
-    justify-content: space-around;
-  }
-
-  .social {
-    display: flex;
-    width: auto;
-    box-shadow: 2px 2px 0px 0px #000000;
-    padding: unset;
-
-    & > button {
-      padding: 7px 14px;
-      background-color: white;
-      letter-spacing: 1px;
-    }
-  }
 }

@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import {
   Alert,
   Button,
-  Container,
   Modal,
   ToggleButton,
   ToggleButtonGroup,
+  Container,
+  Row,
 } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { PAYPAL_CLIENT_ID, PRICE_PER_NFT } from "../../constants/payment";
@@ -304,10 +305,17 @@ const PayCTA = () => {
           )}
         </Modal.Body>
       </Modal>
-      <div className={"text-center " + style.btn_container}>
-        <Button onClick={paypalClicked}>PAGAR CON PAYPAL</Button>
-        <Button onClick={maticClicked}>PAGAR CON MATIC</Button>
-      </div>
+
+      <Row>
+        <Container className="d-flex flex-column flex-md-row justify-content-center">
+          <Button onClick={paypalClicked} className="mx-md-2 mb-2">
+            PAGAR CON PAYPAL
+          </Button>
+          <Button onClick={maticClicked} className="mx-md-2 mb-2">
+            PAGAR CON MATIC
+          </Button>
+        </Container>
+      </Row>
     </>
   );
 };

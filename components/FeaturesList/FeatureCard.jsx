@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row, Image } from "react-bootstrap";
 import style from "./feature-card.module.scss";
 
 const FeatureCard = (props) => {
@@ -33,7 +33,11 @@ const FeatureCard = (props) => {
       </Col>
       {props.imgSrc && (
         <Col sm={12} md={6} className={style.flex_col}>
-          <img className={style.feature_img} src={props.imgSrc} />
+          <Image
+            className={style.feature_img + " mt-5 mt-md-0"}
+            src={props.imgSrc}
+            fluid
+          />
         </Col>
       )}
     </Row>
