@@ -15,62 +15,51 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className={style.section} as="section">
-          <Col xs={12} md={7}>
-            <Row>
-              <Col xs={12}>
-                <div className={style.introduction}>
-                  <h3>ESTRELLA BAJO UN VOLCÁN DORMIDO</h3>
-                  <h4>OCTAVIO DEL TORO</h4>
-                  <p>
-                    Apoya el arte canario y a los afectados del volcán de La
-                    Palma con la compra de un NFT. Puedes ser dueño de una
-                    exclusiva pieza de arte digital donde el 80% de la
-                    recaudación se destinará a los afectados por el volcán de La
-                    Palma.
-                  </p>
-                  <p>
-                    La colección “Estrella sobre un volcán dormido” es una
-                    fusión de arte físico y digital mezclando la democratización
-                    de la tecnología blockchain, la promoción del arte local
-                    canario y el apoyo económico a una causa social para los
-                    afectados por el volcán palmero.
-                  </p>
-                </div>
-              </Col>
-              <Col xs={{ order: "first", size: 12 }} md={{ order: "last" }}>
-                <Button className={style.btnFullWidth + " mb-4"} href={"/nft"}>
-                  COMPRAR NFT POR 20€ O 10 MATIC
-                </Button>
-
-                <div>
-                  <video width="300p" height="auto" controls>
-                    <source
-                      src="videos/LaPalma_9x16.mp4"
-                      type="video/mp4"
-                    ></source>
-                  </video>
-                </div>
-              </Col>
-            </Row>
+        <Row as="section" className={"my-sm-4"}>
+          <Col xs={12} lg={7}>
+            <div className={style.introduction}>
+              <h3 className="pt-3 pt-xs-0">ESTRELLA BAJO UN VOLCÁN DORMIDO</h3>
+              <h4>OCTAVIO DEL TORO</h4>
+              <p>
+                Apoya el arte canario y a los afectados del volcán de La Palma
+                con la compra de un NFT. Puedes ser dueño de una exclusiva pieza
+                de arte digital donde el 80% de la recaudación se destinará a
+                los afectados por el volcán de La Palma.
+              </p>
+              <p>
+                La colección “Estrella sobre un volcán dormido” es una fusión de
+                arte físico y digital mezclando la democratización de la
+                tecnología blockchain, la promoción del arte local canario y el
+                apoyo económico a una causa social para los afectados por el
+                volcán palmero.
+              </p>
+            </div>
           </Col>
           <Col
-            xs={{ order: "first", size: "12" }}
-            md={{ order: "last", size: "5" }}
+            xs={{ order: "first", size: 12 }}
+            lg={{ order: "last", size: 5 }}
             className={style.flexCol}
           >
-            <div>
-              <Image
-                src="/images/collection/azul-blanco-negro.png"
-                className={style.heroImage}
-                fluid="xs"
-              />
-            </div>
+            <video width="300px" height="auto" controls>
+              <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
+            </video>
           </Col>
         </Row>
 
         <Row as="section">
-          <Col className={style.section}>
+          <Col xs={12} lg={4}>
+            <div className="text-center">
+              <Image
+                src="/images/collection/azul-blanco-negro.png"
+                className={style.heroImage + " my-2"}
+                fluid="xs"
+              />
+              <Button className={style.btnFullWidth + " my-2"} href={"/nft"}>
+                COMPRAR NFT POR 20€ O 10 MATIC
+              </Button>
+            </div>
+          </Col>
+          <Col xs={12} lg={8} className={style.section + " " + style.saleStats}>
             <div className="text-center">
               <NFTSaleStats />
             </div>
@@ -79,8 +68,8 @@ const Home = () => {
 
         <section className={style.section}>
           <div className={"text-center black_background " + style.discover}>
+            <p>DESCUBRE MÁS</p>
             <p>
-              DESCUBRE MÁS <br></br>
               <a className="link" href="https://octaviodeltoro.com">
                 OCTAVIO DEL TORO
               </a>
