@@ -5,27 +5,70 @@ import style from "./nftsale.module.scss";
 
 const NFTSaleItem = (props) => {
   const rarity = props.rarity;
-  const rarityStr = props.rarityStr;
+  const imageUrl = props.imageUrl;
+  const index = props.index;
 
   const rarityFormat = NumberFormat().rarity;
+
+  const getRarityStr = (rarity) => {
+    if (rarity >= 0.1) {
+      return "COMÚN";
+    }
+    if (0.04 <= rarity && rarity <= 0.05) {
+      return "RARO";
+    }
+    if (0.01 <= rarity && rarity <= 0.02) {
+      return "ÉPICO";
+    }
+    if (0.001 <= rarity && rarity <= 0.005) {
+      return "LEGENDARIO";
+    }
+    if (rarity < 0.001) {
+      return "COLECCIONISTA";
+    }
+  };
+
+  const getRarityStyle = (rarity) => {
+    if (rarity >= 0.1) {
+      return style.gold_card;
+    }
+    if (0.04 <= rarity && rarity <= 0.05) {
+      return style.gold_card;
+    }
+    if (0.01 <= rarity && rarity <= 0.02) {
+      return style.bronce_card;
+    }
+    if (0.001 <= rarity && rarity <= 0.005) {
+      return style.metal_card;
+    }
+    if (rarity < 0.001) {
+      return style.gold_card;
+    }
+  };
 
   return (
     <Col className={style.wrap} xs={6} md={4}>
       {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-      <Card>
-        <Card.Img
-          variant="top"
-          src={props.imageUrl}
-          alt={"NFT tres enanos de rareza " + rarity}
-          fluid="true"
-        />
-        <Card.Body className={style.card_body + " " + props.rarityStr}>
-          <Card.Title className={style.team_card_title}>{rarityStr}</Card.Title>
-          <Card.Text className={style.team_card_text}>
-            {rarityFormat(rarity)}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+      <div className={style.card_container}>
+        <Card className={style.card + " " + getRarityStyle(rarity)}>
+          <Card.Img
+            variant="top"
+            src={imageUrl}
+            alt={"NFT tres enanos de rareza " + rarity}
+            fluid={true}
+          />
+          {props.cleanDesign ? (
+            <Card.Body></Card.Body>
+          ) : (
+            <Card.Body className={style.card_body}>
+              <Card.Title className={style.card_text}>
+                #{index}. {getRarityStr(rarity)}
+              </Card.Title>
+              <p className={style.rarityValue}>{rarityFormat(rarity)}</p>
+            </Card.Body>
+          )}
+        </Card>
+      </div>
     </Col>
   );
 };

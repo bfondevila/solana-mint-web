@@ -1,11 +1,28 @@
+.card {
+  padding: 20px;
+}
+
 .team_card_text {
   font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: white;
+  letter-spacing:  1.8px;
+}
+
+.team_card_title {
+  font-size: 20px;
 }
 
 .card_body {
   height: 100px;
+  padding: 20px 0;
 }
 
 .team_grid_cell {
   margin-bottom: 15px;
 }
+
+.gold_card {
+  background-color: #f4d47d;
+  }

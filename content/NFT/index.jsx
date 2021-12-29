@@ -1,32 +1,39 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { Button, Nav } from "react-bootstrap";
+import { Button, Nav, Row } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
 import MetamaskConnection from "../../components/MetamaskConnection";
 import PayCTA from "../../components/PayCTA";
+import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import PaymentSection from "../../components/PaymentSection";
+
 import Header from "../../widgets/Header";
 import style from "./nft.module.scss";
 
 const NFT = () => {
   const router = useRouter();
 
-  const imgLinks = [
+  const nftRarityExamples = [
     {
-      src: "/images/collection/blanco-verde-bronce.png",
-      background: "#999999",
+      img: "/images/collection/blanco-verde-bronce.png",
+      rarity: 0.005,
+      unique: true,
     },
     {
-      src: "/images/collection/morado-azul-bronce.png",
-      background: "#7c6887",
+      img: "/images/collection/morado-azul-bronce.png",
+      rarity: 0.005,
     },
     {
-      src: "/images/collection/blanco-verde-bronce.png",
-      background: "#f4d47d",
+      img: "/images/collection/blanco-verde-bronce.png",
+      rarity: 0.005,
     },
-  ];
+    {
+      img: "/images/collection/morado-negro-blanco.png",
+      rarity: 0.12,
+    },
+  ]
 
   const links = [
     {
@@ -115,17 +122,27 @@ const NFT = () => {
       </section>
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
-          <h4 className={style.justify_text}>
+          <h3 className={style.justify_text}>
             La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
             digital diseñadas por el pintor canario Octavio del Toro. Con un
             trasfondo social y cultural, el uso de la tecnología blockchain
             permite que cualquier persona pueda ser dueño de una exclusiva pieza
             de arte:
-          </h4>
-
-          {imgLinks.map((entry, index) => (
-            <img src={entry.src} key={index} width="300" height="auto" />
-          ))}
+          </h3>
+          <Row>
+      {nftRarityExamples.map((item, index) => {
+        return (
+          <NFTSaleItem
+            imageUrl={item.img}
+            rarity={item.rarity}
+            unique={item.unique}
+            index={index}
+            key={index}
+            cleanDesign={true}
+          />
+        );
+      })}
+    </Row>
         </div>
       </section>
 
