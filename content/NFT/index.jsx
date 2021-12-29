@@ -63,7 +63,7 @@ const NFT = () => {
       <div className={style.card_content_container}>
         <h2>¿Cómo comprar un NFT?</h2>
         <p>
-          Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo
+          Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo👇
         </p>
       </div>
     </div>
@@ -120,7 +120,7 @@ const NFT = () => {
             digital diseñadas por el pintor canario Octavio del Toro. Con un
             trasfondo social y cultural, el uso de la tecnología blockchain
             permite que cualquier persona pueda ser dueño de una exclusiva pieza
-            de arte
+            de arte:
           </h4>
 
           {imgLinks.map((entry, index) => (
