@@ -56,7 +56,7 @@ const PayCTA = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("paypal");
-    setModalTitle("PAGA CON PAYPAL");
+    setModalTitle("COMPRAR CON PAYPAL");
     setShow(true);
   };
 
@@ -64,7 +64,7 @@ const PayCTA = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("matic");
-    setModalTitle("PAGA CON MATIC (CRYPTO)");
+    setModalTitle("COMPRAR CON MATIC");
     setShow(true);
   };
 
@@ -293,7 +293,7 @@ const PayCTA = () => {
             </>
           )}
           {platform === "matic" && (
-            <>
+            <div class="d-flex justify-content-end">
               <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
                 disabled={userWallet === "" || !NFTAmount || mintInProgress}
@@ -301,7 +301,7 @@ const PayCTA = () => {
               >
                 Mintear NFTs
               </Button>
-            </>
+            </div>
           )}
         </Modal.Body>
       </Modal>
