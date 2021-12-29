@@ -39,11 +39,11 @@ const Home = () => {
             ></img>
             <Button href={"/nft"}>COMPRAR NFT POR 20€ O 10 MATIC</Button>
           </div>
-          {/* <div>
-            <video width="200p" height="auto" controls>
+          {<div>
+            <video width="300p" height="auto" controls>
               <source src="videos/LaPalma_9x16.mp4" type="video/mp4"></source>
             </video>
-          </div> */}
+          </div>}
         </div>
         <div className="text-center">
           <NFTSaleStats />
