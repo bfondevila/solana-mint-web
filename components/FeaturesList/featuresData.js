@@ -10,7 +10,6 @@ const featuresData = {
                 explicamos cómo crearte uno. La venta de esta colección \
                 estará abierta hasta el 7 de Enero de 2022. ¡Luego no se \
                 venderá nunca más!",
-      footer: "Dirección del contrato: 0x265...456",
       imgSrc: "/images/payment_methods.png",
     },
     {
@@ -28,7 +27,7 @@ const featuresData = {
           <a className="black_link" href="/coleccion">
             En esta página
           </a>{" "}
-          puedes ver el porcentaje de rarezas de cada obra
+          puedes ver el porcentaje de rarezas de cada obra.
         </p>
       ),
       imgSrc: "/images/collage.png",
@@ -42,9 +41,9 @@ const featuresData = {
       de La Palma.",
       footer: (
         <p>
-          Lee nuestro manifiesto{" "}
+          Lee más sobre la causa social {" "}
           <a className="black_link" href="/causa">
-            aquí
+            aquí.
           </a>
         </p>
       ),

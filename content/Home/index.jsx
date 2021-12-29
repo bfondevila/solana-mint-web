@@ -10,7 +10,7 @@ const Home = () => {
       <section className={style.section}>
         <div className={"text-center"}>
           <h1>Colección Afectados por Volcán de La Palma</h1>
-          <h4>Obten un pedazo de arte digital de la historia palmera</h4>
+          <h4>El NFT solidario de Octavio del Toro</h4>
         </div>
         <div className={style.introduction_container}>
           <div className={style.introduction}>
@@ -26,7 +26,7 @@ const Home = () => {
               La colección “Estrella sobre un volcán dormido” es una fusión de
               arte físico y digital mezclando la democratización de la
               tecnología blockchain, la promoción del arte local canario y el
-              apoyo económico a una causa social de los afectados por el volcán
+              apoyo económico a una causa social para los afectados por el volcán
               palmero.
             </p>
           </div>
