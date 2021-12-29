@@ -56,6 +56,7 @@ export default function MyAccount() {
                       rarity={nft.rarity / 10000}
                       rarityStr={nft.rarityStr}
                       key={index}
+                      cleanDesign={false}
                     ></NFTSaleItem>
                   );
                 })}
