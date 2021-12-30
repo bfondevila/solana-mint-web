@@ -12,7 +12,9 @@ export default function MyAccount() {
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
 
   useEffect(async () => {
-    const myNFTs = await getNFTsFromAddress(userWallet);
+    const myNFTs = (await getNFTsFromAddress(userWallet)).filter(
+      (nft) => !nft.pendingReveal,
+    );
     myNFTs.sort((a, b) => a.rarity - b.rarity);
     setNFTsInWallet(myNFTs);
   }, [userWallet]);
@@ -49,7 +51,7 @@ export default function MyAccount() {
                   return (
                     <NFTSaleItem
                       imageUrl={nft.image}
-                      rarity={nft.rarity / 1000}
+                      rarity={nft.rarity ? nft.rarity / 1000 : null}
                       rarityStr={nft.rarityStr}
                       key={index}
                       cleanDesign={false}

@@ -30,7 +30,11 @@ const getNFTsFromAddress = async (address) => {
         return response
           .map((result) => {
             return {
-              ...{ tokenId: result.id, tokenURI: result.tokenURI },
+              ...{
+                tokenId: result.id,
+                tokenURI: result.tokenURI,
+                pendingReveal: false,
+              },
               ...result.properties,
             };
           })
@@ -64,16 +68,13 @@ const calculatePricePerNFT = (priceInWei) => {
  * Gets the properties of the NFT with a given ID (or null if it has not been revealed)
  * @returns an object with the following properties:
  * "rarity" (as an int), "color1", "color2", "color3",
- * "imgUrl" (a renderizable img url), "rarityStr" (as a string)
+ * "imgUrl" (a renderizable img url), "rarityStr" (as a string),
+ * "pendingReveal" (as a boolean)
  * @see getRarityLevel(rarity: int) to retrieve rarity as a string
  */
 const getNFTProperties = async (properties) => {
-  if (!properties) {
-    return {};
-  }
-
-  if (properties.color1 === "") {
-    return null; //Pending reveal
+  if (!properties || (properties.rarity == 0 && properties.tokenId !== 1)) {
+    return { pendingReveal: true };
   } else {
     const tokenMetadata = await fetch(getIPFSGateway(properties.tokenURI))
       .then((response) => response.json())
