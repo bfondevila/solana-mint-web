@@ -26,7 +26,7 @@ const TeamData = [
   },
   {
     img: "/images/team/brunof.png",
-    name: "BRUNO FONDEVILA RODRÍGUEZ",
+    name: "BRUNO FONDEVILA",
     profile: "DESARROLLADOR BLOCKCHAIN / WEB",
   },
   {

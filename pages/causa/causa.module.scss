@@ -52,3 +52,28 @@
 .section_title {
   margin-bottom: 50px;
 }
+
+.video-responsive {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+	}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
+
+  .imgs_responsive {
+    width: 300px;
+  }
+
+  @media (max-width: 992px) {
+    .imgs_responsive {
+      width: 150px;
+    }
+  }

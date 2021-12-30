@@ -2,6 +2,7 @@ import PaymentSection from "../../components/PaymentSection";
 import TeamGrid from "../../components/TeamGrid";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
 import style from "./causa.module.scss";
+import { Col, Row } from "react-bootstrap";
 
 const Causa = () => {
   const card_content = (
@@ -57,9 +58,8 @@ const Causa = () => {
           <h2 className={style.section_title}>
             Conoce más sobre el proyecto directamente por los fundadores
           </h2>
+          <div className={style.video_responsiv}>
           <iframe
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/G9vMrkFaby8"
             title="YouTube video player"
             frameBorder="0"
@@ -68,6 +68,7 @@ const Causa = () => {
           gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          </div>
         </div>
       </section>
 
@@ -87,7 +88,11 @@ const Causa = () => {
             style.paddings_plus
           }
         >
+          <Row>
+          <Col xs={12} md={4}>
           <h2>CON EL APOYO DE:</h2>
+          </Col>
+          <Col xs={12} md={4}>
           <div>
             <span>
               <img
@@ -97,6 +102,8 @@ const Causa = () => {
               ></img>
             </span>
           </div>
+          </Col>
+          <Col xs={12} md={4}>
           <div>
             <span>
               <img
@@ -106,6 +113,8 @@ const Causa = () => {
               ></img>
             </span>
           </div>
+          </Col>
+          </Row>
         </div>
       </section>
 
