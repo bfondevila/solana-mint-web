@@ -6,24 +6,19 @@ import style from "./nftsale.module.scss";
 const NFTSaleItem = (props) => {
   const rarity = props.rarity;
   const imageUrl = props.imageUrl;
-  const index = props.index;
 
   const rarityFormat = NumberFormat().rarity;
 
   const getRarityStr = (rarity) => {
     if (rarity >= 0.1) {
       return "COMÚN";
-    }
-    if (0.04 <= rarity && rarity <= 0.05) {
+    } else if (0.04 <= rarity && rarity <= 0.05) {
       return "RARO";
-    }
-    if (0.01 <= rarity && rarity <= 0.02) {
+    } else if (0.01 <= rarity && rarity <= 0.02) {
       return "ÉPICO";
-    }
-    if (0.001 <= rarity && rarity <= 0.005) {
+    } else if (0.001 <= rarity && rarity <= 0.005) {
       return "LEGENDARIO";
-    }
-    if (rarity < 0.001) {
+    } else if (rarity < 0.001) {
       return "COLECCIONISTA";
     }
   };
@@ -31,17 +26,13 @@ const NFTSaleItem = (props) => {
   const getRarityStyle = (rarity) => {
     if (rarity >= 0.1) {
       return style.white_card;
-    }
-    if (0.04 <= rarity && rarity <= 0.05) {
+    } else if (0.04 <= rarity && rarity <= 0.05) {
       return style.bronze_card;
-    }
-    if (0.01 <= rarity && rarity <= 0.02) {
+    } else if (0.01 <= rarity && rarity <= 0.02) {
       return style.metal_card;
-    }
-    if (0.001 <= rarity && rarity <= 0.005) {
+    } else if (0.001 <= rarity && rarity <= 0.005) {
       return style.gold_card;
-    }
-    if (rarity < 0.001) {
+    } else if (rarity < 0.001) {
       return style.collector_card;
     }
   };
