@@ -65,7 +65,7 @@ const NFT = () => {
       <div className={style.card_content_container}>
         <h2>¿Cómo comprar un NFT?</h2>
         <p>
-          Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo👇
+          Conecta tu monedero. Si no tienes, nosotros te guiamos cómo crearlo 👇
         </p>
       </div>
     </div>
@@ -110,7 +110,7 @@ const NFT = () => {
       </section>
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
-          <h3 className={style.justify_text}>
+          <h3>
             La obra “Estrella sobre un volcán” está formada por 24 piezas de arte
             digital diseñadas por el pintor canario Octavio del Toro. Con un
             trasfondo social y cultural, el uso de la tecnología blockchain

@@ -25,7 +25,7 @@ const NFTSaleItem = (props) => {
 
   const getRarityStyle = (rarity) => {
     if (rarity >= 0.1) {
-      return style.white_card;
+      return style.common_card;
     } else if (0.04 <= rarity && rarity <= 0.05) {
       return style.bronze_card;
     } else if (0.01 <= rarity && rarity <= 0.02) {
@@ -38,7 +38,7 @@ const NFTSaleItem = (props) => {
   };
 
   return (
-    <Col className={style.wrap} xs={6} md={4}>
+    <Col className={style.wrap} xs={12} md={4}>
       {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
       <div className={style.card_container}>
         <Card className={style.card + " " + getRarityStyle(rarity)}>
