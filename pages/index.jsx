@@ -50,7 +50,7 @@ const Home = () => {
           <Col xs={12} lg={4}>
             <div className="text-center">
               <Image
-                src="/images/collection/azul-blanco-negro.png"
+                src="/images/hero.png"
                 className={style.heroImage + " my-2"}
                 fluid="xs"
               />
