@@ -1,9 +1,7 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import { Container, Nav, Navbar } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
-
 import style from "./header.module.scss";
 
 const Header = (props) => {
@@ -76,7 +74,7 @@ const Header = (props) => {
                 </Link>
               );
             })}
-            <MetamaskConnection onAccountsChanged={props.onAccountsChanged} />
+            <MetamaskConnection />
           </Nav>
         </Navbar.Collapse>
       </Container>

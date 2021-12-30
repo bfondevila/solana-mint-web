@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext } from "react";
 import { Button, Nav, Row } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
@@ -8,6 +8,7 @@ import MetamaskConnection from "../../components/MetamaskConnection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import PayCTA from "../../components/PayCTA";
 import PaymentSection from "../../components/PaymentSection";
+import { WalletContext } from "../../providers/WalletProvider";
 import style from "./nft.module.scss";
 
 const NFT = () => {
@@ -74,15 +75,9 @@ const NFT = () => {
     </div>
   );
 
-  const [userWallet, setUserWallet] = useState("");
-
+  const { userWallet } = useContext(WalletContext);
   const isConnected = () => {
     return userWallet !== "";
-  };
-
-  const handleAccountsChanged = async (accounts) => {
-    const userWallet = accounts.length > 0 ? accounts[0] : "";
-    setUserWallet(userWallet);
   };
 
   return (
@@ -108,7 +103,7 @@ const NFT = () => {
             >
               ¿Cómo crear un wallet?
             </Button>
-            <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+            <MetamaskConnection />
           </div>
         )}
         {isConnected() && (

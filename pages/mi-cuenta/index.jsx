@@ -1,23 +1,21 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import OpenseaButton from "../../components/OpenseaButton";
+import { WalletContext } from "../../providers/WalletProvider";
 import { getNFTsFromAddress } from "../../shared/lib/Crypto";
 import style from "./micuenta.module.scss";
 
 export default function MyAccount() {
-  const [userWallet, setUserWallet] = useState("");
+  const { userWallet } = useContext(WalletContext);
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
 
-  const handleAccountsChanged = async (accounts) => {
-    const userWallet = accounts.length > 0 ? accounts[0] : "";
-    setUserWallet(userWallet);
-
+  useEffect(async () => {
     const myNFTs = await getNFTsFromAddress(userWallet);
     myNFTs.sort((a, b) => a.rarity - b.rarity);
     setNFTsInWallet(myNFTs);
-  };
+  }, [userWallet]);
 
   return (
     <>
@@ -30,7 +28,7 @@ export default function MyAccount() {
               : "Por favor, conecta tu monedero primero."}
           </h4>
           <div className={"btn " + style.social} hidden={userWallet !== ""}>
-            <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
+            <MetamaskConnection />
           </div>
           <div hidden={userWallet === ""}>
             <OpenseaButton wallet={userWallet}></OpenseaButton>
