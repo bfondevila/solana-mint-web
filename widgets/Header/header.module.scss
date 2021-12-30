@@ -10,4 +10,8 @@
 .navCentered {
   justify-content: center;
   width: 100%;
+
+  & > a {
+    align-self: center;
+  }
 }
