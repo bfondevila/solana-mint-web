@@ -1,7 +1,12 @@
 import style from "./footer.module.scss";
 
 const Footer = () => {
-  const mainLinks = [
+  const mainLinks =[
+    {
+      key: "home",
+      name: "HOME",
+      link: "/",
+    },
     {
       key: "venta_nft",
       name: "COMPRAR NFT",
@@ -10,17 +15,22 @@ const Footer = () => {
     {
       key: "coleccion",
       name: "COLECCIÓN",
-      link: "/nft",
+      link: "/coleccion",
     },
     {
-      key: "historia",
-      name: "HISTORIA",
-      link: "/historia",
+      key: "relato",
+      name: "RELATO",
+      link: "/relato",
     },
     {
       key: "causa_social",
       name: "CAUSA SOCIAL",
-      link: "/",
+      link: "/causa",
+    },
+    {
+      key: "mi_cuenta",
+      name: "MI CUENTA",
+      link: "/mi-cuenta",
     },
   ];
 
