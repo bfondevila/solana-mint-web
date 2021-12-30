@@ -36,7 +36,7 @@ const FeatureCard = (props) => {
           <Image
             className={style.feature_img + " mt-5 mt-md-0"}
             src={props.imgSrc}
-            fluid
+            fluid={true}
           />
         </Col>
       )}

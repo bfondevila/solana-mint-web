@@ -8,7 +8,7 @@ const Relato = () => {
       <Container>
         <Row className={style.section + " text-center"} as="section">
           <Col>
-            <Image src="/images/anelio.jpeg" fluid />
+            <Image src="/images/anelio.jpeg" fluid={true} />
             <h1>La isla de La Palma, el volcán y los Enanos</h1>
             <h3>El relato detrás de la ceniza</h3>
             <h5>por Anelio Rodríguez Concepción</h5>

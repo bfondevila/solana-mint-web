@@ -39,7 +39,7 @@ const Timer = (props) => {
     }
 
     timerComponents.push(
-      <span>
+      <span key={timerComponents.length}>
         {timeLeft[interval]} {interval}{" "}
       </span>,
     );

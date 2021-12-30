@@ -287,7 +287,7 @@ const PayCTA = () => {
             </>
           )}
           {platform === "matic" && (
-            <div class="d-flex justify-content-end">
+            <div className="d-flex justify-content-end">
               <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
                 disabled={!isConnected() || !NFTAmount || mintInProgress}
