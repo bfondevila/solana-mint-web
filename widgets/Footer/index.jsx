@@ -3,11 +3,6 @@ import style from "./footer.module.scss";
 const Footer = () => {
   const mainLinks =[
     {
-      key: "home",
-      name: "HOME",
-      link: "/",
-    },
-    {
       key: "venta_nft",
       name: "COMPRAR NFT",
       link: "/nft",
@@ -17,6 +12,14 @@ const Footer = () => {
       name: "COLECCIÓN",
       link: "/coleccion",
     },
+    {
+      key: "mi_cuenta",
+      name: "MI CUENTA",
+      link: "/mi-cuenta",
+    },
+  ];
+
+  const secondaryLinks = [
     {
       key: "relato",
       name: "RELATO",
@@ -28,26 +31,8 @@ const Footer = () => {
       link: "/causa",
     },
     {
-      key: "mi_cuenta",
-      name: "MI CUENTA",
-      link: "/mi-cuenta",
-    },
-  ];
-
-  const secondaryLinks = [
-    {
       key: "aviso_legal",
       name: "AVISO LEGAL",
-      link: "/",
-    },
-    {
-      key: "politica_cookies",
-      name: "POLÍTICA DE COOKIES",
-      link: "/",
-    },
-    {
-      key: "politica_privacidad",
-      name: "POLÍTICA DE PRIVACIDAD",
       link: "/",
     },
   ];
@@ -61,7 +46,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className={style.links_container}>
-          <div className={style.links_left}>
+          <div className={style.links_right}>
             {mainLinks.map((entry, index) => {
               return (
                 <div key={"footerLink" + index}>

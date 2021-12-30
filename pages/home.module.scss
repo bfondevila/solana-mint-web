@@ -4,16 +4,10 @@
 
 .introduction_container {
   display: flex;
-  flex-wrap: row wrap;
-  justify-content: space-between;
-  padding-top: 69px;
-  padding-bottom: 47.7px;
-  max-width: 948px;
-  width: 100%;
-  margin: 0 auto;
+  justify-content: center;
 
   .introduction {
-    width: 500px;
+    width: 100%;
   }
 
   .pic_container {
@@ -35,6 +29,7 @@
 
 .discover {
   padding: 30px;
+  width: 100%;
 }
 
 .pay_section {
@@ -71,3 +66,13 @@
 .saleStats {
   align-self: center;
 }
+
+$breakpoint-mobile: 480px;
+
+@media (max-width: $breakpoint-mobile) {
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+

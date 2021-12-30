@@ -15,9 +15,11 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row as="section" className={"my-sm-4"}>
-          <Col xs={12} lg={7}>
-            <div className={style.introduction}>
+        <Row as="section" className={"my-sm-4 " + style.introduction_container}>
+          <Col xs={{ order: "last", span:12}}
+            lg={{ order: "first", span:5}}
+            >
+            <div className={style.introduction + " " + style.section}>
               <h3 className="pt-3 pt-xs-0">ESTRELLA SOBRE UN VOLCÁN DORMIDO</h3>
               <h4>OCTAVIO DEL TORO</h4>
               <p>
@@ -35,19 +37,7 @@ const Home = () => {
               </p>
             </div>
           </Col>
-          <Col
-            xs={{ order: "first", size: 12 }}
-            lg={{ order: "last", size: 5 }}
-            className={style.flexCol}
-          >
-            <video width="300px" height="auto" controls>
-              <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
-            </video>
-          </Col>
-        </Row>
-
-        <Row as="section">
-          <Col xs={12} lg={4}>
+          <Col xs={12} lg={5}>
             <div className="text-center">
               <Image
                 src="/images/hero.png"
@@ -59,33 +49,47 @@ const Home = () => {
               </Button>
             </div>
           </Col>
-          <Col xs={12} lg={8} className={style.section + " " + style.saleStats}>
+        </Row>
+
+        <Row as="section">
+          <Col
+            xs={12}
+            lg={5}
+            className={style.flexCol + " " + style.section}
+          >
+            <video width="300px" height="auto" controls>
+              <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
+            </video>
+          </Col>
+
+          <Col xs={12} lg={5} className={style.section + " " + style.saleStats}>
             <div className="text-center">
               <NFTSaleStats />
             </div>
           </Col>
         </Row>
+        </Container>
+        
+          <section className={style.section}>
+            <div className={"text-center black_background " + style.discover}>
+              <p>DESCUBRE MÁS</p>
+              <p>
+                <a className="link" href="https://octaviodeltoro.com">
+                  OCTAVIO DEL TORO
+                </a>
+              </p>
+            </div>
+          </section>
+          <Container>
+          <section className={style.section}>
+            <FeaturesList data="Home" />
+          </section>
 
-        <section className={style.section}>
-          <div className={"text-center black_background " + style.discover}>
-            <p>DESCUBRE MÁS</p>
-            <p>
-              <a className="link" href="https://octaviodeltoro.com">
-                OCTAVIO DEL TORO
-              </a>
-            </p>
-          </div>
-        </section>
-
-        <section className={style.section}>
-          <FeaturesList data="Home" />
-        </section>
-
-        <section
-          className={"text-center " + style.section + " " + style.paddings}
-        >
-          <PaymentSection />
-        </section>
+          <section
+            className={"text-center " + style.section + " " + style.paddings}
+          >
+            <PaymentSection />
+          </section>
       </Container>
     </>
   );
