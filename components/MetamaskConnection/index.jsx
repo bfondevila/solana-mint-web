@@ -131,7 +131,7 @@ const MetamaskConnection = (props) => {
   };
 
   return (
-    <Button
+    <button
       disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
       onClick={onClick}
       className={
@@ -142,7 +142,7 @@ const MetamaskConnection = (props) => {
     >
       <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
       <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>
-    </Button>
+    </button>
   );
 };
 

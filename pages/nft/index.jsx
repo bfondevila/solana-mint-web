@@ -103,7 +103,7 @@ const NFT = () => {
             >
               ¿Cómo crear un wallet?
             </Button>
-            <MetamaskConnection />
+            <MetamaskConnection displayFullAddress={true}/>
           </div>
         )}
         {isConnected() && (

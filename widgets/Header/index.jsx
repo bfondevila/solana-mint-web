@@ -74,7 +74,7 @@ const Header = (props) => {
                 </Link>
               );
             })}
-            <MetamaskConnection />
+            <MetamaskConnection displayFullAddress={false} />
           </Nav>
         </Navbar.Collapse>
       </Container>
