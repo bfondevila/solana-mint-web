@@ -130,15 +130,20 @@ const MetamaskConnection = (props) => {
     }
   };
 
+  let buttonType = "";
+  if (!props.normalButtonSize) {
+    if (props.displayFullAddress) {
+      buttonType = style.longDisplay;
+    } else {
+      buttonType = style.shortDisplay;
+    }
+  }
+
   return (
     <button
       disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
       onClick={onClick}
-      className={
-        style.metamaskButton +
-        " " +
-        (props.displayFullAddress ? style.longDisplay : style.shortDisplay)
-      }
+      className={style.metamaskButton + " " + buttonType}
     >
       <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
       <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>

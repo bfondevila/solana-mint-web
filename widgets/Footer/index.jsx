@@ -1,3 +1,4 @@
+import { mainLinks } from "../../constants/links";
 import style from "./footer.module.scss";
 
 const Footer = () => {
