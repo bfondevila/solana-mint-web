@@ -76,10 +76,28 @@ const MetamaskConnection = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    onboarding.current.initialized = initialized;
+  }, [initialized]);
+
   useEffect(async () => {
     const handleChainChanged = (_chainId) => {
       window.location.reload();
     };
+
+    setTimeout(() => {
+      {
+        /*
+        Bug in metamask onboarding after installing the extension,
+        it can leave the connect button unresponsive, since it will
+        continuously poll for a metamask update.
+        Reloading the page fixes this problem.
+        */
+      }
+      if (!onboarding.current.initialized) {
+        window.location.reload();
+      }
+    }, 5000);
 
     if (
       MetaMaskOnboarding.isMetaMaskInstalled() &&
