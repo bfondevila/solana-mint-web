@@ -1,6 +1,6 @@
 import MetaMaskOnboarding from "@metamask/onboarding";
 import { useContext, useEffect, useRef, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Placeholder } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { WalletContext } from "../../providers/WalletProvider";
 import style from "./metamask.module.scss";
@@ -10,6 +10,7 @@ const CONNECT_TEXT = "Conectar Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
 const MetamaskConnection = (props) => {
+  const [initialized, setInitialized] = useState(false);
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
   const { userWallet, setUserWallet } = useContext(WalletContext);
   const onboarding = useRef();
@@ -64,6 +65,7 @@ const MetamaskConnection = (props) => {
 
   const handleNewAccounts = (newAccounts) => {
     setUserWallet(newAccounts[0] ?? "");
+    setInitialized(true);
   };
 
   useEffect(() => {
@@ -93,6 +95,8 @@ const MetamaskConnection = (props) => {
         window.ethereum.removeListener("accountsChanged", handleNewAccounts);
         window.ethereum.removeListener("chainChanged", handleChainChanged);
       };
+    } else {
+      setInitialized(true);
     }
   }, []);
 
@@ -128,7 +132,7 @@ const MetamaskConnection = (props) => {
 
   return (
     <Button
-      disabled={userWallet !== "" && !props.displayWithLink}
+      disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
       onClick={onClick}
       className={
         style.metamaskButton +
@@ -137,7 +141,7 @@ const MetamaskConnection = (props) => {
       }
     >
       <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
-      <span>{buttonText}</span>
+      <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>
     </Button>
   );
 };
