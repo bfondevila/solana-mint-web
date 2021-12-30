@@ -18,7 +18,7 @@ const Home = () => {
         <Row as="section" className={"my-sm-4"}>
           <Col xs={12} lg={7}>
             <div className={style.introduction}>
-              <h3 className="pt-3 pt-xs-0">ESTRELLA BAJO UN VOLCÁN DORMIDO</h3>
+              <h3 className="pt-3 pt-xs-0">ESTRELLA SOBRE UN VOLCÁN DORMIDO</h3>
               <h4>OCTAVIO DEL TORO</h4>
               <p>
                 Apoya el arte canario y a los afectados del volcán de La Palma

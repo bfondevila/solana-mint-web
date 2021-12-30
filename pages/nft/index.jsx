@@ -111,7 +111,7 @@ const NFT = () => {
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
           <h3 className={style.justify_text}>
-            La obra “Estrella bajo un volcán” está formada por 24 piezas de arte
+            La obra “Estrella sobre un volcán” está formada por 24 piezas de arte
             digital diseñadas por el pintor canario Octavio del Toro. Con un
             trasfondo social y cultural, el uso de la tecnología blockchain
             permite que cualquier persona pueda ser dueño de una exclusiva pieza
