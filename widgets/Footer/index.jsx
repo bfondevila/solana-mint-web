@@ -34,7 +34,7 @@ const Footer = () => {
     {
       key: "aviso_legal",
       name: "AVISO LEGAL",
-      link: "/",
+      link: "/aviso-legal",
     },
   ];
 

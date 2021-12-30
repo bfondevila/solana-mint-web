@@ -28,5 +28,5 @@ export const mainLinks = [
     key: "mi_cuenta",
     name: "MI CUENTA",
     link: "/mi-cuenta",
-  },
+  }
 ];
