@@ -28,10 +28,6 @@ const NFT = () => {
       img: "/images/collection/blanco-verde-bronce.png",
       rarity: 0.005,
     },
-    {
-      img: "/images/collection/morado-negro-blanco.png",
-      rarity: 0.12,
-    },
   ];
 
   const links = [
