@@ -9,7 +9,7 @@ export const getTransactionUrl = (transactionHash) => {
 };
 
 export const Contract = {
-  address: "0x87eD5E7E9b2d3FccB9B113A1d15436D15C2ad107",
+  address: "0xfCd82c2C7DB03402542dE28A138b16859Fd72C30",
   rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
   chainId: "0x13881",
   chainName: "Polygon Testnet (Mumbai)",
@@ -275,6 +275,19 @@ export const Contract = {
       type: "function",
     },
     {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "burn",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
       inputs: [],
       name: "fee",
       outputs: [
@@ -378,6 +391,11 @@ export const Contract = {
             {
               internalType: "uint256",
               name: "lastMinted",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "tokensBurned",
               type: "uint256",
             },
             {
@@ -838,6 +856,19 @@ export const Contract = {
           internalType: "string",
           name: "",
           type: "string",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "tokensBurned",
+      outputs: [
+        {
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
         },
       ],
       stateMutability: "view",

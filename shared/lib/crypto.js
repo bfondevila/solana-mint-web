@@ -45,6 +45,7 @@ const getNFTsFromAddress = async (address) => {
   struct PublicInfo {
     uint256 lastTokenId;
     uint256 lastMinted;
+    uint256 tokensBurned;
     uint256 nftPrice;
     uint256 saleFinishTime;
     bool nftSaleFinished;

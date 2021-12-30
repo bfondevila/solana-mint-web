@@ -113,6 +113,7 @@ const NFTSale = (props) => {
             unique={item.unique}
             index={index}
             key={index}
+            cleanDesign={false}
           />
         );
       })}

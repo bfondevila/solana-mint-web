@@ -1,17 +1,18 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import {
   Alert,
   Button,
+  Container,
   Modal,
+  Row,
   ToggleButton,
   ToggleButtonGroup,
-  Container,
-  Row,
 } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { PAYPAL_CLIENT_ID, PRICE_PER_NFT } from "../../constants/payment";
+import { WalletContext } from "../../providers/WalletProvider";
 import {
   calculatePricePerNFT,
   getMintData,
@@ -24,10 +25,14 @@ import style from "./pay_cta.module.scss";
 const defaultNFTAmount = 1;
 
 const PayCTA = () => {
+  const { userWallet } = useContext(WalletContext);
+  const isConnected = () => {
+    return userWallet !== "";
+  };
+
   const [show, setShow] = useState(false);
-  const orderDetails = useRef({ amount: defaultNFTAmount, userWallet: "" });
+  const orderDetails = useRef({ amount: defaultNFTAmount });
   const [NFTAmount, setNFTAmount] = useState(defaultNFTAmount);
-  const [userWallet, setUserWallet] = useState("");
   const [modalTitle, setModalTitle] = useState();
   const [platform, setPlatform] = useState();
   const [errorState, setErrorState] = useState(false);
@@ -47,16 +52,11 @@ const PayCTA = () => {
     orderDetails.current.amount = amount;
   };
 
-  const handleAccountsChanged = (accounts) => {
-    setUserWallet(accounts.length > 0 ? accounts[0] : "");
-    orderDetails.current.userWallet = accounts.length > 0 ? accounts[0] : "";
-  };
-
   const paypalClicked = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("paypal");
-    setModalTitle("PAGA CON PAYPAL");
+    setModalTitle("COMPRAR CON PAYPAL");
     setShow(true);
   };
 
@@ -64,7 +64,7 @@ const PayCTA = () => {
     setErrorState(false);
     setOrderSuccess(false);
     setPlatform("matic");
-    setModalTitle("PAGA CON MATIC (CRYPTO)");
+    setModalTitle("COMPRAR CON MATIC");
     setShow(true);
   };
 
@@ -83,7 +83,6 @@ const PayCTA = () => {
     setOrderSuccess(false);
 
     const amount = data.orderDetails.current.amount;
-    const userWallet = data.orderDetails.current.userWallet;
     if (userWallet === "") {
       setErrorState("Debes conectar tu wallet primero.");
       return;
@@ -127,7 +126,6 @@ const PayCTA = () => {
     setOrderSuccess(false);
 
     const amount = data.orderDetails.current.amount;
-    const userWallet = data.orderDetails.current.userWallet;
 
     if (amount > 0 && userWallet !== "") {
       const order = {
@@ -217,12 +215,8 @@ const PayCTA = () => {
           <div className={style.container}>
             <span className={style.form_field}>Enviar a: </span>
             <span>
-              <MetamaskConnection
-                onAccountsChanged={handleAccountsChanged}
-                displayFullAddress
-                displayWithLink
-              />
-              <label className={style.required} hidden={userWallet !== ""}>
+              <MetamaskConnection displayFullAddress displayWithLink />
+              <label className={style.required} hidden={isConnected()}>
                 * Requerido
               </label>
             </span>
@@ -287,27 +281,32 @@ const PayCTA = () => {
                     )
                   }
                   onApprove={(data, actions) => onApprove(data, actions)}
-                  disabled={userWallet === "" || !NFTAmount}
+                  disabled={!isConnected() || !NFTAmount}
                 />
               </PayPalScriptProvider>
             </>
           )}
           {platform === "matic" && (
-            <>
+            <div className="d-flex justify-content-end">
               <Button
                 onClick={() => mint({ orderDetails: orderDetails })}
-                disabled={userWallet === "" || !NFTAmount || mintInProgress}
+                disabled={!isConnected() || !NFTAmount || mintInProgress}
                 className={style.mint_btn}
               >
                 Mintear NFTs
               </Button>
-            </>
+            </div>
           )}
         </Modal.Body>
       </Modal>
 
       <Row>
-        <Container className="d-flex flex-column flex-md-row justify-content-center">
+        <Container
+          className={
+            style.paymentOptionsWrapper +
+            "d-flex flex-column flex-md-row justify-content-center"
+          }
+        >
           <Button onClick={paypalClicked} className="mx-md-2 mb-2">
             PAGAR CON PAYPAL
           </Button>

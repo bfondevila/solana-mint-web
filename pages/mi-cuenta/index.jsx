@@ -1,27 +1,24 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import OpenseaButton from "../../components/OpenseaButton";
+import { WalletContext } from "../../providers/WalletProvider";
 import { getNFTsFromAddress } from "../../shared/lib/Crypto";
-import Footer from "../../widgets/Footer";
-import Header from "../../widgets/Header";
 import style from "./micuenta.module.scss";
 
 export default function MyAccount() {
-  const [userWallet, setUserWallet] = useState("");
+  const { userWallet } = useContext(WalletContext);
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
 
-  const handleAccountsChanged = async (accounts) => {
-    const userWallet = accounts.length > 0 ? accounts[0] : "";
-    setUserWallet(userWallet);
-
-    setNFTsInWallet(await getNFTsFromAddress(userWallet));
-  };
+  useEffect(async () => {
+    const myNFTs = await getNFTsFromAddress(userWallet);
+    myNFTs.sort((a, b) => a.rarity - b.rarity);
+    setNFTsInWallet(myNFTs);
+  }, [userWallet]);
 
   return (
-    <main>
-      <Header />
+    <>
       <section className={style.section}>
         <div className={"text-center" + " " + style.paddings}>
           <h1>Tu cuenta</h1>
@@ -31,8 +28,7 @@ export default function MyAccount() {
               : "Por favor, conecta tu monedero primero."}
           </h4>
           <div className={"btn " + style.social} hidden={userWallet !== ""}>
-            <MetamaskConnection onAccountsChanged={handleAccountsChanged} />
-            {/* <Container>Iconos Sociales</Container> */}
+            <MetamaskConnection />
           </div>
           <div hidden={userWallet === ""}>
             <OpenseaButton wallet={userWallet}></OpenseaButton>
@@ -56,6 +52,7 @@ export default function MyAccount() {
                       rarity={nft.rarity / 1000}
                       rarityStr={nft.rarityStr}
                       key={index}
+                      cleanDesign={false}
                     ></NFTSaleItem>
                   );
                 })}
@@ -64,7 +61,6 @@ export default function MyAccount() {
           </div>
         </div>
       </section>
-      <Footer />
-    </main>
+    </>
   );
 }
