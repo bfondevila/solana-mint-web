@@ -6,7 +6,6 @@ import {
   Button,
   Container,
   Modal,
-  Row,
   ToggleButton,
   ToggleButtonGroup,
 } from "react-bootstrap";
@@ -300,21 +299,19 @@ const PayCTA = () => {
         </Modal.Body>
       </Modal>
 
-      <Row>
-        <Container
-          className={
-            style.paymentOptionsWrapper +
-            "d-flex flex-column flex-md-row justify-content-center"
-          }
-        >
-          <Button onClick={paypalClicked} className="mx-md-2 mb-2">
-            PAGAR CON PAYPAL
-          </Button>
-          <Button onClick={maticClicked} className="mx-md-2 mb-2">
-            PAGAR CON MATIC
-          </Button>
-        </Container>
-      </Row>
+      <Container
+        className={
+          style.paymentOptionsWrapper +
+          "d-flex flex-column flex-md-row justify-content-center"
+        }
+      >
+        <Button onClick={paypalClicked} className="mx-md-2 mb-2">
+          PAGAR CON PAYPAL
+        </Button>
+        <Button onClick={maticClicked} className="mx-md-2 mb-2">
+          PAGAR CON MATIC
+        </Button>
+      </Container>
     </>
   );
 };

@@ -90,16 +90,19 @@ const NFT = () => {
           </div>
         </div>
         {!isConnected() && (
-          <div className={"text-center " + style.btn_container}>
+          <div className="d-flex flex-column flex-md-row justify-content-center">
             <Button
               href={
                 "https://docs.google.com/document/d/1aHsFnM6tkibs6I-EfpT_KjOwq-ik8StR89JQeEObqIQ/edit"
               }
               target="_blank"
+              className={style.button_style + " mx-md-2 mb-2"}
             >
               ¿Cómo crear un wallet?
             </Button>
-            <MetamaskConnection normalButtonSize />
+            <div className={style.metamaskWrapper + " mx-md-2 mb-2"}>
+              <MetamaskConnection normalButtonSize />
+            </div>
           </div>
         )}
         {isConnected() && (
@@ -111,9 +114,9 @@ const NFT = () => {
       <section className={style.section + " white_background"}>
         <div className={"text-center container" + " " + style.paddings}>
           <h3>
-            La obra “Estrella sobre un volcán” está formada por 24 piezas de arte
-            digital diseñadas por el pintor canario Octavio del Toro. Con un
-            trasfondo social y cultural, el uso de la tecnología blockchain
+            La obra “Estrella sobre un volcán” está formada por 24 piezas de
+            arte digital diseñadas por el pintor canario Octavio del Toro. Con
+            un trasfondo social y cultural, el uso de la tecnología blockchain
             permite que cualquier persona pueda ser dueño de una exclusiva pieza
             de arte:
           </h3>

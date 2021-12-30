@@ -69,9 +69,15 @@
   width: 75%;
 }
 
-.btn_container {
+.button_style {
   margin: 0 auto;
-  width: 730px;
-  display: flex;
-  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.metamaskWrapper {
+  margin: 0 auto;
+
+  & > button {
+    padding: 20px 30px;
+  }
 }
