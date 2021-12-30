@@ -1,6 +1,7 @@
 import MetaMaskOnboarding from "@metamask/onboarding";
+import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
-import { Button, Placeholder } from "react-bootstrap";
+import { Placeholder } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { WalletContext } from "../../providers/WalletProvider";
 import style from "./metamask.module.scss";
@@ -10,6 +11,7 @@ const CONNECT_TEXT = "Conectar Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
 const MetamaskConnection = (props) => {
+  const router = useRouter();
   const [initialized, setInitialized] = useState(false);
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
   const { userWallet, setUserWallet } = useContext(WalletContext);
@@ -122,8 +124,8 @@ const MetamaskConnection = (props) => {
       }
     } else {
       // redirect to new page to explain how to create Metamask
-      if (location.href.split("/").at(-1) != "nft") {
-        window.location = "/nft";
+      if (router.pathname != "/nft") {
+        router.push("/nft");
       } else {
         onboarding.current.startOnboarding();
       }
