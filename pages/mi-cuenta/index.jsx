@@ -4,8 +4,6 @@ import MetamaskConnection from "../../components/MetamaskConnection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import OpenseaButton from "../../components/OpenseaButton";
 import { getNFTsFromAddress } from "../../shared/lib/Crypto";
-import Footer from "../../widgets/Footer";
-import Header from "../../widgets/Header";
 import style from "./micuenta.module.scss";
 
 export default function MyAccount() {
@@ -22,8 +20,7 @@ export default function MyAccount() {
   };
 
   return (
-    <main>
-      <Header />
+    <>
       <section className={style.section}>
         <div className={"text-center" + " " + style.paddings}>
           <h1>Tu cuenta</h1>
@@ -66,7 +63,6 @@ export default function MyAccount() {
           </div>
         </div>
       </section>
-      <Footer />
-    </main>
+    </>
   );
 }
