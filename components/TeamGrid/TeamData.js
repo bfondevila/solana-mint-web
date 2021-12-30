@@ -16,12 +16,12 @@ const TeamData = [
   },
   {
     img: "/images/team/manuel.png",
-    name: "MANUEL ÁLVAREZ FERNÁNDEZ",
+    name: "MANUEL ÁLVAREZ",
     profile: "CONTENIDO",
   },
   {
     img: "/images/team/angel.png",
-    name: "ÁNGEL JIMÉNEZ BAUTISTA",
+    name: "ÁNGEL JIMÉNEZ",
     profile: "DISEÑO WEB",
   },
   {
@@ -36,12 +36,12 @@ const TeamData = [
   },
   {
     img: "/images/team/pedro.png",
-    name: "PEDRO ANTONIO ARENAS LARA",
+    name: "PEDRO ARENAS LARA",
     profile: "DESARROLLADOR WEB",
   },
   {
     img: "/images/team/johnny.png",
-    name: "JUAN MANUEL TUÑAS",
+    name: "JOHNNY TUÑAS",
     profile: "DESARROLLADOR WEB",
   },
   {
