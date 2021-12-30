@@ -9,7 +9,7 @@ export const getTransactionUrl = (transactionHash) => {
 };
 
 export const Contract = {
-  address: "0x87eD5E7E9b2d3FccB9B113A1d15436D15C2ad107",
+  address: "0xfCd82c2C7DB03402542dE28A138b16859Fd72C30",
   rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
   chainId: "0x13881",
   chainName: "Polygon Testnet (Mumbai)",
