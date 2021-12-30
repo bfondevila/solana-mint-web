@@ -8,10 +8,18 @@
 }
 
 .navCentered {
-  justify-content: center;
+  justify-content: left;
   width: 100%;
 
-  & > a {
+  & > * {
     align-self: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .navCentered {
+    & > * {
+      align-self: flex-end;
+    }
   }
 }
