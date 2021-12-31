@@ -89,7 +89,7 @@ const Causa = () => {
           }
         >
           <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4} >
           <h2>CON EL APOYO DE:</h2>
           </Col>
           <Col xs={12} md={4}>
@@ -97,7 +97,7 @@ const Causa = () => {
             <span>
               <img
                 src="/images/lecover_abogados.PNG"
-                width="300p"
+                width="90%"
                 height="auto"
               ></img>
             </span>
@@ -108,7 +108,7 @@ const Causa = () => {
             <span>
               <img
                 src="/images/fotoarte_black.png"
-                width="300p"
+                width="90%"
                 height="auto"
               ></img>
             </span>

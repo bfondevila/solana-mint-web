@@ -5,15 +5,14 @@
 
 .footer {
   width: 100%;
-  height: 300px;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 25px;
+  padding: 30px 10px;
 
   .footer_container {
-    padding: 10px 46px;
+    padding: 10px 20px;
     .title {
       font-size: 28px;
       letter-spacing: 10px;
@@ -23,13 +22,18 @@
 
     .links_container {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       .links_left {
+        text-align: left;
         a {
           text-decoration: none;
+          font-size: 10px;
+          font-weight: lighter;
+          letter-spacing: 5px;
         }
       }
       .links_right {
+        text-align: right;
         a {
           text-decoration: none;
           font-size: 10px;

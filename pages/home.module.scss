@@ -73,6 +73,19 @@ $breakpoint-mobile: 480px;
   .reverse {
     flex-direction: row-reverse;
   }
+  .paddings {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+  .introduction_container {
+    padding: 0 5%;
+  }
 }
 
+$breakpoint-tablet: 1000px;
 
+@media (max-width: $breakpoint-tablet) {
+  .introduction_container {
+    padding: 0 5%;
+  }
+}

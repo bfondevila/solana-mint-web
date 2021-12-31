@@ -8,14 +8,14 @@ const Relato = () => {
       <Container>
         <Row className={style.section + " text-center"} as="section">
           <Col>
-            <Image src="/images/anelio.jpeg" fluid={true} />
+            <Image className={style.img_container} src="/images/anelio.jpeg" fluid={true} />
             <h1>La isla de La Palma, el volcán y los Enanos</h1>
             <h3>El relato detrás de la ceniza</h3>
             <h5>por Anelio Rodríguez Concepción</h5>
           </Col>
         </Row>
 
-        <Row as="section">
+        <Row as="section" className={style.section}>
           <Col>
             <p>
               En La Palma no hace mucho explotó un volcán, el último hasta ahora
@@ -60,7 +60,7 @@ const Relato = () => {
         </Row>
 
         <section
-          className={"text-center " + style.section + " " + style.paddings}
+          className={"text-center " + style.paddings}
         >
           <PaymentSection />
         </section>

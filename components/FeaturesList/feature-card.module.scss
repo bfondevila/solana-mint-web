@@ -31,3 +31,15 @@
   justify-content: center;
 }
 
+$breakpoint-mobile: 480px;
+
+@media (max-width: $breakpoint-mobile) {
+  
+  .card_body_content {
+    margin: 20px 5%;
+  }
+  .feature_card_header {
+    margin: 10px auto 20px auto;
+    padding: 0px 5%;
+  }
+}

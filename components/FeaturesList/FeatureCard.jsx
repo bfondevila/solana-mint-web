@@ -12,7 +12,7 @@ const FeatureCard = (props) => {
           : " .grey_background")
       }
     >
-      <Col>
+      <Col className=" mb-5 mb-md-0 ">
         <Card className={style.card_container_text}>
           <Card.Body className={style.card_body_content}>
             <Card.Title className={style.feature_card_header}>
@@ -32,7 +32,7 @@ const FeatureCard = (props) => {
         </Card>
       </Col>
       {props.imgSrc && (
-        <Col sm={12} md={6} className={style.flex_col}>
+        <Col sm={12} md={12} lg={6} className={style.flex_col}>
           <Image
             className={style.feature_img + " mt-5 mt-md-0"}
             src={props.imgSrc}

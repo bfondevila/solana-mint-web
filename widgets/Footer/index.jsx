@@ -47,7 +47,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className={style.links_container}>
-          <div className={style.links_right}>
+          <div className={style.links_left}>
             {mainLinks.map((entry, index) => {
               return (
                 <div key={"footerLink" + index}>
