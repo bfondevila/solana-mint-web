@@ -4,7 +4,7 @@ import style from "./team-card.module.scss";
 const TeamMemberCard = (props) => {
   return (
     <Col xs="12" sm="6" md="4" lg="3" className={style.team_grid_cell}>
-      <Card className={style.gold_card + " " + style.card}>
+      <Card className={style.gold_card + " " + style.card + " mx-sm-2"}>
         <Card.Img variant="top" src={props.img} />
         <Card.Body className={style.card_body}>
           <Card.Title
