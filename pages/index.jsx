@@ -16,9 +16,10 @@ const Home = () => {
         </Row>
 
         <Row as="section" className={"my-sm-4 " + style.introduction_container}>
-          <Col xs={{ order: "last", span:12}}
-            lg={{ order: "first", span:5}}
-            >
+          <Col
+            xs={{ order: "last", span: 12 }}
+            lg={{ order: "first", span: 5 }}
+          >
             <div className={style.introduction + " " + style.section}>
               <h3 className="pt-3 pt-xs-0">ESTRELLA SOBRE UN VOLCÁN DORMIDO</h3>
               <h4>OCTAVIO DEL TORO</h4>
@@ -45,18 +46,14 @@ const Home = () => {
                 fluid="xs"
               />
               <Button className={style.btnFullWidth + " my-2"} href={"/nft"}>
-                COMPRAR NFT POR 20€ O 10 MATIC
+                COMPRAR NFT POR 20€ O 8 MATIC
               </Button>
             </div>
           </Col>
         </Row>
 
         <Row as="section">
-          <Col
-            xs={12}
-            lg={5}
-            className={style.flexCol + " " + style.section}
-          >
+          <Col xs={12} lg={5} className={style.flexCol + " " + style.section}>
             <video width="300px" height="auto" controls>
               <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
             </video>
@@ -68,28 +65,28 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-        </Container>
-        
-          <section className={style.section}>
-            <div className={"text-center black_background " + style.discover}>
-              <p>DESCUBRE MÁS</p>
-              <p>
-                <a className="link" href="https://octaviodeltoro.com">
-                  OCTAVIO DEL TORO
-                </a>
-              </p>
-            </div>
-          </section>
-          <Container>
-          <section className={style.section}>
-            <FeaturesList data="Home" />
-          </section>
+      </Container>
 
-          <section
-            className={"text-center " + style.section + " " + style.paddings}
-          >
-            <PaymentSection />
-          </section>
+      <section className={style.section}>
+        <div className={"text-center black_background " + style.discover}>
+          <p>DESCUBRE MÁS</p>
+          <p>
+            <a className="link" href="https://octaviodeltoro.com">
+              OCTAVIO DEL TORO
+            </a>
+          </p>
+        </div>
+      </section>
+      <Container>
+        <section className={style.section}>
+          <FeaturesList data="Home" />
+        </section>
+
+        <section
+          className={"text-center " + style.section + " " + style.paddings}
+        >
+          <PaymentSection />
+        </section>
       </Container>
     </>
   );
