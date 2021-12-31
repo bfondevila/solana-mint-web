@@ -45,7 +45,7 @@ const Home = () => {
                 fluid="xs"
               />
               <Button className={style.btnFullWidth + " my-2"} href={"/nft"}>
-                COMPRAR NFT POR 20€ O 10 MATIC
+                COMPRAR NFT POR 20€ O 8 MATIC
               </Button>
             </div>
           </Col>
@@ -57,7 +57,10 @@ const Home = () => {
             lg={5}
             className={style.flexCol + " " + style.section}
           >
-            <video width="300px" height="auto" controls>
+            <video width="300px" 
+                  height="auto" 
+                  poster="images/poster.png"
+                  controls>
               <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
             </video>
           </Col>
