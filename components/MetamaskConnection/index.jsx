@@ -1,7 +1,7 @@
 import MetaMaskOnboarding from "@metamask/onboarding";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
-import { Placeholder } from "react-bootstrap";
+import { Alert, Button, Modal, Placeholder } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { WalletContext } from "../../providers/WalletProvider";
 import style from "./metamask.module.scss";
@@ -15,6 +15,8 @@ const MetamaskConnection = (props) => {
   const [initialized, setInitialized] = useState(false);
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
   const { userWallet, setUserWallet } = useContext(WalletContext);
+  const [metamaskInstalled, setMetamaskInstalled] = useState(false);
+  const [installMetamaskModal, setInstallMetamaskModal] = useState(false);
   const onboarding = useRef();
 
   const accountDisplay = (account) => {
@@ -99,22 +101,25 @@ const MetamaskConnection = (props) => {
       }
     }, 5000);
 
-    if (
-      MetaMaskOnboarding.isMetaMaskInstalled() &&
-      (await window.ethereum._metamask.isUnlocked())
-    ) {
-      await switchToContractChain();
+    if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+      setMetamaskInstalled(true);
 
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then(handleNewAccounts);
-      window.ethereum.on("accountsChanged", handleNewAccounts);
-      window.ethereum.on("chainChanged", handleChainChanged);
+      if (await window.ethereum._metamask.isUnlocked()) {
+        await switchToContractChain();
 
-      return () => {
-        window.ethereum.removeListener("accountsChanged", handleNewAccounts);
-        window.ethereum.removeListener("chainChanged", handleChainChanged);
-      };
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then(handleNewAccounts);
+        window.ethereum.on("accountsChanged", handleNewAccounts);
+        window.ethereum.on("chainChanged", handleChainChanged);
+
+        return () => {
+          window.ethereum.removeListener("accountsChanged", handleNewAccounts);
+          window.ethereum.removeListener("chainChanged", handleChainChanged);
+        };
+      } else {
+        setInitialized(true);
+      }
     } else {
       setInitialized(true);
     }
@@ -122,6 +127,7 @@ const MetamaskConnection = (props) => {
 
   useEffect(async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+      setMetamaskInstalled(true);
       if (userWallet !== "") {
         await switchToContractChain();
         setButtonText(accountDisplay(userWallet));
@@ -134,6 +140,7 @@ const MetamaskConnection = (props) => {
 
   const onClick = async () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+      setMetamaskInstalled(true);
       if (userWallet === "") {
         window.ethereum
           .request({ method: "eth_requestAccounts" })
@@ -150,6 +157,10 @@ const MetamaskConnection = (props) => {
     }
   };
 
+  const onClickMobile = () => {
+    setInstallMetamaskModal(true);
+  };
+
   let buttonType = "";
   if (!props.normalButtonSize) {
     if (props.displayFullAddress) {
@@ -160,14 +171,63 @@ const MetamaskConnection = (props) => {
   }
 
   return (
-    <button
-      disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
-      onClick={onClick}
-      className={style.metamaskButton + " " + buttonType}
-    >
-      <img src="/images/metamask.png" className={style.metamaskImage} />{" "}
-      <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>
-    </button>
+    <>
+      <button
+        disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
+        onClick={onClick}
+        className={
+          style.metamaskButton +
+          " " +
+          buttonType +
+          (metamaskInstalled ? "" : " d-none d-md-inline")
+        }
+      >
+        <img src="/images/metamask.png" className={style.metamaskImage} />
+        <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>
+      </button>
+
+      {!metamaskInstalled && (
+        <>
+          <button
+            onClick={onClickMobile}
+            className={style.metamaskButton + " " + buttonType + " d-md-none"}
+          >
+            <img src="/images/metamask.png" className={style.metamaskImage} />
+            <span>{CONNECT_TEXT}</span>
+          </button>
+          <Modal
+            show={installMetamaskModal}
+            onHide={() => setInstallMetamaskModal(false)}
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Instalar extensión Metamask</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <Alert variant="danger">
+                <p>
+                  Por favor, instala la extensión Metamask para poder comprar
+                  uno de nuestros NFTs.
+                </p>
+                <p>
+                  Si estás viendo la web en móvil, te recomendamos mejor usar
+                  los navegadores Firefox o Chrome en tu PC.
+                </p>
+              </Alert>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button
+                variant="primary"
+                onClick={() => setInstallMetamaskModal(false)}
+              >
+                Aceptar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </>
+      )}
+    </>
   );
 };
 
