@@ -55,7 +55,9 @@ const NFTSaleItem = (props) => {
               <Card.Title className={style.card_text}>
                 {getRarityStr(rarity)}
               </Card.Title>
-              <p className={style.rarityValue}>{rarityFormat(rarity)}</p>
+              <p className={style.rarityValue}>
+                {rarity == 0 ? "ÚNICO" : rarityFormat(rarity)}
+              </p>
             </Card.Body>
           )}
         </Card>
