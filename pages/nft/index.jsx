@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { Button, Nav, Row, Col } from "react-bootstrap";
+import { Button, Nav, Row } from "react-bootstrap";
 import FeaturesList from "../../components/FeaturesList";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
 import MetamaskConnection from "../../components/MetamaskConnection";
@@ -143,25 +143,23 @@ const NFT = () => {
           <div className={style.link_container}>
             {links.map((entry, index) => {
               return (
-                <Col xs={12} sm={4}>
-                  <Link
-                    href={entry.link}
-                    passHref
-                    key={"MainNavbarLink" + entry.key}
-                    className="link"
-                    key={index}
+                <Link
+                  href={entry.link}
+                  passHref
+                  key={"MainNavbarLink" + entry.key}
+                  className="link"
+                  key={index}
+                >
+                  <Nav.Link
+                    className={
+                      entry.link === router.pathname
+                        ? "active " + style.link
+                        : style.link
+                    }
                   >
-                    <Nav.Link
-                      className={
-                        entry.link === router.pathname
-                          ? "active " + style.link
-                          : style.link
-                      }
-                    >
-                      {entry.name ?? entry.key}
-                    </Nav.Link>
-                  </Link>
-                </Col>
+                    {entry.name ?? entry.key}
+                  </Nav.Link>
+                </Link>
               );
             })}
           </div>

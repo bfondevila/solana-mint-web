@@ -81,3 +81,13 @@
     padding: 20px 30px;
   }
 }
+
+
+$breakpoint-mobile: 480px;
+
+@media (max-width: $breakpoint-mobile) {
+  .link {
+    font-size: 14px;
+    padding: 0;
+  }
+  }
