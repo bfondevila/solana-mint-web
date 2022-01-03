@@ -14,7 +14,7 @@ const NFTSaleStats = (props) => {
 
   useEffect(async () => {
     getPublicInfo().then(({ lastTokenId, lastMinted, saleFinishTime }) => {
-      setTotalSales(Math.floor(getTotalMoneyRaisedEuros(lastTokenId)));
+      setTotalSales(Math.floor(getTotalMoneyRaisedEuros(lastTokenId - 1)));
       setSaleFinishTime(saleFinishTime);
 
       const currentDate = Math.floor(Date.now() / 1000);
