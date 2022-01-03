@@ -9,16 +9,16 @@ export const getTransactionUrl = (transactionHash) => {
 };
 
 export const Contract = {
-  address: "0xfCd82c2C7DB03402542dE28A138b16859Fd72C30",
-  rpcUrls: ["https://rpc-mumbai.maticvigil.com"],
-  chainId: "0x13881",
-  chainName: "Polygon Testnet (Mumbai)",
+  address: "0x88EE4FC44A824cc130B596D92c376555820C2f0c",
+  rpcUrls: ["https://polygon-rpc.com"],
+  chainId: "0x89",
+  chainName: "Polygon Mainnet",
   nativeCurrency: {
     name: "Matic",
     symbol: "MATIC",
     decimals: 18,
   },
-  blockExplorerUrls: ["https://mumbai.polygonscan.com"],
+  blockExplorerUrls: ["https://polygonscan.com"],
   abi: [
     {
       inputs: [
@@ -729,6 +729,19 @@ export const Contract = {
         },
       ],
       name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "newPrice",
+          type: "uint256",
+        },
+      ],
+      name: "setNFTPrice",
       outputs: [],
       stateMutability: "nonpayable",
       type: "function",
