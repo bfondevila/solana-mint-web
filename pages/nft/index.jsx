@@ -93,7 +93,7 @@ const NFT = () => {
           <div className="d-flex flex-column flex-md-row justify-content-center">
             <Button
               href={
-                "https://docs.google.com/document/d/1aHsFnM6tkibs6I-EfpT_KjOwq-ik8StR89JQeEObqIQ/edit"
+                "https://www.youtube.com/watch?v=V8YOtKDRMjU"
               }
               target="_blank"
               className={style.button_style + " mx-md-2 mb-2"}
