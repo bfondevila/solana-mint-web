@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import MetamaskConnection from "../../components/MetamaskConnection";
+import SocialLinks from "../../components/Social";
 import { mainLinks } from "../../constants/links";
 import style from "./header.module.scss";
 
@@ -76,6 +77,7 @@ const Header = (props) => {
                 );
               })}
               <MetamaskConnection displayFullAddress={false} />
+              <SocialLinks />
             </Nav>
           </Navbar.Collapse>
         </Container>

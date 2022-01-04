@@ -1,0 +1,16 @@
+.socialLinks {
+  white-space: nowrap;
+  padding: 15px;
+
+  & a {
+    margin-right: 5px;
+  }
+
+  & img {
+    height: 32px;
+  }
+
+  &.inverted {
+    filter: invert(1);
+  }
+}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Col, Row } from "react-bootstrap";
+import SocialLinks from "../../components/Social";
 import { mainLinks, otherLinks } from "../../constants/links";
 import style from "./footer.module.scss";
 
@@ -12,11 +13,11 @@ const Footer = () => {
   return (
     <footer className={"black_background " + style.footer}>
       <div className={style.footer_container}>
-        <div className={style.title}>
+        <Col xs={12} className={`${style.title} mb-4`}>
           <p className={"text-center " + style.title}>
             made with love for La Palma
           </p>
-        </div>
+        </Col>
         <Row className={`${style.footerLinkWrap} px-2`}>
           {footerLinks.map((entry, index) => {
             return (
@@ -36,6 +37,9 @@ const Footer = () => {
             );
           })}
         </Row>
+        <Col xs={12} className={"my-3 text-center"}>
+          <SocialLinks inverted />
+        </Col>
       </div>
     </footer>
   );
