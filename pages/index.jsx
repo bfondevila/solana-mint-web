@@ -58,7 +58,7 @@ const Home = () => {
             <video
               width="300px"
               height="auto"
-              poster="images/poster.png"
+              poster="images/poster.webp"
               controls
             >
               <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
