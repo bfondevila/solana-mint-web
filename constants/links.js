@@ -1,32 +1,40 @@
 export const mainLinks = [
   {
     key: "home",
-    name: "HOME",
+    name: "Home",
     link: "/",
   },
   {
     key: "venta_nft",
-    name: "COMPRAR NFT",
-    link: "/nft",
+    name: "Comprar NFT",
+    link: "/nft/",
   },
   {
     key: "coleccion",
-    name: "COLECCIÓN",
-    link: "/coleccion",
+    name: "Colección",
+    link: "/coleccion/",
   },
   {
     key: "relato",
-    name: "RELATO",
-    link: "/relato",
+    name: "Relato",
+    link: "/relato/",
   },
   {
     key: "causa_social",
-    name: "CAUSA SOCIAL",
-    link: "/causa",
+    name: "Causa Social",
+    link: "/causa/",
   },
   {
     key: "mi_cuenta",
-    name: "MI CUENTA",
-    link: "/mi-cuenta",
-  }
+    name: "Mi Cuenta",
+    link: "/mi-cuenta/",
+  },
+];
+
+export const otherLinks = [
+  {
+    key: "aviso_legal",
+    name: "Aviso Legal",
+    link: "/aviso-legal",
+  },
 ];

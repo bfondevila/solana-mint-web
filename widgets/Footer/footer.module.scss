@@ -13,6 +13,7 @@
 
   .footer_container {
     padding: 10px 20px;
+
     .title {
       font-size: 28px;
       letter-spacing: 10px;
@@ -20,26 +21,17 @@
       margin-bottom: 41.6px;
     }
 
-    .links_container {
+    .footerLinkWrap {
       display: flex;
       justify-content: space-around;
-      .links_left {
-        text-align: left;
-        a {
-          text-decoration: none;
-          font-size: 10px;
-          font-weight: lighter;
-          letter-spacing: 5px;
-        }
-      }
-      .links_right {
-        text-align: right;
-        a {
-          text-decoration: none;
-          font-size: 10px;
-          font-weight: lighter;
-          letter-spacing: 5px;
-        }
+      max-width: fit-content;
+
+      .footerLink {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: lighter;
+        letter-spacing: 5px;
       }
     }
   }
