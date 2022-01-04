@@ -33,8 +33,8 @@ const Header = (props) => {
   return (
     <>
       <Head>
-        <title>{`Estrella sobre un volcán dormido ${activeLink.name}`}</title>$
-        {activeLink.description && (
+        <title>{`Estrella sobre un volcán dormido ${activeLink?.name}`}</title>$
+        {activeLink?.description && (
           <meta name="description" content={activeLink.description} />
         )}
       </Head>
@@ -65,7 +65,7 @@ const Header = (props) => {
                   >
                     <Nav.Link
                       className={
-                        pathMatchesEntry(entry.link, activeLink.link)
+                        pathMatchesEntry(entry.link, activeLink?.link)
                           ? "active"
                           : ""
                       }
