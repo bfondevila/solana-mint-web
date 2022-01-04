@@ -7,6 +7,7 @@ import style from "./nftsale.module.scss";
 const NFTSaleItem = (props) => {
   const rarity = props.rarity;
   const imageUrl = props.imageUrl;
+  const useWebp = props.useWebp;
 
   const rarityFormat = NumberFormat().rarity;
 
@@ -46,6 +47,7 @@ const NFTSaleItem = (props) => {
           <Card.Img
             as={Image}
             variant="top"
+            useWebp={useWebp}
             src={imageUrl}
             alt={"NFT tres enanos de rareza " + rarity}
             fluid={true}
