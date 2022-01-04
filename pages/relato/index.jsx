@@ -1,4 +1,5 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import Image from "../../components/Image";
 import PaymentSection from "../../components/PaymentSection";
 import style from "./relato.module.scss";
 
@@ -8,7 +9,11 @@ const Relato = () => {
       <Container>
         <Row className={style.section + " text-center"} as="section">
           <Col>
-            <Image className={style.img_container} src="/images/anelio.jpeg" fluid={true} />
+            <Image
+              className={style.img_container}
+              src="/images/anelio.jpeg"
+              fluid={true}
+            />
             <h1>La isla de La Palma, el volcán y los Enanos</h1>
             <h3>El relato detrás de la ceniza</h3>
             <h5>por Anelio Rodríguez Concepción</h5>
@@ -59,9 +64,7 @@ const Relato = () => {
           </Col>
         </Row>
 
-        <section
-          className={"text-center " + style.paddings}
-        >
+        <section className={"text-center " + style.paddings}>
           <PaymentSection />
         </section>
       </Container>

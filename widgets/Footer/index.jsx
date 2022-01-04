@@ -27,6 +27,7 @@ const Footer = () => {
                 className={`text-center ${
                   index % 2 == 0 ? "text-sm-start" : "text-sm-end"
                 }`}
+                key={index}
               >
                 <Link href={entry.link}>
                   <a className={`link mx-sm-5 ${style.footerLink}`}>

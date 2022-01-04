@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import Image from "../../components/Image";
 import MetamaskConnection from "../../components/MetamaskConnection";
 import SocialLinks from "../../components/Social";
 import { mainLinks } from "../../constants/links";
@@ -47,12 +48,12 @@ const Header = (props) => {
       >
         <Container>
           <Navbar.Brand>
-            <img
+            <Image
               src="/images/logo.png"
               width="200px"
               height="auto"
               className="center"
-            ></img>
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -1,3 +1,4 @@
+import Image from "../Image";
 import style from "./social.module.scss";
 
 const SocialLinks = (props) => (
@@ -9,17 +10,17 @@ const SocialLinks = (props) => (
       target="_blank"
       title="Twitter"
     >
-      <img src="/images/logos/twitter.png" alt="Twitter" />
+      <Image src="/images/logos/twitter.png" alt="Twitter" />
     </a>
     <a
       href="https://www.instagram.com/estrellavolcan"
       target="_blank"
       title="Instagram"
     >
-      <img src="/images/logos/instagram.png" alt="Instagram" />
+      <Image src="/images/logos/instagram.png" alt="Instagram" />
     </a>
     <a href="https://t.me/estrellavolcan" target="_blank" title="Telegram">
-      <img src="/images/logos/telegram.png" alt="Telegram" />
+      <Image src="/images/logos/telegram.png" alt="Telegram" />
     </a>
   </div>
 );

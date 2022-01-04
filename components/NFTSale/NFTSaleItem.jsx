@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
 import NumberFormat from "../../shared/lib/NumberFormat";
+import Image from "../Image";
 import style from "./nftsale.module.scss";
 
 const NFTSaleItem = (props) => {
@@ -43,6 +44,7 @@ const NFTSaleItem = (props) => {
       <div className={style.card_container}>
         <Card className={style.card + " " + getRarityStyle(rarity)}>
           <Card.Img
+            as={Image}
             variant="top"
             src={imageUrl}
             alt={"NFT tres enanos de rareza " + rarity}

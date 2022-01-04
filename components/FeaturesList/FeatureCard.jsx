@@ -1,4 +1,5 @@
-import { Card, Col, Row, Image } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
+import Image from "../Image";
 import style from "./feature-card.module.scss";
 
 const FeatureCard = (props) => {

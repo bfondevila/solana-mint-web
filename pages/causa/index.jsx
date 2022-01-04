@@ -1,5 +1,6 @@
 import PaymentSection from "../../components/PaymentSection";
 import TeamGrid from "../../components/TeamGrid";
+import Image from "../../components/Image";
 import FeatureCard from "../../components/FeaturesList/FeatureCard";
 import style from "./causa.module.scss";
 import { Col, Row } from "react-bootstrap";
@@ -68,22 +69,22 @@ const Causa = () => {
             <Col xs={12} md={4}>
               <div>
                 <span>
-                  <img
+                  <Image
                     src="/images/lecover_abogados.PNG"
                     width="90%"
                     height="auto"
-                  ></img>
+                  />
                 </span>
               </div>
             </Col>
             <Col xs={12} md={4}>
               <div>
                 <span>
-                  <img
+                  <Image
                     src="/images/fotoarte_black.png"
                     width="90%"
                     height="auto"
-                  ></img>
+                  />
                 </span>
               </div>
             </Col>

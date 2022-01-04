@@ -1,0 +1,17 @@
+{
+  "name": "deltoro-web-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compress-images": "node compress-images.js"
+  },
+  "devDependencies": {
+    "glob": "^7.2.0",
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "prettier": "^2.5.1"
+  },
+  "type": "module"
+}

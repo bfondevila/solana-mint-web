@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Alert, Button, Modal, Placeholder } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { WalletContext } from "../../providers/WalletProvider";
+import Image from "../Image";
 import style from "./metamask.module.scss";
 
 const ONBOARD_TEXT = "Instalar wallet MetaMask!";
@@ -170,7 +171,7 @@ const MetamaskConnection = (props) => {
           (metamaskInstalled ? "" : " d-none d-md-inline")
         }
       >
-        <img src="/images/metamask.png" className={style.metamaskImage} />
+        <Image src="/images/metamask.png" className={style.metamaskImage} />
         <span>{initialized ? buttonText : <Placeholder xs={6} />}</span>
       </button>
 
@@ -180,7 +181,7 @@ const MetamaskConnection = (props) => {
             onClick={onClickMobile}
             className={style.metamaskButton + " " + buttonType + " d-md-none"}
           >
-            <img src="/images/metamask.png" className={style.metamaskImage} />
+            <Image src="/images/metamask.png" className={style.metamaskImage} />
             <span>{CONNECT_TEXT}</span>
           </button>
           <Modal

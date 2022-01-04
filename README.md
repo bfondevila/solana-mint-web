@@ -24,3 +24,7 @@ To test this locally, follow these two steps:
 
 1. Run `npm run build` to produce a production-optimised version of the website.
 1. Run `docker-compose up` in the root folder of the project to start nginx pointing to the output dir, serving all files statically when accessing http://localhost:8080.
+
+### Compressing images
+
+To generate the webp version of every image, run `npm run compress-images` that is present in the `script/` folder

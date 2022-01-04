@@ -1,5 +1,6 @@
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import FeaturesList from "../components/FeaturesList";
+import Image from "../components/Image";
 import NFTSaleStats from "../components/NFTSaleStats";
 import PaymentSection from "../components/PaymentSection";
 import style from "./home.module.scss";
