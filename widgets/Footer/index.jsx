@@ -13,9 +13,9 @@ const Footer = () => {
     <footer className={"black_background " + style.footer}>
       <div className={style.footer_container}>
         <div className={style.title}>
-          <h2 className={"text-center " + style.title}>
+          <p className={"text-center " + style.title}>
             made with love for La Palma
-          </h2>
+          </p>
         </div>
         <Row className={`${style.footerLinkWrap} px-2`}>
           {footerLinks.map((entry, index) => {

@@ -43,7 +43,7 @@ export default function MyAccount() {
       >
         <div className={"text-center"}>
           <div className={"text-center" + " " + style.paddings}>
-            <h2>Actualmente tienes {NFTsInWallet.length} NFT en tu monedero</h2>
+            <h3>Actualmente tienes {NFTsInWallet.length} NFT en tu monedero</h3>
             <hr className={style.sep_line}></hr>
             <div className={style.grid_container}>
               <Row>

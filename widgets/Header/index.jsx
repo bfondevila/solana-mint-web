@@ -33,7 +33,10 @@ const Header = (props) => {
   return (
     <>
       <Head>
-        <title>{`Estrella sobre un volcán dormido ${activeLink.name}`}</title>
+        <title>{`Estrella sobre un volcán dormido ${activeLink.name}`}</title>$
+        {activeLink.description && (
+          <meta name="description" content={activeLink.description} />
+        )}
       </Head>
       <Navbar
         className={style.header_container}

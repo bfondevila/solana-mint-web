@@ -92,9 +92,7 @@ const NFT = () => {
         {!isConnected() && (
           <div className="d-flex flex-column flex-md-row justify-content-center">
             <Button
-              href={
-                "https://www.youtube.com/watch?v=V8YOtKDRMjU"
-              }
+              href={"https://www.youtube.com/watch?v=V8YOtKDRMjU"}
               target="_blank"
               className={style.button_style + " mx-md-2 mb-2"}
             >
@@ -112,7 +110,7 @@ const NFT = () => {
         )}
       </section>
       <section className={style.section + " white_background"}>
-        <div className={"text-center container" + " " + style.paddings}>
+        <article className={"text-center container" + " " + style.paddings}>
           <h3>
             La obra “Estrella sobre un volcán” está formada por 24 piezas de
             arte digital diseñadas por el pintor canario Octavio del Toro. Con
@@ -134,11 +132,11 @@ const NFT = () => {
               );
             })}
           </Row>
-        </div>
+        </article>
       </section>
 
       <section>
-        <div className={"text-center black_background " + style.discover}>
+        <article className={"text-center black_background " + style.discover}>
           <h2>CONOCE MÁS SOBRE:</h2>
           <div className={style.link_container}>
             {links.map((entry, index) => {
@@ -163,7 +161,7 @@ const NFT = () => {
               );
             })}
           </div>
-        </div>
+        </article>
       </section>
       <section className={style.section}>
         <FeaturesList data="NFT" />
