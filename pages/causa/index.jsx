@@ -45,41 +45,14 @@ const Causa = () => {
         </div>
       </section>
 
-      <section>
-        <div
-          className={
-            "text-center" +
-            " " +
-            style.white_background +
-            " " +
-            style.paddings_plus
-          }
-        >
-          <h2 className={style.section_title}>
-            Conoce más sobre el proyecto directamente por los fundadores
-          </h2>
-          <div className={style.video_responsiv}>
-          <iframe
-            src="https://www.youtube.com/embed/G9vMrkFaby8"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; 
-          clipboard-write; encrypted-media; 
-          gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          </div>
-        </div>
-      </section>
-
       <section className={style.section}>
-        <div className={"text-center" + " " + style.paddings}>
+        <div className={`text-center white_background ${style.padding}`}>
           <h2 className={style.section_title}>NUESTRO EQUIPO</h2>
           <TeamGrid />
         </div>
       </section>
 
-      <section className={style.section}>
+      <section>
         <div
           className={
             "text-center white_background " +
@@ -89,31 +62,31 @@ const Causa = () => {
           }
         >
           <Row>
-          <Col xs={12} md={4} >
-          <h2>CON EL APOYO DE:</h2>
-          </Col>
-          <Col xs={12} md={4}>
-          <div>
-            <span>
-              <img
-                src="/images/lecover_abogados.PNG"
-                width="90%"
-                height="auto"
-              ></img>
-            </span>
-          </div>
-          </Col>
-          <Col xs={12} md={4}>
-          <div>
-            <span>
-              <img
-                src="/images/fotoarte_black.png"
-                width="90%"
-                height="auto"
-              ></img>
-            </span>
-          </div>
-          </Col>
+            <Col xs={12} md={4}>
+              <h2>CON EL APOYO DE:</h2>
+            </Col>
+            <Col xs={12} md={4}>
+              <div>
+                <span>
+                  <img
+                    src="/images/lecover_abogados.PNG"
+                    width="90%"
+                    height="auto"
+                  ></img>
+                </span>
+              </div>
+            </Col>
+            <Col xs={12} md={4}>
+              <div>
+                <span>
+                  <img
+                    src="/images/fotoarte_black.png"
+                    width="90%"
+                    height="auto"
+                  ></img>
+                </span>
+              </div>
+            </Col>
           </Row>
         </div>
       </section>
