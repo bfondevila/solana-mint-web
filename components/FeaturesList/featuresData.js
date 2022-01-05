@@ -8,7 +8,7 @@ const featuresData = {
       content:
         "Fácil y rápido. Recibe tu NFT en tu wallet y si no tienes te \
                 explicamos cómo crearte uno. La venta de esta colección \
-                estará abierta hasta el 16 de Enero de 2022. ¡Luego no se \
+                estará abierta hasta el 23 de Enero de 2022 a las 23:59. ¡Luego no se \
                 venderá nunca más!",
       imgSrc: "/images/payment_methods.png",
     },
@@ -41,7 +41,7 @@ const featuresData = {
       de La Palma.",
       footer: (
         <p>
-          Lee más sobre la causa social {" "}
+          Lee más sobre la causa social{" "}
           <a className="black_link" href="/causa">
             aquí.
           </a>
@@ -81,17 +81,17 @@ const featuresData = {
         <>
           <p>
             <ul>
-            <li>Diseño digital: ProCreate en iPad </li>
-            <li>
-              Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
-              Hemp 290g usando tintas pigmentadas minerales
-            </li>
-            <li>Blockchain: Polygon</li>
-            <li>
-              <a href={getContractUrl()} target="_blank">
-                {"Smart contract"}
-              </a>
-            </li>
+              <li>Diseño digital: ProCreate en iPad </li>
+              <li>
+                Cuadro físico: lámina 46x54cm en papel Hahnemühle<br></br>
+                Hemp 290g usando tintas pigmentadas minerales
+              </li>
+              <li>Blockchain: Polygon</li>
+              <li>
+                <a href={getContractUrl()} target="_blank">
+                  {"Smart contract"}
+                </a>
+              </li>
             </ul>
           </p>
         </>
@@ -104,8 +104,7 @@ const featuresData = {
       header: "EDICIÓN EXCLUSIVA",
       content:
         "El número de unidades a vender es ilimitado  \
-      pero la colección estará abierta hasta el 16 de \
-      Enero de 2022. Luego, nunca más se volverán a \
+      pero la colección estará abierta hasta el 23 de Enero de 2022 a las 23:59. Luego, nunca más se volverán a \
       vender nuevas unidades. Cuando finalice la \
       venta, sortearemos entre todos los participantes el NFT Coleccionista (formado por los colores oro, plata y bronce) y la versión física de la \
       obra.",
