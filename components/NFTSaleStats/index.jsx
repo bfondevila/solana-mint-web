@@ -31,9 +31,9 @@ const NFTSaleStats = (props) => {
 
   return (
     <Container className="text-center">
+      <p className={style.moneySummary}>{totalSales}€</p>
       <p className={style.stats}>
-        {totalSales}€ han sido recaudados para La Palma, la última compra hace{" "}
-        {lastSale}.
+        han sido recaudados para La Palma, la última compra hace {lastSale}
       </p>
       <p className={style.countdown}>
         <Timer deadline={saleFinishTime} />
