@@ -31,11 +31,9 @@ const Home = () => {
                 los afectados por el volcán de La Palma.
               </p>
               <p>
-                La colección “Estrella sobre un volcán dormido” es una fusión de
-                arte físico y digital mezclando la democratización de la
-                tecnología blockchain, la promoción del arte local canario y el
-                apoyo económico a una causa social para los afectados por el
-                volcán palmero.
+                Un NFT es un contrato digital que verifica que el dueño de la
+                pieza de arte eres tú. Su funcionamiento es un coleccionable que
+                conmemora la causa social afectados por el volcán de La Palma.
               </p>
             </div>
           </Col>
@@ -67,6 +65,13 @@ const Home = () => {
 
           <Col xs={12} lg={5} className={style.section + " " + style.saleStats}>
             <div className="text-center">
+              <p>
+                La colección “Estrella sobre un volcán dormido” es una fusión de
+                arte físico y digital mezclando la democratización de la
+                tecnología blockchain, la promoción del arte local canario y el
+                apoyo económico a una causa social para los afectados por el
+                volcán palmero.
+              </p>
               <NFTSaleStats />
             </div>
           </Col>

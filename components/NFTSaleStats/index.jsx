@@ -33,7 +33,7 @@ const NFTSaleStats = (props) => {
     <Container className="text-center">
       <p className={style.moneySummary}>{totalSales}€</p>
       <p className={style.stats}>
-        han sido recaudados para La Palma, la última compra hace {lastSale}
+        Han sido recaudados para La Palma, la última compra hace {lastSale}
       </p>
       <p className={style.countdown}>
         <Timer deadline={saleFinishTime} />
