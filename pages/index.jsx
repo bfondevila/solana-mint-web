@@ -64,14 +64,14 @@ const Home = () => {
           </Col>
 
           <Col xs={12} lg={5} className={style.section + " " + style.saleStats}>
+            <p>
+              La colección “Estrella sobre un volcán dormido” es una fusión de
+              arte físico y digital mezclando la democratización de la
+              tecnología blockchain, la promoción del arte local canario y el
+              apoyo económico a una causa social para los afectados por el
+              volcán palmero.
+            </p>
             <div className="text-center">
-              <p>
-                La colección “Estrella sobre un volcán dormido” es una fusión de
-                arte físico y digital mezclando la democratización de la
-                tecnología blockchain, la promoción del arte local canario y el
-                apoyo económico a una causa social para los afectados por el
-                volcán palmero.
-              </p>
               <NFTSaleStats />
             </div>
           </Col>
