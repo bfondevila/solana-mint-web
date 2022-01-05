@@ -59,7 +59,7 @@ const Home = () => {
               poster="images/poster.webp"
               controls
             >
-              <source src="/videos/LaPalma_9x16.mp4" type="video/mp4"></source>
+              <source src="/videos/LaPalma_intro.mp4" type="video/mp4"></source>
             </video>
           </Col>
 
