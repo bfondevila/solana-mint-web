@@ -44,9 +44,9 @@ const Home = () => {
                 className={style.heroImage + " my-2"}
                 fluid="xs"
               />
-              <Button className={style.btnFullWidth + " my-2"} href={"/nft"}>
+              {/* <Button className={style.btnFullWidth + " my-2"} href={"/nft"}>
                 COMPRAR NFT POR 20€ O 8 MATIC
-              </Button>
+              </Button> */}
             </div>
           </Col>
         </Row>

@@ -104,7 +104,7 @@ const Timer = (props) => {
           </div>
         </div>
       ) : (
-        <span>La venta de NFTs ha finalizado.</span>
+        <span>La venta de NFTs ha finalizado</span>
       )}
     </>
   );

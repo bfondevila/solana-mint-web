@@ -37,6 +37,7 @@ const Footer = () => {
               </Col>
             );
           })}
+          {footerLinks.length % 2 == 1 ? <Col xs={12} sm={6} /> : ""}
         </Row>
         <Col xs={12} className={"my-3 text-center"}>
           <SocialLinks inverted />

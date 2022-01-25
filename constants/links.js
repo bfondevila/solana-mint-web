@@ -6,13 +6,13 @@ export const mainLinks = [
     description:
       "Colleción NFT creada por Octavio del Toro para el apoyo a los afectados del volcán de La Palma",
   },
-  {
-    key: "venta_nft",
-    name: "Comprar NFT",
-    link: "/nft/",
-    description:
-      "Cómo adquirir el NFT único creado por el artista palmero Octavio del Toro",
-  },
+  // {
+  //   key: "venta_nft",
+  //   name: "Comprar NFT",
+  //   link: "/nft/",
+  //   description:
+  //     "Cómo adquirir el NFT único creado por el artista palmero Octavio del Toro",
+  // },
   {
     key: "coleccion",
     name: "Colección",
