@@ -1,2 +1,5 @@
 [submodule "infrastructure"]
-	master = master
+	branch = master
+	path = infrastructure
+	url = git@github.com:Dracoblocks/deltoro-web-infrastructure
+
