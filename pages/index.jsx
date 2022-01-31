@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Alert, Col, Container, Row } from "react-bootstrap";
 import FeaturesList from "../components/FeaturesList";
 import Image from "../components/Image";
 import NFTSaleStats from "../components/NFTSaleStats";
@@ -9,6 +9,27 @@ const Home = () => {
   return (
     <>
       <Container>
+        <Row as="section" className={"my-sm-4 " + style.introduction_container}>
+          <Alert variant="success" className={style.winnerMessage}>
+            El ganador de la versión original del NFT{" "}
+            <i>Estrella sobre un volcán dormido</i> ha sido el wallet{" "}
+            <a
+              target="_blank"
+              href="https://polygonscan.com/token/0x88ee4fc44a824cc130b596d92c376555820c2f0c?a=0x410f2e92347a0ce497f56470161102a99cbc6c0b"
+            >
+              0x410f2e92347a0ce497f56470161102a99cbc6c0b
+            </a>{" "}
+            y el sorteo se ha llevado a cabo en{" "}
+            <a
+              target="_blank"
+              href="https://polygonscan.com/tx/0xa3e1e66d0936080507a532eb67a3491d83989b91018c2b7c5c3a9826c4d4c3fd"
+            >
+              esta transacción
+            </a>
+            .
+          </Alert>
+        </Row>
+
         <Row as="section">
           <Col className={`text-center ${style.section}`} fluid={true}>
             <h1>Colección Afectados por Volcán de La Palma</h1>
