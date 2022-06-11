@@ -12,21 +12,25 @@ const NFTSaleStats = (props) => {
   const [lastSale, setLastSale] = useState();
   const [saleFinishTime, setSaleFinishTime] = useState(null);
 
-  useEffect(async () => {
-    getPublicInfo().then(({ lastTokenId, lastMinted, saleFinishTime }) => {
-      setTotalSales(Math.floor(getTotalMoneyRaisedEuros(lastTokenId - 1)));
-      setSaleFinishTime(saleFinishTime);
+  useEffect(() => {
+    const fetchData = async () => {
+      getPublicInfo().then(({ lastTokenId, lastMinted, saleFinishTime }) => {
+        setTotalSales(Math.floor(getTotalMoneyRaisedEuros(lastTokenId - 1)));
+        setSaleFinishTime(saleFinishTime);
 
-      const currentDate = Math.floor(Date.now() / 1000);
-      const seconds = currentDate - lastMinted;
-      if (seconds / 3600 > 1) {
-        setLastSale(Math.floor(seconds / 3600) + " horas");
-      } else if (seconds / 60 > 1) {
-        setLastSale(Math.floor(seconds / 60) + " minutos");
-      } else {
-        setLastSale(seconds + " segundos");
-      }
-    });
+        const currentDate = Math.floor(Date.now() / 1000);
+        const seconds = currentDate - lastMinted;
+        if (seconds / 3600 > 1) {
+          setLastSale(Math.floor(seconds / 3600) + " horas");
+        } else if (seconds / 60 > 1) {
+          setLastSale(Math.floor(seconds / 60) + " minutos");
+        } else {
+          setLastSale(seconds + " segundos");
+        }
+      });
+    };
+
+    fetchData();
   }, []);
 
   return (

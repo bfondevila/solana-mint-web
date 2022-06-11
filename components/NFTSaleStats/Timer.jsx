@@ -4,10 +4,6 @@ import style from "./timer.module.scss";
 const Timer = (props) => {
   const { deadline } = props;
 
-  if (deadline === null) {
-    return null;
-  }
-
   const addZeroToLeft = (value) => {
     if (value < 10) {
       return "0" + value;

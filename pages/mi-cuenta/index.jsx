@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import Web3Connection from "../../components/Web3Connection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import OpenseaButton from "../../components/OpenseaButton";
+import Web3Connection from "../../components/Web3Connection";
 import { WalletContext } from "../../providers/WalletProvider";
 import { getNFTsFromAddress } from "../../shared/lib/Crypto";
 import style from "./micuenta.module.scss";
@@ -11,12 +11,15 @@ export default function MyAccount() {
   const { userWallet } = useContext(WalletContext);
   const [NFTsInWallet, setNFTsInWallet] = useState([]);
 
-  useEffect(async () => {
-    const myNFTs = (await getNFTsFromAddress(userWallet)).filter(
-      (nft) => !nft.pendingReveal,
-    );
-    myNFTs.sort((a, b) => a.rarity - b.rarity);
-    setNFTsInWallet(myNFTs);
+  useEffect(() => {
+    const fetchData = async () => {
+      const myNFTs = (await getNFTsFromAddress(userWallet)).filter(
+        (nft) => !nft.pendingReveal,
+      );
+      myNFTs.sort((a, b) => a.rarity - b.rarity);
+      setNFTsInWallet(myNFTs);
+    };
+    fetchData();
   }, [userWallet]);
 
   return (

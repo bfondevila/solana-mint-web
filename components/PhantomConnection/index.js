@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Alert, Button, Modal, Placeholder } from "react-bootstrap";
+import { Alert, Button, Modal } from "react-bootstrap";
 import { Contract } from "../../constants/contract";
 import { WalletContext } from "../../providers/WalletProvider";
 import Image from "../Image";
 import style from "./phantom.module.scss";
 import { getProvider } from "./Provider";
 
-const ONBOARD_TEXT = "Instalar wallet Phantom!";
+const ONBOARD_TEXT = "Instalar Phantom wallet";
 const CONNECT_TEXT = "Conectar Wallet";
 
 const PhantomConnection = ({
@@ -69,6 +69,11 @@ const PhantomConnection = ({
   useEffect(() => {
     provider?.on("connect", updateWalletDetails);
     provider?.on("accountChanged", updateWalletDetails);
+
+    return () => {
+      provider?.removeListener("connect", updateWalletDetails);
+      provider?.removeListener("accountChanged", updateWalletDetails);
+    };
   });
 
   useEffect(() => {
@@ -92,10 +97,16 @@ const PhantomConnection = ({
     }
   }
 
+  const buttonProps = {};
+  if (!provider) {
+    buttonProps.href = "https://phantom.app/";
+    buttonProps.target = "_blank";
+  }
+
   return (
     <>
-      <button
-        disabled={!provider || (userWallet !== "" && !displayWithLink)}
+      <Button
+        disabled={userWallet !== "" && !displayWithLink}
         onClick={connectWallet}
         className={
           style.button +
@@ -103,10 +114,11 @@ const PhantomConnection = ({
           buttonType +
           (provider ? "" : " d-none d-md-inline")
         }
+        {...buttonProps}
       >
         <Image src="/images/phantom.png" className={style.image} />
-        <span>{provider ? buttonText : <Placeholder xs={6} />}</span>
-      </button>
+        <span>{provider ? buttonText : ONBOARD_TEXT}</span>
+      </Button>
 
       {!provider && (
         <>
