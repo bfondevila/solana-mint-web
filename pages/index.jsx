@@ -74,14 +74,12 @@ const Home = () => {
 
         <Row as="section">
           <Col xs={12} lg={5} className={style.flexCol + " " + style.section}>
-            <video
+            <Image
               width="300px"
               height="auto"
-              poster="images/poster.webp"
+              src="/images/poster.webp"
               controls
-            >
-              <source src="/videos/LaPalma_intro.mp4" type="video/mp4"></source>
-            </video>
+            />
           </Col>
 
           <Col xs={12} lg={5} className={style.section + " " + style.saleStats}>
