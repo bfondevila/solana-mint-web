@@ -18,7 +18,7 @@ import {
   getPublicInfo,
 } from "../../shared/lib/Crypto";
 import NumberFormat from "../../shared/lib/NumberFormat";
-import MetamaskConnection from "../MetamaskConnection";
+import Web3Connection from "../Web3Connection";
 import style from "./pay_cta.module.scss";
 
 const defaultNFTAmount = 1;
@@ -214,7 +214,7 @@ const PayCTA = () => {
           <div className={style.container}>
             <span className={style.form_field}>Enviar a: </span>
             <span>
-              <MetamaskConnection displayFullAddress displayWithLink />
+              <Web3Connection displayFullAddress displayWithLink />
               <label className={style.required} hidden={isConnected()}>
                 * Requerido
               </label>

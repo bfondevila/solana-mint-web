@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import MetamaskConnection from "../../components/MetamaskConnection";
+import Web3Connection from "../../components/Web3Connection";
 import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 import OpenseaButton from "../../components/OpenseaButton";
 import { WalletContext } from "../../providers/WalletProvider";
@@ -30,7 +30,7 @@ export default function MyAccount() {
               : "Por favor, conecta tu monedero primero."}
           </h4>
           <div className={"btn " + style.social} hidden={userWallet !== ""}>
-            <MetamaskConnection />
+            <Web3Connection />
           </div>
           <div hidden={userWallet === ""}>
             <OpenseaButton wallet={userWallet}></OpenseaButton>

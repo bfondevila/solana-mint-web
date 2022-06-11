@@ -11,7 +11,7 @@ const ONBOARD_TEXT = "Instalar wallet MetaMask!";
 const CONNECT_TEXT = "Conectar Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
-const MetamaskConnection = (props) => {
+const MetamaskConnection = ({displayFullAddress, displayWithLink, normalButtonSize}) => {
   const router = useRouter();
   const [initialized, setInitialized] = useState(false);
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
@@ -22,7 +22,7 @@ const MetamaskConnection = (props) => {
 
   const accountDisplay = (account) => {
     let result;
-    if (props.displayFullAddress) {
+    if (displayFullAddress) {
       result = account;
     } else {
       result =
@@ -31,7 +31,7 @@ const MetamaskConnection = (props) => {
         account.substring(account.length - 4, account.length - 1);
     }
 
-    if (props.displayWithLink) {
+    if (displayWithLink) {
       result = (
         <a
           target="_blank"
@@ -151,8 +151,8 @@ const MetamaskConnection = (props) => {
   };
 
   let buttonType = "";
-  if (!props.normalButtonSize) {
-    if (props.displayFullAddress) {
+  if (!normalButtonSize) {
+    if (displayFullAddress) {
       buttonType = style.longDisplay;
     } else {
       buttonType = style.shortDisplay;
@@ -162,7 +162,7 @@ const MetamaskConnection = (props) => {
   return (
     <>
       <button
-        disabled={!initialized || (userWallet !== "" && !props.displayWithLink)}
+        disabled={!initialized || (userWallet !== "" && !displayWithLink)}
         onClick={onClick}
         className={
           style.metamaskButton +

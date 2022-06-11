@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Image from "../../components/Image";
-import MetamaskConnection from "../../components/MetamaskConnection";
+import Web3Connection from "../../components/Web3Connection";
 import SocialLinks from "../../components/Social";
 import { mainLinks } from "../../constants/links";
 import style from "./header.module.scss";
@@ -77,7 +77,7 @@ const Header = (props) => {
                   </Link>
                 );
               })}
-              <MetamaskConnection displayFullAddress={false} />
+              <Web3Connection displayFullAddress={false} />
               <SocialLinks />
             </Nav>
           </Navbar.Collapse>

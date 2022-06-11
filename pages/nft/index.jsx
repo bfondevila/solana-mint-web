@@ -5,7 +5,7 @@
 // import { Button, Nav, Row } from "react-bootstrap";
 // import FeaturesList from "../../components/FeaturesList";
 // import FeatureCard from "../../components/FeaturesList/FeatureCard";
-// import MetamaskConnection from "../../components/MetamaskConnection";
+// import Web3Connection from "../../components/Web3Connection";
 // import NFTSaleItem from "../../components/NFTSale/NFTSaleItem";
 // import PayCTA from "../../components/PayCTA";
 // import PaymentSection from "../../components/PaymentSection";
@@ -103,7 +103,7 @@ const NFT = () => {
   //             ¿Cómo crear un wallet?
   //           </Button>
   //           <div className={style.metamaskWrapper + " mx-md-2 mb-2"}>
-  //             <MetamaskConnection normalButtonSize />
+  //             <Web3Connection normalButtonSize />
   //           </div>
   //         </div>
   //       )}
