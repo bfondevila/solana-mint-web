@@ -45,21 +45,15 @@ const PhantomConnection = ({
   };
 
   const connectWallet = async () => {
-    if (provider) {
-      try {
-        const response = provider?.connect().then(() => {});
-      } catch (err) {
-        // { code: 4001, message: 'User rejected the request.' }
-        console.error("error: ", err);
-      }
-    }
+    provider?.connect().catch(() => {});
   };
 
   useEffect(() => {
     const provider = getProvider();
     setProvider(provider);
 
-    provider?.connect({ onlyIfTrusted: true });
+    //Do nothing if there's an error and the user has not performed any actions
+    provider?.connect({ onlyIfTrusted: true }).catch(() => {});
   }, []);
 
   const updateWalletDetails = (publicKey) => {
@@ -120,7 +114,7 @@ const PhantomConnection = ({
         <span>{provider ? buttonText : ONBOARD_TEXT}</span>
       </Button>
 
-      {!provider && (
+      {(!provider || !provider.isPhantom) && (
         <>
           <button
             onClick={onClickMobile}
