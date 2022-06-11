@@ -11,7 +11,11 @@ const ONBOARD_TEXT = "Instalar wallet MetaMask!";
 const CONNECT_TEXT = "Conectar Wallet";
 const NOT_ADDED_TO_METAMASK_ERROR = 4902;
 
-const MetamaskConnection = ({displayFullAddress, displayWithLink, normalButtonSize}) => {
+const MetamaskConnection = ({
+  displayFullAddress,
+  displayWithLink,
+  normalButtonSize,
+}) => {
   const router = useRouter();
   const [initialized, setInitialized] = useState(false);
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);

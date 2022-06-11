@@ -27,15 +27,11 @@
   background-color: rgba(218, 165, 32, 1);
 }
 
-
 $breakpoint-mobile: 480px;
 
 @media (max-width: $breakpoint-mobile) {
-
   .card_body {
     height: 100px;
     padding: 3% 0 0 0;
   }
-
 }
-
