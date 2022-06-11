@@ -12,7 +12,7 @@ const Relato = () => {
             <Image
               className={style.img_container}
               src="/images/anelio.jpeg"
-              fluid={true}
+              fluid="true"
             />
             <h1>La isla de La Palma, el volcán y los Enanos</h1>
             <h3>El relato detrás de la ceniza</h3>

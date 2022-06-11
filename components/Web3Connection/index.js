@@ -1,4 +1,5 @@
 import MetamaskConnection from "../MetamaskConnection";
+import PhantomConnection from "../PhantomConnection";
 
 const Web3Connection = ({
   displayFullAddress,
@@ -6,7 +7,7 @@ const Web3Connection = ({
   normalButtonSize,
 }) => {
   return (
-    <MetamaskConnection
+    <PhantomConnection
       displayFullAddress={displayFullAddress}
       displayWithLink={displayWithLink}
       normalButtonSize={normalButtonSize}

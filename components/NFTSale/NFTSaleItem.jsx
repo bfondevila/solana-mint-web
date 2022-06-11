@@ -50,7 +50,7 @@ const NFTSaleItem = (props) => {
             useWebp={useWebp}
             src={imageUrl}
             alt={"NFT tres enanos de rareza " + rarity}
-            fluid={true}
+            fluid="true"
           />
           {props.cleanDesign ? (
             <Card.Body></Card.Body>

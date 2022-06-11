@@ -31,7 +31,7 @@ const Home = () => {
         </Row>
 
         <Row as="section">
-          <Col className={`text-center ${style.section}`} fluid={true}>
+          <Col className={`text-center ${style.section}`} fluid="true">
             <h1>Colección Afectados por Volcán de La Palma</h1>
             <h4>El NFT solidario de Octavio del Toro</h4>
           </Col>

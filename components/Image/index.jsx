@@ -9,7 +9,7 @@ const Image = ({ src, useWebp = true, ...props }) => {
 
   return useWebp === true ? (
     <picture>
-      <source srcSet={webpVersion} type="image/webp" />
+      <source srcSet={webpVersion} type="image/webp" {...props} />
       <BootstrapImage src={src} {...props} />
     </picture>
   ) : (
