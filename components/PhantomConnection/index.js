@@ -16,7 +16,6 @@ const PhantomConnection = ({
 }) => {
   const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
   const { userWallet, setUserWallet } = useContext(WalletContext);
-  const { publicKey, setPublicKey } = useContext(WalletContext);
   const [provider, setProvider] = useState(undefined);
   const [installProviderModal, setInstallProviderModal] = useState(false);
 
@@ -64,7 +63,6 @@ const PhantomConnection = ({
   }, []);
 
   const updateWalletDetails = (publicKey) => {
-    setPublicKey(publicKey);
     setUserWallet(publicKey?.toBase58());
   };
 
